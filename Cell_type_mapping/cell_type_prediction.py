@@ -1,10 +1,12 @@
+import csv
 import os
 
-from cell_type_processor import CellTypeProcessor
-import csv
 import pandas as pd
 
-def main(DATA_PAIRS,n):
+from cell_type_processor import CellTypeProcessor
+
+
+def main(DATA_PAIRS, n, output_dir):
     # 初始化处理器
     processor = CellTypeProcessor()
 
@@ -13,7 +15,6 @@ def main(DATA_PAIRS,n):
 
     # 收集预测数据
     prediction_data = collect_prediction_data(results)
-
 
     # 转换为 DataFrame
     df = pd.DataFrame(prediction_data, columns=['cluster', 'predicted_type', 'species_pair', 'confidence', 'features'])
@@ -37,8 +38,13 @@ def main(DATA_PAIRS,n):
     # 输出结果
     print(result[['cluster', 'predicted_type', 'support_count', 'weighted_confidence']])
     print(top_n[['cluster', 'predicted_type', 'support_count', 'weighted_confidence']])
-    top_n[['cluster', 'predicted_type', 'support_count', 'weighted_confidence']].to_csv('top_n_cells.tsv', sep='\t', index=False)
 
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    output_dir_file_path = os.path.join(output_dir, 'top_n_cells.tsv')
+    top_n[['cluster', 'predicted_type', 'support_count', 'weighted_confidence']].to_csv(output_dir_file_path, sep='\t',
+                                                                                        index=False)
 
 
 def collect_prediction_data(results):
@@ -90,7 +96,8 @@ def save_results_to_tsv(results, output_dir):
 
     with open(tsv_file_path, mode='w', newline='') as tsv_file:
         writer = csv.writer(tsv_file, delimiter='\t')
-        writer.writerow(['cluster','species_pair', 'cell_type', 'confidence', 'overlap_count', 'overlap_genes'])  # 写入表头
+        writer.writerow(
+            ['cluster', 'species_pair', 'cell_type', 'confidence', 'overlap_count', 'overlap_genes'])  # 写入表头
 
         for cluster, species_pair, cell_type_mappings in results.items():
             for cell_type, mappings in cell_type_mappings.items():
@@ -127,6 +134,7 @@ if __name__ == "__main__":
             'marker2': r'D:\nextcloud\pd论文\data\test\Cell_type_prediction\SP-SP-cell\all_markers.tsv'
         }
     }
-    #输出前n个置信度较高的预测结果
+    # 输出前n个置信度较高的预测结果
     n = 3
-    main(DATA_PAIRS,n)
+    output_dir = r"D:\nextcloud\pd论文\result\Cell_type"
+    main(DATA_PAIRS, n, output_dir)

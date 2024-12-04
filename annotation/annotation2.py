@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-#import abstract method
 from abc import ABC, abstractmethod
 
 class GeneList(object):
@@ -137,7 +136,7 @@ class AnnotationKegg(Annotation):
     def set_index(self):
         self.anno_df['Query_id'] = self.anno_df['Query_id'].str.strip().str.lower()
         
-        # 检查重复记��
+        # 检查重复记
         duplicates = self.anno_df['Query_id'].duplicated().sum()
         print(f"发现 {duplicates} 个重复的基因ID")
         
@@ -200,10 +199,48 @@ class AnnotationKog(Annotation):
         self.anno_df.set_index('Gene_id', inplace=True)
         return self.anno_df
 
+class AnnotationMarker(Annotation):
+    '''
+    marker文件格式示例:
+    p_val    avg_log2FC    pct.1    pct.2    p_val_adj    cluster    gene
+    0.000359    12.024    0.011    0    1    0    LOC113670121
+    '''
+    def __init__(self, anno_file):
+        super().__init__(anno_file)
+    
+    def read_anno_file(self):
+        # 直接使用pandas读取tsv文件
+        self.anno_df = pd.read_csv(self.anno_file, sep='\t')
+        # 将gene列中的-替换为_
+        self.anno_df['gene'] = self.anno_df['gene'].str.replace('-', '_')
+        return self.anno_df
+    
+    def set_index(self):
+        # 清理并转换gene为小写
+        self.anno_df['gene'] = self.anno_df['gene'].str.strip().str.lower()
+        
+        # 检查重复记录
+        duplicates = self.anno_df['gene'].duplicated().sum()
+        print(f"发现 {duplicates} 个重复的基因ID")
+        
+        # 对重复记录进行分组和合并，保留p值最小的记录
+        self.anno_df = self.anno_df.sort_values('p_val').groupby('gene').first().reset_index()
+        
+        # 设置索引
+        self.anno_df.set_index('gene', inplace=True)
+        return self.anno_df
+    
+    def search(self, gene_list):
+        # 将基因名称转换为小写并替换-为_
+        gene_list = [gene.strip().lower().replace('-', '_') for gene in gene_list]
+        
+        # 使用父类的search方法
+        return super().search(gene_list)
+
 
 if __name__ == "__main__":
     # 测试文件路径
-    gene_list_file = r"C:\Users\伯言\Desktop\test001\filtered_genes.txt"
+    marker_anno_file = r"D:\Bioinformatics\数据整合\最终版数据\下游分析\test001\out\markers\cluster0_markers.tsv"  # 替换为实际的marker文件路径
     go_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\GO.anno.xls"
     kegg_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\P2.KEGG.filter.m8.anno.xls"
     pfam_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\P2.pfam.anno.xls"
@@ -214,9 +251,11 @@ if __name__ == "__main__":
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
 
-    # 创建基因列表对象
-    gene_list = GeneList(gene_list_file)
-    gene_list = gene_list.get_gene_list()
+    # 从 marker 文件中提取基因列表
+    marker_anno = AnnotationMarker(marker_anno_file)
+    marker_anno.read_anno_file()
+    marker_anno.set_index()
+    gene_list = marker_anno.anno_df.index.tolist()
 
     # 测试 GO 注释
     print("测试 GO 注释...")
@@ -224,6 +263,12 @@ if __name__ == "__main__":
     go_anno.read_anno_file()
     go_anno.set_index()
     go_results = go_anno.search(gene_list)
+    # 合并 p 值信息，使用基因名称列作为合并键
+    go_results = pd.merge(go_results, 
+                         marker_anno.anno_df[['p_val']].reset_index(), 
+                         left_on=go_results.columns[0],  # 第一列是基因名称
+                         right_on='gene', 
+                         how='left')
     print(f"GO注释结果行数: {len(go_results)}")
     print(go_results.head())
     go_anno.export(go_results, os.path.join(out_dir, "go_results.tsv"))
@@ -235,6 +280,12 @@ if __name__ == "__main__":
     kegg_anno.read_anno_file()
     kegg_anno.set_index()
     kegg_results = kegg_anno.search(gene_list)
+    # 合并 p 值信息
+    kegg_results = pd.merge(kegg_results, 
+                           marker_anno.anno_df[['p_val']].reset_index(), 
+                           left_on=kegg_results.columns[0], 
+                           right_on='gene', 
+                           how='left')
     print(f"KEGG注释结果行数: {len(kegg_results)}")
     print(kegg_results.head())
     kegg_anno.export(kegg_results, os.path.join(out_dir, "kegg_results.tsv"))
@@ -246,6 +297,12 @@ if __name__ == "__main__":
     pfam_anno.read_anno_file()
     pfam_anno.set_index()
     pfam_results = pfam_anno.search(gene_list)
+    # 合并 p 值信息
+    pfam_results = pd.merge(pfam_results, 
+                           marker_anno.anno_df[['p_val']].reset_index(), 
+                           left_on=pfam_results.columns[0], 
+                           right_on='gene', 
+                           how='left')
     print(f"Pfam注释结果行数: {len(pfam_results)}")
     print(pfam_results.head())
     pfam_anno.export(pfam_results, os.path.join(out_dir, "pfam_results.tsv"))
@@ -257,6 +314,12 @@ if __name__ == "__main__":
     kog_anno.read_anno_file()
     kog_anno.set_index()
     kog_results = kog_anno.search(gene_list)
+    # 合并 p 值信息
+    kog_results = pd.merge(kog_results, 
+                          marker_anno.anno_df[['p_val']].reset_index(), 
+                          left_on=kog_results.columns[0], 
+                          right_on='gene', 
+                          how='left')
     print(f"KOG注释结果行数: {len(kog_results)}")
     print(kog_results.head())
     kog_anno.export(kog_results, os.path.join(out_dir, "kog_results.tsv"))

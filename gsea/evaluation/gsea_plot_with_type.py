@@ -240,7 +240,7 @@ if __name__ == "__main__":
                              font_family='Arial')
     
     # Load data
-    plotter.load_data(r'V:\DATA\nextcloud\pd论文\data\test\gsea.tsv', 
+    plotter.load_data(r'V:\DATA\nextcloud\pd论文\data\test\gsea\plot\gsea.tsv', 
                       transformed=False,
                       trans_para_dic={
                            'pvalue_column': 'Adjusted P-value',

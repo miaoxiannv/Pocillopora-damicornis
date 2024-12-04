@@ -202,17 +202,26 @@ class AnnotationKog(Annotation):
 class AnnotationMarker(Annotation):
     '''
     marker文件格式示例:
-    p_val    avg_log2FC    pct.1    pct.2    p_val_adj    cluster    gene
-    0.000359    12.024    0.011    0    1    0    LOC113670121
+        p_val	avg_log2FC	pct.1	pct.2	p_val_adj
+    LOC131768943	6.18524364650503e-140	-4.87084765820469	0.015	0.359	2.96959732712353e-135
+    LOC113677177	3.0655613009905e-136	-3.6039312602767	0.019	0.362	1.47180663621855e-131 
     '''
     def __init__(self, anno_file):
         super().__init__(anno_file)
     
     def read_anno_file(self):
-        # 直接使用pandas读取tsv文件
-        self.anno_df = pd.read_csv(self.anno_file, sep='\t')
+        # 直接使用pandas读取tsv文件，并将第一列设置为索引
+        self.anno_df = pd.read_csv(self.anno_file, sep='\t', header=0)  # 确保header=0以读取第一行作为列名
+        
+        # 打印列名以进行调试
+        print("读取的列名:", self.anno_df.columns.tolist())
+        
+        # 将第一列重命名为 'gene'
+        self.anno_df.rename(columns={'Unnamed: 0': 'gene'}, inplace=True)
+        
         # 将gene列中的-替换为_
         self.anno_df['gene'] = self.anno_df['gene'].str.replace('-', '_')
+        
         return self.anno_df
     
     def set_index(self):
@@ -224,7 +233,7 @@ class AnnotationMarker(Annotation):
         print(f"发现 {duplicates} 个重复的基因ID")
         
         # 对重复记录进行分组和合并，保留p值最小的记录
-        self.anno_df = self.anno_df.sort_values('p_val').groupby('gene').first().reset_index()
+        self.anno_df = self.anno_df.sort_values('gene').groupby('gene').first().reset_index()
         
         # 设置索引
         self.anno_df.set_index('gene', inplace=True)
@@ -234,20 +243,28 @@ class AnnotationMarker(Annotation):
         # 将基因名称转换为小写并替换-为_
         gene_list = [gene.strip().lower().replace('-', '_') for gene in gene_list]
         
-        # 使用父类的search方法
-        return super().search(gene_list)
-
+        # 使用父类的search方法获取基本结果
+        base_results = super().search(gene_list)
+        
+        # 合并所有marker信息
+        results = pd.merge(base_results, 
+                          self.anno_df.reset_index(), 
+                          left_on=base_results.columns[0],  
+                          right_on='gene', 
+                          how='left')
+        
+        return results
 
 if __name__ == "__main__":
     # 测试文件路径
-    marker_anno_file = r"D:\Bioinformatics\数据整合\最终版数据\下游分析\test001\out\markers\cluster0_markers.tsv"  # 替换为实际的marker文件路径
+    marker_anno_file = r"D:\nextcloud\pd论文\data\cluster-marker\cluster9_markers.tsv"  
     go_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\GO.anno.xls"
     kegg_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\P2.KEGG.filter.m8.anno.xls"
     pfam_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\P2.pfam.anno.xls"
     kog_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\P2.KOG.filter.m8.anno.xls"
     
     # 创建输出目录
-    out_dir = r"D:\nextcloud\pd论文\result\test\annotation"
+    out_dir = r"D:\nextcloud\pd论文\result\annotation\cluster9"
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
 
@@ -255,7 +272,17 @@ if __name__ == "__main__":
     marker_anno = AnnotationMarker(marker_anno_file)
     marker_anno.read_anno_file()
     marker_anno.set_index()
-    gene_list = marker_anno.anno_df.index.tolist()
+
+    # 添加调试信息，查看列名
+    print("Marker Annotation DataFrame 列名:", marker_anno.anno_df.columns)
+
+    # 确保这些列存在
+    expected_columns = ['p_val', 'avg_log2FC', 'pct.1', 'pct.2', 'p_val_adj']
+    missing_columns = [col for col in expected_columns if col not in marker_anno.anno_df.columns]
+    if missing_columns:
+        print(f"缺少以下列: {missing_columns}")
+    else:
+        gene_list = marker_anno.anno_df.index.tolist()
 
     # 测试 GO 注释
     print("测试 GO 注释...")
@@ -263,12 +290,14 @@ if __name__ == "__main__":
     go_anno.read_anno_file()
     go_anno.set_index()
     go_results = go_anno.search(gene_list)
-    # 合并 p 值信息，使用基因名称列作为合并键
+    # 合并所有marker信息
     go_results = pd.merge(go_results, 
-                         marker_anno.anno_df[['p_val']].reset_index(), 
-                         left_on=go_results.columns[0],  # 第一列是基因名称
+                         marker_anno.anno_df[['p_val', 'avg_log2FC', 'pct.1', 'pct.2', 
+                                            'p_val_adj']].reset_index(), 
+                         left_on=go_results.columns[0],
                          right_on='gene', 
                          how='left')
+    
     print(f"GO注释结果行数: {len(go_results)}")
     print(go_results.head())
     go_anno.export(go_results, os.path.join(out_dir, "go_results.tsv"))
@@ -282,7 +311,8 @@ if __name__ == "__main__":
     kegg_results = kegg_anno.search(gene_list)
     # 合并 p 值信息
     kegg_results = pd.merge(kegg_results, 
-                           marker_anno.anno_df[['p_val']].reset_index(), 
+                           marker_anno.anno_df[['p_val', 'avg_log2FC', 'pct.1', 'pct.2', 
+                                            'p_val_adj']].reset_index(), 
                            left_on=kegg_results.columns[0], 
                            right_on='gene', 
                            how='left')
@@ -299,7 +329,8 @@ if __name__ == "__main__":
     pfam_results = pfam_anno.search(gene_list)
     # 合并 p 值信息
     pfam_results = pd.merge(pfam_results, 
-                           marker_anno.anno_df[['p_val']].reset_index(), 
+                           marker_anno.anno_df[['p_val', 'avg_log2FC', 'pct.1', 'pct.2', 
+                                            'p_val_adj']].reset_index(), 
                            left_on=pfam_results.columns[0], 
                            right_on='gene', 
                            how='left')
@@ -316,7 +347,8 @@ if __name__ == "__main__":
     kog_results = kog_anno.search(gene_list)
     # 合并 p 值信息
     kog_results = pd.merge(kog_results, 
-                          marker_anno.anno_df[['p_val']].reset_index(), 
+                          marker_anno.anno_df[['p_val', 'avg_log2FC', 'pct.1', 'pct.2', 
+                                            'p_val_adj']].reset_index(), 
                           left_on=kog_results.columns[0], 
                           right_on='gene', 
                           how='left')

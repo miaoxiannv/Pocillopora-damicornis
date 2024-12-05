@@ -1,20 +1,18 @@
 import pandas as pd
-import glob
-marker_files = glob.glob("data/4589/cluster*_markers.tsv")
-# 处理每个文件
-for file in sorted(marker_files):
-   # 读取TSV文件,第一行作为列名
-   df = pd.read_csv(file, sep='\t', index_col=0)
-   
-   # 获取基因名称(现在是索引)
-   genes = df.index.tolist()
-   
-   # 生成输出文件名
-   output_file = file.replace('_markers.tsv', '_genes.txt')
-   
-   # 保存到新文件
-   with open(output_file, 'w') as f:
-       for gene in genes:
-           f.write(f"{gene}\n")
+
+# 读取数据
+data = pd.read_csv(r'D:\nextcloud\pd论文\data\cluster-marker\cluster0_markers.tsv',sep='\t')  # 假设文件名为gene_data.csv
+data.rename(columns={'Unnamed: 0': 'gene_name'},inplace=True)
+
+
+print(data.columns)  # 添加此行以查看数据框的列名
+
+# 根据log2FC的正负值分组
+positive_genes = data[data['avg_log2FC'] > 0]['gene_name'].str.replace('-','_')  # 正值基因
+negative_genes = data[data['avg_log2FC'] < 0]['gene_name'].str.replace('-','_')  # 负值基因
+
+# 保存到文件
+positive_genes.to_csv(r'D:\nextcloud\pd论文\data\genelist\Cluster0\positive_genes.txt', index=False, header=False)
+negative_genes.to_csv(r'D:\nextcloud\pd论文\data\genelist\Cluster0\negative_genes.txt', index=False, header=False)
 
 

@@ -195,15 +195,21 @@ if __name__ == '__main__':
             'matrix': 'D:\Bioinformatics\数据整合\最终版数据\下游分析\PV-data\\matrix.mtx'
         },
         'species4': {
-            'barcode': 'D:\Bioinformatics\数据整合\最终版数据\下游分析\FL-data\\barcodes.tsv',
-            'feature': 'D:\Bioinformatics\数据整合\最终版数据\下游分析\FL-data\\features.tsv',
-            'matrix': 'D:\Bioinformatics\数据整合\最终版数据\下游分析\FL-data\\matrix.mtx'
+            'barcode': r'D:\nextcloud\pd论文\data\merge-data\FL-data\\barcodes.tsv',
+            'feature': r'D:\nextcloud\pd论文\data\merge-data\FL-data\\features.tsv',
+            'matrix': r'D:\nextcloud\pd论文\data\merge-data\FL-data\\matrix.mtx'
         },
         'species5': {
-            'barcode': 'D:\Bioinformatics\数据整合\最终版数据\下游分析\SD-data\\barcodes.tsv',
-            'feature': 'D:\Bioinformatics\数据整合\最终版数据\下游分析\SD-data\\features.tsv',
-            'matrix': 'D:\Bioinformatics\数据整合\最终版数据\下游分析\SD-data\\matrix.mtx'
+            'barcode': r'D:\nextcloud\pd论文\data\merge-data\SD-data\barcodes.tsv',
+            'feature': r'D:\nextcloud\pd论文\data\merge-data\SD-data\features.tsv',
+            'matrix': r'D:\nextcloud\pd论文\data\merge-data\SD-data\matrix.mtx'
+        },
+        'species6':{
+            'barcode': r'D:\nextcloud\pd论文\data\merge-data\SP-NCBI-data\barcodes.tsv',
+            'feature': r'D:\nextcloud\pd论文\data\merge-data\SP-NCBI-data\features.tsv',
+            'matrix': r'D:\nextcloud\pd论文\data\merge-data\SP-NCBI-data\matrix.mtx'
         }
+
 
     }
 
@@ -236,7 +242,7 @@ if __name__ == '__main__':
         final_data.merge_data(data)
 
     # 保存合并后的数据
-    out_file_path = r'D:\Bioinformatics\数据整合\最终版数据\下游分析\test001'
+    out_file_path = r"D:\nextcloud\pd论文\result\merge_data"
     os.makedirs(out_file_path, exist_ok=True)  # 确保输出目录存在
     save_data = SaveData(final_data.data, out_file_path)
 

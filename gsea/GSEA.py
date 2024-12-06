@@ -132,12 +132,12 @@ class GSEA:
 if __name__ == "__main__":
     """测试GSEA分析的主函数"""
     # 测试文件路径
-    gene_list_file = r"V:\DATA\nextcloud\pd论文\data\test\gsea\genlist.txt"
+    gene_list_file = r"D:\nextcloud\pd论文\data\genelist\Cluster0\negative_genes.txt"
     anno_files = {
-        "go": r"V:\DATA\nextcloud\pd论文\data\test\gsea\GO.anno.xls",
-        "kegg": r"V:\DATA\nextcloud\pd论文\data\test\gsea\P2.KEGG.filter.m8.anno.xls", 
-        "kog": r"V:\DATA\nextcloud\pd论文\data\test\gsea\P2.KOG.filter.m8.anno.xls",
-        "pfam": r"V:\DATA\nextcloud\pd论文\data\test\gsea\P2.pfam.anno.xls"
+        "go": r"D:\nextcloud\pd论文\data\test\gsea\GO.anno.xls",
+        "kegg": r"D:\nextcloud\pd论文\data\test\gsea\P2.KEGG.filter.m8.anno.xls",
+        "kog": r"D:\nextcloud\pd论文\data\test\gsea\P2.KOG.filter.m8.anno.xls",
+        "pfam": r"D:\nextcloud\pd论文\data\test\gsea\P2.pfam.anno.xls"
     }
 
     try:
@@ -181,7 +181,7 @@ if __name__ == "__main__":
         print(f"运行过程中出错: {str(e)}")
 
     # export result
-    gsea.save_result(r"V:\DATA\nextcloud\pd论文\result\test\gsea", format='tsv')
+    gsea.save_result(r"D:\nextcloud\pd论文\result\CollateCode\GSEA\Cluster0\negative", format='tsv')
 
 
 

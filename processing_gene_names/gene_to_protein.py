@@ -15,7 +15,7 @@ LOC111327082
 LOC111320821
 """
 # 读取loc111_genes.tsv文件
-loc111_file = r"D:\nextcloud\pd论文\data\cluster-marker\loc111_genes.tsv"
+loc111_file = r"D:\nextcloud\pd论文\data\merge-data\SP-NCBI-data\genlist.tsv"
 with open(loc111_file, 'r') as f:
     loc111_genes = [line.strip() for line in f]
 
@@ -71,7 +71,7 @@ with open(gtf_file, 'r') as f:
             gene_to_protein[gene_id] = protein_id
 
 # 输出结果到tsv文件
-output_file = r'D:\nextcloud\pd论文\data\cluster-marker\loc111_gene_mapping.tsv'
+output_file = r'D:\nextcloud\pd论文\data\cluster-marker\ncbi_gene_mapping.tsv'
 with open(output_file, 'w') as out:
     # 写入表头
     out.write("gene_id\tprotein_id\n")

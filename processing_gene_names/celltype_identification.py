@@ -53,7 +53,7 @@ gene_to_protein = {k: v if v != '未找到对应的protein_id' else None for k, 
 """
 # 读取第二个marker文件（带有Spis-前缀的文件）
 try:
-    marker_file2 = r"D:\nextcloud\pd论文\data\Cell-cluster-marker\calicoblast-markers.tsv"
+    marker_file2 = r"D:\nextcloud\pd论文\data\Cell-cluster-marker\cnidocyte-markers.tsv"
     marker_df2 = pd.read_csv(marker_file2, sep=" ", quotechar='"')
 except UnicodeDecodeError:
     try:
@@ -65,7 +65,14 @@ except UnicodeDecodeError:
 
 marker2_proteins = []
 for gene in marker_df2.index:
-    if gene.startswith('Spis-XP-'):
+    # 获取当前基因的avg_log2FC和p_val值
+    avg_log2fc = marker_df2.loc[gene, 'avg_log2FC']
+    p_val = marker_df2.loc[gene, 'p_val']
+    
+    # 判断条件：以Spis-XP-开头，avg_log2FC > 0，p_val < 0.05
+    if (gene.startswith('Spis-XP-') and 
+        avg_log2fc > 0 and 
+        p_val < 0.05):
         # 去除Spis-前缀，将-替换为_
         protein = gene.replace('Spis-XP-', 'XP_').replace('-', '_')
         marker2_proteins.append(protein)
@@ -74,8 +81,17 @@ for gene in marker_df2.index:
 
 
 marker1_proteins = []
-for gene in marker_df1.iloc[:, 0]:
-    if gene.startswith('LOC111') and gene in gene_to_protein and gene_to_protein[gene] is not None:
+for index, row in marker_df1.iterrows():
+    gene = row.iloc[0]  # 获取基因名
+    avg_log2fc = row['avg_log2FC']  # 获取avg_log2FC值
+    p_val = row['p_val']  # 获取p_val值
+    
+    # 判断条件：以LOC111开头，avg_log2FC > 0，p_val < 0.05，且能在mapping中找到对应的蛋白ID
+    if (gene.startswith('LOC111') and 
+        avg_log2fc > 0 and 
+        p_val < 0.05 and 
+        gene in gene_to_protein and 
+        gene_to_protein[gene] is not None):
         protein = gene_to_protein[gene].replace('.', '_')
         marker1_proteins.append(protein)
 

@@ -38,13 +38,14 @@ class OrthoGroupReader:
         sp2_to_sp1 (dict): 物种2到物种1的基因映射字典
     """
     
-    def __init__(self, file_path):
+    def __init__(self, file_path, strip_gene_name=True):
         self.file_path = file_path
         self.sp1_genes = set()  # 物种1的所有基因
         self.sp2_genes = set()  # 物种2的所有基因
         self.sp1_to_sp2 = {}    # 物种1到物种2的映射
         self.sp2_to_sp1 = {}    # 物种2到物种1的映射
         self.skip_count = 0
+        self.strip_gene_name = strip_gene_name
         self._parse_file()
         
     def _parse_file(self):

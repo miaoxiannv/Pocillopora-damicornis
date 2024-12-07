@@ -16,32 +16,12 @@ def read_file_with_encodings(file_path, **kwargs):
             continue
     raise UnicodeDecodeError(f"无法用{encodings}中的编码读取文件：{file_path}")
 
-def process_marker_file1(file_path, gene_to_protein, all_marker1_files, gene_prefix='LOC111', min_log2fc=0, max_pval=0.05):
-    """处理第一种格式的marker文件，只保留特异性表达的基因"""
-    # 读取当前文件
-    current_markers = read_file_with_encodings(file_path, sep='\t')
-    current_proteins = set()
+def process_marker_file1(file_path, gene_to_protein, gene_prefix='LOC111', min_log2fc=0, max_pval=0.05):
+    """处理第一种格式的marker文件"""
+    marker_df = read_file_with_encodings(file_path, sep='\t')
+    proteins = []
     
-    # 读取所有其他marker1文件的基因
-    other_proteins = set()
-    for other_file in all_marker1_files:
-        if other_file != file_path:  # 跳过当前文件
-            other_markers = read_file_with_encodings(other_file, sep='\t')
-            for _, row in other_markers.iterrows():
-                gene = row.iloc[0]
-                avg_log2fc = row['avg_log2FC']
-                p_val = row['p_val']
-                
-                if (gene.startswith(gene_prefix) and 
-                    avg_log2fc > min_log2fc and 
-                    p_val < max_pval and 
-                    gene in gene_to_protein and 
-                    gene_to_protein[gene] is not None):
-                    protein = gene_to_protein[gene].replace('.', '_')
-                    other_proteins.add(protein)
-    
-    # 只保留在当前文件中特异表达的基因  
-    for _, row in current_markers.iterrows():
+    for index, row in marker_df.iterrows():
         gene = row.iloc[0]
         avg_log2fc = row['avg_log2FC']
         p_val = row['p_val']
@@ -52,10 +32,9 @@ def process_marker_file1(file_path, gene_to_protein, all_marker1_files, gene_pre
             gene in gene_to_protein and 
             gene_to_protein[gene] is not None):
             protein = gene_to_protein[gene].replace('.', '_')
-            if protein not in other_proteins:  # 只添加不在其他文件中出现的蛋白
-                current_proteins.add(protein)
+            proteins.append(protein)
     
-    return list(current_proteins)
+    return proteins
 
 def process_marker_file2(file_path, all_marker2_files):
     """处理第二种格式的marker文件，只保留特异性表达的基因"""
@@ -153,19 +132,19 @@ def compare_marker_pairs(marker1_files, marker2_files, mapping_file, output_dir,
     gene_to_protein = {k: v if v != '未找到对应的protein_id' else None 
                       for k, v in gene_to_protein.items()}
     
-    # 存储个文件的处理结果
+    # 存储��个文件的处理结果
     marker1_results = {}
     marker2_results = {}
     
     # 处理所有的marker1文件
     for file in marker1_files:
         logger.info(f"处理marker1文件: {file}")
-        proteins = process_marker_file1(file, gene_to_protein, marker1_files,  # 添加marker1_files参数
+        proteins = process_marker_file1(file, gene_to_protein, 
                                       gene_prefix=gene_prefix,
                                       min_log2fc=min_log2fc,
                                       max_pval=max_pval)
         marker1_results[file] = set(proteins)
-        logger.info(f"找到 {len(proteins)} 个特异性蛋白ID")
+        logger.info(f"找到 {len(proteins)} 个有效蛋白ID")
     
     # 处理所有的marker2文件
     for file in marker2_files:
@@ -237,10 +216,9 @@ if __name__ == "__main__":
         r"D:\nextcloud\pd论文\data\Cell-cluster-marker\gland-markers.tsv",
         r"D:\nextcloud\pd论文\data\Cell-cluster-marker\immune-markers.tsv",
         r"D:\nextcloud\pd论文\data\Cell-cluster-marker\unknown-markers.tsv"
-        # 添加更多第二类marker文件...
     ]
     mapping_file = r"D:\nextcloud\pd论文\data\cluster-marker\loc111_gene_mapping.tsv"
-    output_dir = r"D:\nextcloud\pd论文\result\comparison-result2"
+    output_dir = r"D:\nextcloud\pd论文\result\comparison-result"
 
     # 运行比较
     results = compare_marker_pairs(marker1_files, marker2_files, mapping_file, output_dir)

@@ -132,7 +132,7 @@ class GSEA:
 if __name__ == "__main__":
     """测试GSEA分析的主函数"""
     # 测试文件路径
-    gene_list_file = r"D:\nextcloud\pd论文\data\genelist\Cluster0\negative_genes.txt"
+    gene_list_file = r"D:\nextcloud\pd论文\data\Cluster-pos-nag-genlist\cluster0_markers_negative.txt"
     anno_files = {
         "go": r"D:\nextcloud\pd论文\data\test\gsea\GO.anno.xls",
         "kegg": r"D:\nextcloud\pd论文\data\test\gsea\P2.KEGG.filter.m8.anno.xls",

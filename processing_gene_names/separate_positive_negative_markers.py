@@ -59,8 +59,9 @@ def process_multiple_markers(input_dir, output_dir):
             positive_markers = df[df['avg_log2FC'] > 0]
             negative_markers = df[df['avg_log2FC'] < 0]
             # 过滤掉表头并转换为字符串列表
-            positive_genes = [str(x) for x in positive_markers.index if str(x) != 'Unnamed: 0']
-            negative_genes = [str(x) for x in negative_markers.index if str(x) != 'Unnamed: 0']
+            positive_genes = [str(x).replace('-', '_') for x in positive_markers.index if str(x) != 'Unnamed: 0']
+            negative_genes = [str(x).replace('-', '_') for x in negative_markers.index if str(x) != 'Unnamed: 0']
+            
             # 排序
             positive_markers = positive_markers.sort_values('avg_log2FC', ascending=False)
             negative_markers = negative_markers.sort_values('avg_log2FC', ascending=True)

@@ -70,7 +70,7 @@ class Gmt_stat():
 
 
 class Gmt_stat_gene():
-    def __init__(self, file_name: str, sepr='\t', ele_sepr=';', _lower=True, term_sepr="|"):
+    def __init__(self, file_name: str, sepr='\t', ele_sepr=';', _lower=True, term_sepr=" | "):
         self.file_name = file_name
         self.sepr = sepr
         self.ele_sepr = ele_sepr
@@ -130,8 +130,8 @@ KO_Pathway_Level3	Pathway_Name	Reads_Num	Reads_IDs.
 
 '''
 if __name__ == '__main__':
-    file_fp = r"D:\Bioinformatics\数据整合\GSEA\GSEA\new-data\P2.KEGG.filter.m8.anno.xls"
-    out_fp = r"D:\Bioinformatics\数据整合\GSEA\GSEA\new-data\kegg.gmt"
+    file_fp = r"D:\nextcloud\pd论文\data\test\gsea\P2.KEGG.filter.m8.anno.xls"
+    out_fp = r"D:\nextcloud\pd论文\data\test\gsea\kegg.gmt"
     gmt_obj = Gmt_stat(file_name=file_fp)
     gmt_obj.get_gmtobj()
     exper = ExportGmt(gmt_obj, out_fp)

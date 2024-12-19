@@ -1,6 +1,6 @@
 import pandas as pd
 """
-读入marker文件,提取基因名称,marker文件格式如下
+Read in the marker file and extract the gene names. The marker file format is as follows:
 "p_val" "avg_log2FC" "pct.1" "pct.2" "p_val_adj" "cluster" "gene"
 "LOC131768943" 5.98636196686601e-135 -4.71546249021902 0.016 0.352 3.21234169503997e-130 "0" "LOC131768943"
 "LOC113677177" 3.38178484945174e-130 -3.41989240052076 0.02 0.354 1.8146995680643e-125 "0" "LOC113677177"
@@ -15,13 +15,13 @@ marker_file = r"D:\nextcloud\pd论文\data\cluster-marker\allmarkers.tsv"
 marker_df = pd.read_csv(marker_file,sep=" ")
 print(marker_df.head())
 
-# 创建列表来存储基因名称
+# Create a list to store gene names
 gene_list = []
 loc111_genes = []
 
-# 遍历gene列，将基因名称添加到列表中
+# Traverse the gene column and add the gene names to the list.
 for gene in marker_df['gene'].unique():
-    # 去除引号，如果存在的话
+    # Remove quotation marks if present.
     gene_clean = gene.strip('"')
     gene_list.append(gene_clean)
     if gene_clean.startswith("LOC111"):
@@ -31,10 +31,10 @@ output_file = r"D:\nextcloud\pd论文\data\cluster-marker\gene_list.tsv"
 with open(output_file, 'w') as f:
     for gene in gene_list:
         f.write(f"{gene}\n")
-print(f"已提取 {len(gene_list)} 个唯一基因名称并保存到 {output_file}")
+print(f"have extracted{len(gene_list)} a unique gene name and save it to {output_file}")
 
 output_file = r"D:\nextcloud\pd论文\data\cluster-marker\loc111_genes.tsv"
 with open(output_file, 'w') as f:
     for gene in loc111_genes:
         f.write(f"{gene}\n")
-print(f"已提取 {len(loc111_genes)} 个LOC111基因名称并保存到 {output_file}")
+print(f"have extracted{len(loc111_genes)} the name of the LOC111 gene and save it to {output_file}")

@@ -112,20 +112,29 @@ class MergeData:
     def trans_data(self):
         data = {}
         for line in self.matrix.matrix:
-            barcode_id = line[1]
-            feature_id = line[0]
-            # Get barcode name from barcode_id
-            barcode_name = self.barcode.barcode[int(barcode_id) - 1]
-            # Get feature name from feature_id
-            feature_name = self.feature.feature[int(feature_id) - 1]
-            count = line[2]
-            # Initialize empty dict if barcode_id not in data
-            if barcode_name not in data:
-                data[barcode_name] = {}
-            # Initialize count to 0 if feature_id not in data[barcode_id]
-            if feature_name not in data[barcode_name]:
-                data[barcode_name][feature_name] = 0
-            data[barcode_name][feature_name] += int(count)
+            try:
+                barcode_id = int(line[1])  # Ensure it's an integer
+                feature_id = int(line[0])  # Ensure it's an integer
+                
+                # Get barcode name from barcode_id (using index)
+                barcode_name = self.barcode.barcode[barcode_id - 1]
+                # Get feature name from feature_id (using index)
+                feature_name = self.feature.feature[feature_id - 1]
+                count = int(line[2])  # Ensure count is an integer
+                
+                # Initialize empty dict if barcode_id not in data
+                if barcode_name not in data:
+                    data[barcode_name] = {}
+                # Initialize count to 0 if feature_id not in data[barcode_id]
+                if feature_name not in data[barcode_name]:
+                    data[barcode_name][feature_name] = 0
+                data[barcode_name][feature_name] += count
+                
+            except (IndexError, ValueError) as e:
+                print(f"Error processing line: {line}")
+                print(f"Error details: {str(e)}")
+                continue
+                
         return data
 
     # Merge a new MergeData object with current object

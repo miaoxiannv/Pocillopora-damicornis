@@ -1,11 +1,4 @@
-'''
-1. read gene list;
-2. read go, kegg, kog and pfam annotation xlsx file;
-3. convert gene list to go, kegg, kog and pfam;
-4. run hypergeometric test;
-5. export result;
-6. plot result;
-'''
+
 #import gene list object
 from data.gene_list_obj import GeneList_Obj
 #import gene set object

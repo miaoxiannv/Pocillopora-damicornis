@@ -1,5 +1,3 @@
-data_root = "data"
-
 
 
 

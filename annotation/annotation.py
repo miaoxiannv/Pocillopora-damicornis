@@ -1,6 +1,20 @@
+"""
+Annotation module for processing gene annotations from various databases.
+This script provides base classes and implementations for handling different types of annotations
+including GO, KEGG, Pfam, and KOG annotations.
+
+Usage:
+    Import this module to use annotation functionality:
+    from annotation import AnnotationGO, AnnotationKegg, AnnotationPfam, AnnotationKog
+
+Author: Shengyao Zhang
+Date: 2024-12-19
+Version: 1.0
+"""
+
 import os
 import pandas as pd
-#import abstract method
+# Import abstract method
 from abc import ABC, abstractmethod
 
 class GeneList(object):
@@ -9,44 +23,42 @@ class GeneList(object):
         self.gene_list = None
         self.read_gene_list()
 
-
     def read_gene_list(self):
         gene_df = pd.read_csv(self.gene_list_file, header=None, index_col=False)
         gene_df.columns = ['gene']
-        #lower the gene column
+        # Lower the gene column
         gene_df['gene'] = gene_df['gene'].str.strip().str.lower()
-        #transform the gene column to python list
+        # Transform the gene column to python list
         self.gene_list = gene_df['gene'].tolist()
     
     def get_gene_list(self):
         return self.gene_list
-
 
 class Annotation(ABC):
     def __init__(self, anno_file):
         self.anno_file = anno_file
         self.anno_df = None
     
-    #read annotation file
+    # Read annotation file
     def read_anno_file(self):
-        # 首先尝试读取文件的第一行来获取列名
+        # First try to read the first line to get column names
         with open(self.anno_file, 'r') as f:
             header = f.readline().strip().split('\t')
         
-        # 读取整个文件内容
+        # Read the entire file content
         data = []
         with open(self.anno_file, 'r') as f:
-            next(f)  # 跳过header行
+            next(f)  # Skip header line
             for line in f:
                 fields = line.strip().split('\t')
                 if len(fields) > len(header):
-                    # 如果字段数量多于header数量，将多余的字段合并到最后一列
+                    # If number of fields exceeds header count, merge extra fields into last column
                     merged_fields = fields[:len(header)-1] + ['\t'.join(fields[len(header)-1:])]
                     data.append(merged_fields)
                 else:
                     data.append(fields)
         
-        # 创建DataFrame
+        # Create DataFrame
         self.anno_df = pd.DataFrame(data, columns=header)
         return self.anno_df
     
@@ -55,51 +67,50 @@ class Annotation(ABC):
         pass
     
     def search(self, gene_list):
-        # 将基因名称转换为小写以匹配索引
+        # Convert gene names to lowercase for matching
         gene_list = [gene.strip().lower() for gene in gene_list]
         
-        # 使用 reindex 来查找注释信息
-        # reindex 会自动处理不存在的基因，将其对应行设置为 NaN
+        # Use reindex to find annotation information
+        # reindex will automatically handle non-existent genes by setting them to NaN
         res = self.anno_df.reindex(gene_list)
         found_genes = res.dropna(how='all').shape[0]
-        # 恢复index
+        # Reset index
         res.reset_index(inplace=True)
-        # 统计找到的基因数量和未找到的基因数量
+        # Count found and not found genes
         
         not_found_genes = res.shape[0] - found_genes
         
-        print(f"统计结果:")
-        print(f"- 输入基因总数: {len(gene_list)}")
-        print(f"- 找到注释的基因数: {found_genes}")
-        print(f"- 未找到注释的基因数: {not_found_genes}")
+        print(f"Search Results:")
+        print(f"- Total input genes: {len(gene_list)}")
+        print(f"- Genes with annotation: {found_genes}")
+        print(f"- Genes without annotation: {not_found_genes}")
         
         return res
     
-    # export the result to excel or tsv file
+    # Export the result to excel or tsv file
     def export(self, res, out_file):
-        # 创建一个基础文件名（不包含扩展名）
+        # Create base filename (without extension)
         base_file = os.path.splitext(out_file)[0]
         
-        # 导出原始结果
+        # Export original results
         if out_file.endswith('.xlsx'):
             res.to_excel(out_file, index=False)
-            # 获取第二列的名称
+            # Get second column name
             second_col = res.columns[1]
-            # 创建排序后的结果
+            # Create sorted results
             sorted_res = res.sort_values(by=second_col, ascending=False)
-            # 导出排序后的结果
+            # Export sorted results
             sorted_res.to_excel(f"{base_file}.sorted.xlsx", index=False)
         elif out_file.endswith('.tsv'):
             res.to_csv(out_file, sep='\t', index=False)
-            # 获取第二列的名称
+            # Get second column name
             second_col = res.columns[1]
-            # 创建排序后的结果
+            # Create sorted results
             sorted_res = res.sort_values(by=second_col, ascending=False)
-            # 导出排序后的结果
+            # Export sorted results
             sorted_res.to_csv(f"{base_file}.sorted.tsv", sep='\t', index=False)
         else:
             raise ValueError("Unsupported file format. Please use .xlsx or .tsv.")
-
 
 class AnnotationGO(Annotation):
     '''
@@ -137,12 +148,12 @@ class AnnotationKegg(Annotation):
     def set_index(self):
         self.anno_df['Query_id'] = self.anno_df['Query_id'].str.strip().str.lower()
         
-        # 检查重复记��
+        # Check for duplicates
         duplicates = self.anno_df['Query_id'].duplicated().sum()
-        print(f"发现 {duplicates} 个重复的基因ID")
+        print(f"Found {duplicates} duplicate gene IDs")
         
-        # 对重复记录进行分组和合并
-        # 合并除了Query_id之外的所有列
+        # Group and merge duplicates
+        # Merge all columns except Query_id
         merged_df = self.anno_df.groupby('Query_id').agg({
             'Subject_id': lambda x: ' || '.join(x.dropna().unique()),
             'KO_ID': lambda x: ' || '.join(x.dropna().unique()),
@@ -152,7 +163,7 @@ class AnnotationKegg(Annotation):
             'KO_PATHWAY': lambda x: ' || '.join(x.dropna().unique())
         }).reset_index()
         
-        # 设置索引
+        # Set index
         self.anno_df = merged_df.set_index('Query_id')
         return self.anno_df
 
@@ -202,62 +213,62 @@ class AnnotationKog(Annotation):
 
 
 if __name__ == "__main__":
-    # 测试文件路径
+    # Test file path
     gene_list_file = r"C:\Users\伯言\Desktop\test001\filtered_genes.txt"
     go_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\GO.anno.xls"
     kegg_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\P2.KEGG.filter.m8.anno.xls"
     pfam_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\P2.pfam.anno.xls"
     kog_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\P2.KOG.filter.m8.anno.xls"
     
-    # 创建输出目录
+    # Create output directory
     out_dir = r"D:\nextcloud\pd论文\result\test\annotation"
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
 
-    # 创建基因列表对象
+    # Create gene list object
     gene_list = GeneList(gene_list_file)
     gene_list = gene_list.get_gene_list()
 
-    # 测试 GO 注释
-    print("测试 GO 注释...")
+    # Test GO annotation
+    print("Testing GO annotation...")
     go_anno = AnnotationGO(go_anno_file)
     go_anno.read_anno_file()
     go_anno.set_index()
     go_results = go_anno.search(gene_list)
-    print(f"GO注释结果行数: {len(go_results)}")
+    print(f"GO annotation result row count: {len(go_results)}")
     print(go_results.head())
     go_anno.export(go_results, os.path.join(out_dir, "go_results.tsv"))
     print("\n" + "="*50 + "\n")
 
-    # 测试 KEGG 注释
-    print("测试 KEGG 注释...")
+    # Test KEGG annotation
+    print("Testing KEGG annotation...")
     kegg_anno = AnnotationKegg(kegg_anno_file)
     kegg_anno.read_anno_file()
     kegg_anno.set_index()
     kegg_results = kegg_anno.search(gene_list)
-    print(f"KEGG注释结果行数: {len(kegg_results)}")
+    print(f"KEGG annotation result row count: {len(kegg_results)}")
     print(kegg_results.head())
     kegg_anno.export(kegg_results, os.path.join(out_dir, "kegg_results.tsv"))
     print("\n" + "="*50 + "\n")
 
-    # 测试 Pfam 注释
-    print("测试 Pfam 注释...")
+    # Test Pfam annotation
+    print("Testing Pfam annotation...")
     pfam_anno = AnnotationPfam(pfam_anno_file)
     pfam_anno.read_anno_file()
     pfam_anno.set_index()
     pfam_results = pfam_anno.search(gene_list)
-    print(f"Pfam注释结果行数: {len(pfam_results)}")
+    print(f"Pfam annotation result row count: {len(pfam_results)}")
     print(pfam_results.head())
     pfam_anno.export(pfam_results, os.path.join(out_dir, "pfam_results.tsv"))
     print("\n" + "="*50 + "\n")
 
-    # 测试 KOG 注释
-    print("测试 KOG 注释...")
+    # Test KOG annotation
+    print("Testing KOG annotation...")
     kog_anno = AnnotationKog(kog_anno_file)
     kog_anno.read_anno_file()
     kog_anno.set_index()
     kog_results = kog_anno.search(gene_list)
-    print(f"KOG注释结果行数: {len(kog_results)}")
+    print(f"KOG annotation result row count: {len(kog_results)}")
     print(kog_results.head())
     kog_anno.export(kog_results, os.path.join(out_dir, "kog_results.tsv"))
     print("\n" + "="*50 + "\n")

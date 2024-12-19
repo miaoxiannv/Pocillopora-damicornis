@@ -1,11 +1,10 @@
 import os
 from pathlib import Path
-
 import pandas as pd
 
 """
-读取marker文件将正负marker分开
-marker文件格式：
+Read marker files and separate positive and negative markers
+Marker file format:
 	p_val	avg_log2FC	pct.1	pct.2	p_val_adj
 LOC131768943	5.98636196686601e-135	-4.71546249021902	0.016	0.352	3.21234169503997e-130
 LOC113677177	3.38178484945174e-130	-3.41989240052076	0.02	0.354	1.8146995680643e-125

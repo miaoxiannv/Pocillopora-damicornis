@@ -1,31 +1,55 @@
-
-#import gene list object
+"""
+File GSEA.py
+Description: 
+   This module provides a GSEA (Gene Set Enrichment Analysis) class for performing gene set enrichment analysis.
+   It supports analysis using various annotation databases such as GO, KEGG, KOG, and Pfam.
+Author: Shengyao Zhang
+ate: 2024-12-19
+Usage:
+   1. Create a GSEA object by providing the gene list file and annotation files.
+   2. Run the analysis using the `run_analysis()` method.
+   3. Access the analysis results through the corresponding result attributes (e.g., `go_res`, `kegg_res`, etc.).
+   4. Optionally, save the analysis results to files using the `save_result()` method.
+Example:
+   gene_list_file = "path/to/gene_list.txt"
+   anno_files = {
+       "go": "path/to/go_annotation.xls",
+       "kegg": "path/to/kegg_annotation.xls",
+       "kog": "path/to/kog_annotation.xls",
+       "pfam": "path/to/pfam_annotation.xls"
+   }
+   
+   gsea = GSEA(gene_list_file, **anno_files)
+   go_res, go_bp_res, go_cc_res, go_mf_res, kegg_res, kog_res, pfam_res = gsea.run_analysis()
+   
+   gsea.save_result("path/to/output_directory", format='tsv')
+Dependencies:
+   - data.gene_list_obj
+   - data.gene_set_obj_go_trans
+   - data.gene_set_obj_kegg
+   - data.gene_set_obj_kog_trans
+   - data.gene_set_obj_pfam_trans
+   - algorithms.hypergeom
+   - os
+   - pandas
+"""
 from data.gene_list_obj import GeneList_Obj
-#import gene set object
 from data import gene_set_obj_go_trans
 from data import gene_set_obj_kegg
 from data import gene_set_obj_kog_trans
 from data import gene_set_obj_pfam_trans
-
-#import hypergeometric test
 from algorithms import hypergeom
-
-#import plot
-from evaluation import gsea_plot_no_type
-from evaluation import gsea_plot_with_type
-
-
 import os
 import pandas as pd
 
 class GSEA:
     def __init__(self, gene_list_file, **anno_files):
-        # 初始化文件路径
+        # Initialize file paths
         self.gene_list_file = gene_list_file
         self.anno_files = anno_files
         
 
-        # 初始化结果变量
+        # Initialize result variables
         self.go_gmt = None
         self.go_sub_objs = None
         self.kegg_gmt = None
@@ -40,14 +64,14 @@ class GSEA:
         self.kog_res = None
         self.pfam_res = None
         
-        # 导入基因列表
+        # Import gene list
         self.gene_list = GeneList_Obj(self.gene_list_file)
         
-        # 导入注释文件
+        # Import annotation files
         self._load_annotations()
     
     def _load_annotations(self):
-        """加载所有注释文件"""
+        """Load all annotation files"""
 
         
         for gene_set, file_path in self.anno_files.items():
@@ -62,8 +86,8 @@ class GSEA:
                 self.pfam_gmt = gene_set_obj_pfam_trans.Gmt_stat(file_path)
                             
     def run_analysis(self):
-        """运行GSEA分析"""
-        # 运行超几何检验
+        """Run GSEA analysis"""
+        # Run hypergeometric test
         if self.go_gmt:
             self.go_res = hypergeom.calcu_hypergeom(self.gene_list, self.go_gmt)
             for class_type, sub_obj in self.go_sub_objs.items():
@@ -88,15 +112,15 @@ class GSEA:
     #save all result
     def save_result(self, out_dir, format='xlsx'):
         """
-        保存分析结果
+        Save analysis results
         Args:
-            out_dir: 输出目录路径
-            format: 输出格式，支持 'xlsx' 或 'tsv'
+            out_dir: Output directory path
+            format: Output format, supports 'xlsx' or 'tsv'
         """
         if not os.path.exists(out_dir):
             os.makedirs(out_dir)
         
-        # 定义保存函数
+        # Define save function
         def save_df(df, filename):
             if df is not None and not df.empty:
                 file_path = os.path.join(out_dir, filename)
@@ -105,9 +129,9 @@ class GSEA:
                 elif format.lower() == 'tsv':
                     df.to_csv(f"{file_path}.tsv", sep='\t', index=False)
                 else:
-                    raise ValueError(f"不支持的格式: {format}")
+                    raise ValueError(f"Unsupported format: {format}")
         
-        # 保存各类结果
+        # Save various results
         result_files = {
             'go_res': self.go_res,
             'go_bp_res': self.go_bp_res,
@@ -123,8 +147,8 @@ class GSEA:
 
 
 if __name__ == "__main__":
-    """测试GSEA分析的主函数"""
-    # 测试文件路径
+    """Test main function for GSEA analysis"""
+    # Test file paths
     gene_list_file = r"D:\nextcloud\pd论文\data\Cluster-pos-nag-genlist\Cluster0_markers_negative.txt"
     anno_files = {
         "go": r"D:\nextcloud\pd论文\data\test\gsea\GO.anno.xls",
@@ -134,46 +158,46 @@ if __name__ == "__main__":
     }
 
     try:
-        # 创建GSEA对象
+        # Create GSEA object
         gsea = GSEA(gene_list_file, **anno_files)
         
-        # 运行分析
+        # Run analysis
         go_res, go_bp_res, go_cc_res, go_mf_res, kegg_res, kog_res, pfam_res = gsea.run_analysis()
         
-        # 打印结果
-        print("\nGO富集分析结果:")
+        # Print results
+        print("\nGO Enrichment Analysis Results:")
         if go_res is not None:
-            print(f"GO总条目数: {len(go_res)}")
+            print(f"Total GO terms: {len(go_res)}")
             print(go_res.head())
             
-            print("\nGO子类别分析结果:")
-            print(f"BP条目数: {len(go_bp_res)}")
+            print("\nGO Subcategory Analysis Results:")
+            print(f"BP terms: {len(go_bp_res)}")
             print(go_bp_res.head())
-            print(f"CC条目数: {len(go_cc_res)}")
+            print(f"CC terms: {len(go_cc_res)}")
             print(go_cc_res.head())
-            print(f"MF条目数: {len(go_mf_res)}")
+            print(f"MF terms: {len(go_mf_res)}")
             print(go_mf_res.head())
 
         
-        print("\nKEGG富集分析结果:")
+        print("\nKEGG Enrichment Analysis Results:")
         if kegg_res is not None:
-            print(f"KEGG富集条目数: {len(kegg_res)}")
+            print(f"Enriched KEGG terms: {len(kegg_res)}")
             print(kegg_res.head())
             
-        print("\nKOG富集分析结果:")
+        print("\nKOG Enrichment Analysis Results:")
         if kog_res is not None:
-            print(f"KOG富集条目数: {len(kog_res)}")
+            print(f"Enriched KOG terms: {len(kog_res)}")
             print(kog_res.head())
             
-        print("\nPfam富集分析结果:")
+        print("\nPfam Enrichment Analysis Results:")
         if pfam_res is not None:
-            print(f"Pfam富集条目数: {len(pfam_res)}")
+            print(f"Enriched Pfam terms: {len(pfam_res)}")
             print(pfam_res.head())
             
     except Exception as e:
-        print(f"运行过程中出错: {str(e)}")
+        print(f"Error during execution: {str(e)}")
 
-    # export result
+    # Export result
     gsea.save_result(r"D:\nextcloud\pd论文\result\GSEA\Cluster0\negative", format='tsv')
 
 

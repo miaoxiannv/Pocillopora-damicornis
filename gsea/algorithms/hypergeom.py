@@ -1,3 +1,33 @@
+"""
+File: hypergeom.py
+Description:
+    This module provides functions for performing hypergeometric tests for gene set enrichment analysis.
+    It includes functions for calculating hypergeometric probabilities, adjusting p-values for multiple testing,
+    and performing hypergeometric tests on gene sets.
+
+Author: [Your Name]
+Date: [Current Date]
+
+Functions:
+    - calcu_hypergeom(gene_list_obj, gmt_obj, bg=None, min_count=1): 
+        Perform hypergeometric test on a gene list object and a gene set object.
+    - adj_pv(res: pd.DataFrame, ad_pth=0.05):
+        Adjust p-values for multiple testing using the Benjamini-Hochberg method.
+    - hypergeom_single(expr_in_geneset, allgenes, _geneset, expr_genes, min_count=1):
+        Calculate the hypergeometric probability for a single gene set.
+    - hypergeom_row(expr_in_genesets, allgenes, _geneset, expr_genes, min_count=2):
+        Calculate hypergeometric probabilities for multiple gene sets.
+    - calcu_hypergeom_pp(gene_list_obj, gmt_obj, bg=None, min_count=1):
+        Perform hypergeometric test on a gene list object and a gene set object (alternative implementation).
+
+Dependencies:
+    - numpy
+    - pandas
+    - scipy
+    - statsmodels
+
+"""
+
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -11,7 +41,7 @@ def calcu_hypergeom(gene_list_obj, gmt_obj, bg=None, min_count=1):
     gene_list = gene_list_obj.gene_list
     subsets = sorted(gmt_obj.term_gene_dic.keys())
 
-    # 创建一个列表来存储结果行
+    # Create a list to store result rows
     rows = []
     for s in subsets:
         # each set
@@ -29,7 +59,7 @@ def calcu_hypergeom(gene_list_obj, gmt_obj, bg=None, min_count=1):
         expr_in_geneset = len(hits)
         if expr_in_geneset > min_count:
             pvalue = stats.hypergeom.sf(expr_in_geneset - 1, allgenes, _geneset, expr_genes)
-            # oddsratio means the expr_in_geneset is greater than theory(>1) or lettle than theory(<1)
+            # oddsratio means the expr_in_geneset is greater than theory(>1) or less than theory(<1)
             pvalue_thred = 0.05
             if pvalue <= pvalue_thred:
                 rows.append({
@@ -38,7 +68,7 @@ def calcu_hypergeom(gene_list_obj, gmt_obj, bg=None, min_count=1):
                     'Adjusted P-value': pvalue
                 })
 
-        # 最后一次性创建DataFrame
+    # Create DataFrame at once
     res = pd.DataFrame(rows) if rows else pd.DataFrame(columns=['Term', 'Adjusted P-value', 'Term_name'])
     #sort by 'Adjusted P-value'
     res = res.sort_values(by='Adjusted P-value', ascending=True)
@@ -97,7 +127,7 @@ def calcu_hypergeom_pp(gene_list_obj, gmt_obj, bg=None, min_count=1):
         expr_in_geneset = len(hits)
         if expr_in_geneset > min_count:
             pvalue = stats.hypergeom.sf(expr_in_geneset - 1, allgenes, _geneset, expr_genes)
-            # oddsratio means the expr_in_geneset is greater than theory(>1) or lettle than theory(<1)
+            # oddsratio means the expr_in_geneset is greater than theory(>1) or less than theory(<1)
             pvalue_thred = 0.05
             if pvalue <= pvalue_thred:
                 row = pd.DataFrame({

@@ -1,8 +1,8 @@
 """
-onvert FASTA to GTF and new FASTA.
+Convert FASTA to GTF and new FASTA.
 This script takes a FASTA file or a directory containing FASTA files as input,
-nd generates a new FASTA file and a GTF file based on the input sequences.
-he output files are saved in the specified output directory.
+and generates a new FASTA file and a GTF file based on the input sequences.
+the output files are saved in the specified output directory.
 Usage:
    python full_length_make_gtf_ref.py -i <input_fasta> -o <output_directory>
 Arguments:
@@ -11,8 +11,8 @@ Arguments:
 Example:
    python full_length_make_gtf_ref.py -i input.fasta -o output/
 Author: Shengyao Zhang
-ate: 2024-12-19
-ersion: 1.0
+Date: 2024-12-19
+Version: 1.0
 """
 import argparse
 import os

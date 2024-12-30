@@ -180,23 +180,9 @@ python full_length_make_gtf_ref.py -i <input_fasta> -o <output_directory>
 
 1. `celltype_identification2.py`:比较不同物种的标记基因文件,识别重叠的蛋白质。
 2. `gene_to_protein.py`:使用GTF注释文件将基因ID(LOC111格式)映射到对应的蛋白质ID。
+
 3. `extract_gene_names.py`:从标记基因文件中提取基因名称,并将LOC111格式的基因名称单独保存。
 
-### 功能
-
-- 比较不同物种的标记基因文件,识别重叠的蛋白质
-- 将LOC111格式的基因ID映射到对应的蛋白质ID  
-- 从标记基因文件中提取基因名称,并单独保存LOC111格式的基因名称
-
-### 使用说明
-
-1. 准备输入文件:
-   - 不同物种的标记基因文件(tsv格式)
-   - 基因ID到蛋白质ID的映射文件(tsv格式) 
-   - GTF注释文件
-2. 更新脚本中的文件路径
-3. 运行脚本
-4. 检查输出结果
 
 ## 5. GSEA富集分析
 

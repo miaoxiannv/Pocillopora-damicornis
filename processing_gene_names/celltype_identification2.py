@@ -28,7 +28,6 @@ import logging
 from datetime import datetime
 
 
-
 def read_file_with_encodings(file_path, **kwargs):
     """Generic file reading function that automatically handles encoding issues"""
     encodings = ['utf-8', 'gbk', 'gb18030']
@@ -249,9 +248,8 @@ def compare_marker_pairs(marker1_files, marker2_files, mapping_file, output_dir,
     logger.info("Analysis completed!")
     return comparisons
 
-# 使用示例
+
 if __name__ == "__main__":
-    # 定义文件路径
     marker1_files = [
         r"D:\nextcloud\pd论文\data\cluster-marker\cluster0_markers.tsv",
         r"D:\nextcloud\pd论文\data\cluster-marker\cluster1_markers.tsv",

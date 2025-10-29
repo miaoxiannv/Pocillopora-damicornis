@@ -5,8 +5,8 @@ Description:
     It includes functions for calculating hypergeometric probabilities, adjusting p-values for multiple testing,
     and performing hypergeometric tests on gene sets.
 
-Author: [Your Name]
-Date: [Current Date]
+Author: Shengyao Zhang
+Date: 2024-12-19
 
 Functions:
     - calcu_hypergeom(gene_list_obj, gmt_obj, bg=None, min_count=1): 
@@ -53,13 +53,11 @@ def calcu_hypergeom(gene_list_obj, gmt_obj, bg=None, min_count=1):
         gene_list = set(gene_list)
         # expr_genes = len(gene_list)
         expr_genes = len(gene_list.intersection(gmt_obj.unique_genes))
-
-        # intersection
+        
         hits = category.intersection(gene_list)
         expr_in_geneset = len(hits)
         if expr_in_geneset > min_count:
             pvalue = stats.hypergeom.sf(expr_in_geneset - 1, allgenes, _geneset, expr_genes)
-            # oddsratio means the expr_in_geneset is greater than theory(>1) or less than theory(<1)
             pvalue_thred = 0.05
             if pvalue <= pvalue_thred:
                 rows.append({
@@ -67,12 +65,10 @@ def calcu_hypergeom(gene_list_obj, gmt_obj, bg=None, min_count=1):
                     'Term_name': gmt_obj.term_name[s],
                     'Adjusted P-value': pvalue
                 })
-
-    # Create DataFrame at once
+    
     res = pd.DataFrame(rows) if rows else pd.DataFrame(columns=['Term', 'Adjusted P-value', 'Term_name'])
-    #sort by 'Adjusted P-value'
     res = res.sort_values(by='Adjusted P-value', ascending=True)
-
+    
     return res
 
 
@@ -122,12 +118,11 @@ def calcu_hypergeom_pp(gene_list_obj, gmt_obj, bg=None, min_count=1):
         gene_list = set(gene_list)
         expr_genes = len(gene_list)
 
-        # intersection
+        
         hits = category.intersection(gene_list)
         expr_in_geneset = len(hits)
         if expr_in_geneset > min_count:
             pvalue = stats.hypergeom.sf(expr_in_geneset - 1, allgenes, _geneset, expr_genes)
-            # oddsratio means the expr_in_geneset is greater than theory(>1) or less than theory(<1)
             pvalue_thred = 0.05
             if pvalue <= pvalue_thred:
                 row = pd.DataFrame({

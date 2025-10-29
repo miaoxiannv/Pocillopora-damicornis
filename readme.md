@@ -1,10 +1,10 @@
 # Bioinformatics Analysis Pipeline
 
-This project is a bioinformatics analysis pipeline that includes multiple steps from generating reference genome, processing 10X genomics data, gene annotation to cell type identification. Here are detailed descriptions for each part.
+This project is a comprehensive bioinformatics analysis pipeline that includes multiple steps: generating reference genomes, processing 10X Genomics data, gene annotation, and cell type identification. Below are detailed descriptions for each component.
 
 ## 1. Generating GTF Files
 
-The `full_length_make_gtf_ref.py` script converts FASTA files to GTF and new FASTA format. It takes a FASTA file or a directory containing FASTA files as input, and generates a new FASTA file and a GTF file based on the input sequences.
+The `full_length_make_gtf_ref.py` script converts FASTA files to GTF and new FASTA format. It takes a FASTA file or a directory containing FASTA files as input and generates a new FASTA file and a GTF file based on the input sequences.
 
 ### Features
 
@@ -15,7 +15,10 @@ The `full_length_make_gtf_ref.py` script converts FASTA files to GTF and new FAS
 - Provides command-line arguments for specifying input and output paths
 
 ### Usage
+
+```bash
 python full_length_make_gtf_ref.py -i <input_fasta> -o <output_directory>
+```
 
 ## 2. 10X Genomics Data Processing
 
@@ -36,14 +39,14 @@ This Python script merges 10X Genomics data from different species into a unifie
    - matrix.mtx: Contains expression matrix in sparse format
 2. Update the data_paths dictionary in the script with the file paths for each species
 
-## 3. Gene Annotation 
+## 3. Gene Annotation
 
 This Python script annotates marker genes with additional information from various databases such as GO, KEGG, Pfam, and KOG. It reads a marker gene file and multiple annotation files, merges the information, and exports the annotated marker genes to output files.
 
 ### Features
 
 - Supports annotation from multiple databases: GO, KEGG, Pfam, and KOG
-- Reads marker gene file and annotation files in TSV format
+- Reads marker gene files and annotation files in TSV format
 - Merges annotation information with marker gene data
 - Handles duplicate gene IDs and merges their annotations
 - Exports annotated results to TSV files
@@ -55,14 +58,19 @@ This Python script annotates marker genes with additional information from vario
    - Marker gene file in TSV format
    - Annotation files in TSV format for GO, KEGG, Pfam, and KOG
 2. Update the file paths in the `__main__` section of the script
+3. Run the script:
+
+```bash
+python annotation_with_marker_info.py
+```
 
 ## 4. Cell Type Identification and Gene Name Processing
 
 This part includes three Python scripts for cell type identification and gene name processing:
 
-1. `celltype_identification2.py`: Compares marker gene files from different species to identify overlapping proteins.
-2. `gene_to_protein.py`: Maps gene IDs (LOC111 format) to corresponding protein IDs using a GTF annotation file.  
-3. `extract_gene_names.py`: Extracts gene names from marker gene files and saves LOC111 format gene names separately.
+1. `celltype_identification2.py`: Compares marker gene files from different species to identify overlapping proteins
+2. `gene_to_protein.py`: Maps gene IDs (LOC111 format) to corresponding protein IDs using a GTF annotation file
+3. `extract_gene_names.py`: Extracts gene names from marker gene files and saves LOC111 format gene names separately
 
 ### Features
 
@@ -70,29 +78,36 @@ This part includes three Python scripts for cell type identification and gene na
 - Maps LOC111 format gene IDs to corresponding protein IDs
 - Extracts gene names from marker gene files and saves LOC111 format gene names separately
 
-### Usage 
+### Usage
 
 1. Prepare input files:
-   - Marker gene files from different species (tsv format)
-   - Gene ID to protein ID mapping file (tsv format)
+   - Marker gene files from different species (TSV format)
+   - Gene ID to protein ID mapping file (TSV format)
    - GTF annotation file
 2. Update file paths in the scripts
-3. Run the scripts 
+3. Run the scripts:
+
+```bash
+python celltype_identification2.py
+python gene_to_protein.py
+python extract_gene_names.py
+```
+
 4. Check the output results
 
 ## 5. GSEA Enrichment Analysis
 
 This is a Python module for performing Gene Set Enrichment Analysis (GSEA).
 
-### Features  
+### Features
 
 - Perform hypergeometric test on gene lists and gene sets
 - P-value correction for multiple hypothesis testing
 - Support multiple gene set database formats such as GMT, GO, KEGG, KOG, and Pfam
 - Flexible input and output options
-Here's the code with the markdown format corrected:
 
 ### Usage Example
+
 ```python
 from gsea.algorithms.hypergeom import calcu_hypergeom
 from gsea.data.gene_list_obj import GeneList_Obj
@@ -116,3 +131,45 @@ print(res)
 - Pandas
 - SciPy
 - statsmodels
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd pd
+```
+
+2. Install dependencies:
+
+```bash
+pip install -r requirement.txt
+```
+
+## Project Structure
+
+```
+.
+├── align_count/              # GTF and FASTA file generation
+├── annotation/               # Gene annotation tools
+├── data_processing/          # 10X Genomics data processing
+├── gsea/                     # GSEA analysis module
+│   ├── algorithms/          # Analysis algorithms
+│   └── data/                # Data objects and loaders
+├── processing_gene_names/    # Gene name processing utilities
+├── readme.md                 # This file
+└── requirement.txt          # Python dependencies
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+[Add your license information here]
+
+## Contact
+
+[Add your contact information here]

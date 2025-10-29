@@ -1,0 +1,2908 @@
+[1mdiff --git a/.idea/.gitignore b/.idea/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..13566b8[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/.gitignore[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m# Default ignored files[m
+[32m+[m[32m/shelf/[m
+[32m+[m[32m/workspace.xml[m
+[32m+[m[32m# Editor-based HTTP Client requests[m
+[32m+[m[32m/httpRequests/[m
+[32m+[m[32m# Datasource local storage ignored files[m
+[32m+[m[32m/dataSources/[m
+[32m+[m[32m/dataSources.local.xml[m
+[1mdiff --git a/.idea/deployment.xml b/.idea/deployment.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9b3f0d1[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/deployment.xml[m
+[36m@@ -0,0 +1,14 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">[m
+[32m+[m[32m    <serverData>[m
+[32m+[m[32m      <paths name="liuyq@172.24.141.222:22 password">[m
+[32m+[m[32m        <serverdata>[m
+[32m+[m[32m          <mappings>[m
+[32m+[m[32m            <mapping local="$PROJECT_DIR$" web="/" />[m
+[32m+[m[32m          </mappings>[m
+[32m+[m[32m        </serverdata>[m
+[32m+[m[32m      </paths>[m
+[32m+[m[32m    </serverData>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..73b8943[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/inspectionProfiles/Project_Default.xml[m
+[36m@@ -0,0 +1,43 @@[m
+[32m+[m[32m<component name="InspectionProjectProfileManager">[m
+[32m+[m[32m  <profile version="1.0">[m
+[32m+[m[32m    <option name="myName" value="Project Default" />[m
+[32m+[m[32m    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">[m
+[32m+[m[32m      <Languages>[m
+[32m+[m[32m        <language minSize="102" name="Python" />[m
+[32m+[m[32m      </Languages>[m
+[32m+[m[32m    </inspection_tool>[m
+[32m+[m[32m    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">[m
+[32m+[m[32m      <option name="ignoredErrors">[m
+[32m+[m[32m        <list>[m
+[32m+[m[32m          <option value="W191" />[m
+[32m+[m[32m          <option value="E101" />[m
+[32m+[m[32m          <option value="E265" />[m
+[32m+[m[32m          <option value="E302" />[m
+[32m+[m[32m          <option value="E129" />[m
+[32m+[m[32m        </list>[m
+[32m+[m[32m      </option>[m
+[32m+[m[32m    </inspection_tool>[m
+[32m+[m[32m    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">[m
+[32m+[m[32m      <option name="ignoredErrors">[m
+[32m+[m[32m        <list>[m
+[32m+[m[32m          <option value="N802" />[m
+[32m+[m[32m          <option value="N803" />[m
+[32m+[m[32m          <option value="N806" />[m
+[32m+[m[32m        </list>[m
+[32m+[m[32m      </option>[m
+[32m+[m[32m    </inspection_tool>[m
+[32m+[m[32m    <inspection_tool class="PyUnboundLocalVariableInspection" enabled="false" level="WARNING" enabled_by_default="false" />[m
+[32m+[m[32m    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">[m
+[32m+[m[32m      <option name="ignoredIdentifiers">[m
+[32m+[m[32m        <list>[m
+[32m+[m[32m          <option value="requests" />[m
+[32m+[m[32m          <option value="urllib.*" />[m
+[32m+[m[32m          <option value="list.group" />[m
+[32m+[m[32m          <option value="BeautifulSoup" />[m
+[32m+[m[32m          <option value="talib" />[m
+[32m+[m[32m          <option value="aiDesign.test.df_final" />[m
+[32m+[m[32m        </list>[m
+[32m+[m[32m      </option>[m
+[32m+[m[32m    </inspection_tool>[m
+[32m+[m[32m  </profile>[m
+[32m+[m[32m</component>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..105ce2d[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/inspectionProfiles/profiles_settings.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<component name="InspectionProjectProfileManager">[m
+[32m+[m[32m  <settings>[m
+[32m+[m[32m    <option name="USE_PROJECT_PROFILE" value="false" />[m
+[32m+[m[32m    <version value="1.0" />[m
+[32m+[m[32m  </settings>[m
+[32m+[m[32m</component>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/misc.xml b/.idea/misc.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a6218fe[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/misc.xml[m
+[36m@@ -0,0 +1,7 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="Black">[m
+[32m+[m[32m    <option name="sdkName" value="Python 3.11" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11" project-jdk-type="Python SDK" />[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/modules.xml b/.idea/modules.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f669a0e[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/modules.xml[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="ProjectModuleManager">[m
+[32m+[m[32m    <modules>[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/.idea/src.iml" filepath="$PROJECT_DIR$/.idea/src.iml" />[m
+[32m+[m[32m    </modules>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/src.iml b/.idea/src.iml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8a05c6e[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/src.iml[m
+[36m@@ -0,0 +1,12 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<module type="PYTHON_MODULE" version="4">[m
+[32m+[m[32m  <component name="NewModuleRootManager">[m
+[32m+[m[32m    <content url="file://$MODULE_DIR$" />[m
+[32m+[m[32m    <orderEntry type="inheritedJdk" />[m
+[32m+[m[32m    <orderEntry type="sourceFolder" forTests="false" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m  <component name="PyDocumentationSettings">[m
+[32m+[m[32m    <option name="format" value="GOOGLE" />[m
+[32m+[m[32m    <option name="myDocStringFormat" value="Google" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</module>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/vcs.xml b/.idea/vcs.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..35eb1dd[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/vcs.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="VcsDirectoryMappings">[m
+[32m+[m[32m    <mapping directory="" vcs="Git" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/.vscode/c_cpp_properties.json b/.vscode/c_cpp_properties.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9010120[m
+[1m--- /dev/null[m
+[1m+++ b/.vscode/c_cpp_properties.json[m
+[36m@@ -0,0 +1,27 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m    "configurations": [[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "Win32",[m
+[32m+[m[32m            "includePath": [[m
+[32m+[m[32m                "${workspaceFolder}/**"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "defines": [[m
+[32m+[m[32m                "_DEBUG",[m
+[32m+[m[32m                "UNICODE",[m
+[32m+[m[32m                "_UNICODE"[m
+[32m+[m[32m            ][m
+[32m+[m[32m        },[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "name": "1",[m
+[32m+[m[32m            "includePath": [[m
+[32m+[m[32m                "${workspaceFolder}/**"[m
+[32m+[m[32m            ],[m
+[32m+[m[32m            "defines": [[m
+[32m+[m[32m                "_DEBUG",[m
+[32m+[m[32m                "UNICODE",[m
+[32m+[m[32m                "_UNICODE"[m
+[32m+[m[32m            ][m
+[32m+[m[32m        }[m
+[32m+[m[32m    ],[m
+[32m+[m[32m    "version": 4[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/README.md b/README.md[m
+[1mdeleted file mode 100644[m
+[1mindex 547a9aa..0000000[m
+[1m--- a/README.md[m
+[1m+++ /dev/null[m
+[36m@@ -1 +0,0 @@[m
+[31m-# pd[m
+\ No newline at end of file[m
+[1mdiff --git a/align_count/full_length_make_gtf_ref.py b/align_count/full_length_make_gtf_ref.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ef24e61[m
+[1m--- /dev/null[m
+[1m+++ b/align_count/full_length_make_gtf_ref.py[m
+[36m@@ -0,0 +1,157 @@[m
+[32m+[m[32m"""[m
+[32m+[m[32mConvert FASTA to GTF and new FASTA.[m
+[32m+[m[32mThis script takes a FASTA file or a directory containing FASTA files as input,[m
+[32m+[m[32mand generates a new FASTA file and a GTF file based on the input sequences.[m
+[32m+[m[32mthe output files are saved in the specified output directory.[m
+[32m+[m[32mUsage:[m
+[32m+[m[32m   python full_length_make_gtf_ref.py -i <input_fasta> -o <output_directory>[m
+[32m+[m[32mArguments:[m
+[32m+[m[32m   -i, --input     Input FASTA file or directory containing FASTA files (required)[m
+[32m+[m[32m   -o, --output    Output directory path (required)[m
+[32m+[m[32mExample:[m
+[32m+[m[32m   python full_length_make_gtf_ref.py -i input.fasta -o output/[m
+[32m+[m[32mAuthor: Shengyao Zhang[m
+[32m+[m[32mDate: 2024-12-19[m
+[32m+[m[32mVersion: 1.0[m
+[32m+[m[32m"""[m
+[32m+[m[32mimport argparse[m
+[32m+[m[32mimport os[m
+[32m+[m[32mimport sys[m
+[32m+[m
+[32m+[m[32mclass BaseParser:[m
+[32m+[m[32m    def __init__(self, input_fp="", output_dir="") -> None:[m
+[32m+[m[32m        self.input_fp = input_fp[m
+[32m+[m[32m        self.output_dir = output_dir[m
+[32m+[m[41m        [m
+[32m+[m[32m        self._check_input_path()[m
+[32m+[m[32m        self._create_output_directory()[m
+[32m+[m[41m    [m
+[32m+[m[32m    def _check_input_path(self):[m
+[32m+[m[32m        """[m
+[32m+[m[32m        Check if the input path exists. If it's a directory, look for .fa or .fasta files.[m
+[32m+[m[32m        """[m
+[32m+[m[32m        if not os.path.exists(self.input_fp):[m
+[32m+[m[32m            raise FileNotFoundError(f"Input path does not exist: {self.input_fp}")[m
+[32m+[m[41m        [m
+[32m+[m[32m        if os.path.isdir(self.input_fp):[m
+[32m+[m[32m            fasta_files = [f for f in os.listdir(self.input_fp) if f.endswith(('.fa', '.fasta'))][m
+[32m+[m[32m            if not fasta_files:[m
+[32m+[m[32m                raise FileNotFoundError(f"No FASTA file found in directory: {self.input_fp}")[m
+[32m+[m[32m            self.input_fp = os.path.join(self.input_fp, fasta_files[0])[m
+[32m+[m[32m            print(f"Using FASTA file: {self.input_fp}")[m
+[32m+[m[41m        [m
+[32m+[m[32m        if not os.access(self.input_fp, os.R_OK):[m
+[32m+[m[32m            raise PermissionError(f"Cannot read input file: {self.input_fp}")[m
+[32m+[m[41m    [m
+[32m+[m[32m    def _create_output_directory(self):[m
+[32m+[m[32m        """[m
+[32m+[m[32m        Create the output directory. If the directory already exists, skip creation.[m
+[32m+[m[32m        """[m
+[32m+[m[32m        try:[m
+[32m+[m[32m            os.makedirs(self.output_dir, exist_ok=True)[m
+[32m+[m[32m            print(f"Output directory: {self.output_dir}")[m
+[32m+[m[32m        except Exception as e:[m
+[32m+[m[32m            raise Exception(f"Failed to create output directory: {str(e)}")[m
+[32m+[m[41m    [m
+[32m+[m[32m    def read_file(self):[m
+[32m+[m[32m        raise NotImplementedError("Subclass must implement read_file method")[m
+[32m+[m[41m    [m
+[32m+[m[32m    def write_sequence(self):[m
+[32m+[m[32m        raise NotImplementedError("Subclass must implement write_sequence method")[m
+[32m+[m[41m    [m
+[32m+[m[32m    def run(self):[m
+[32m+[m[32m        self.read_file()[m
+[32m+[m
+[32m+[m[32mclass FtoGnGtf(BaseParser):[m
+[32m+[m[32m    def __init__(self, input_fp="", output_dir="") -> None:[m
+[32m+[m[32m        super().__init__(input_fp, output_dir)[m
+[32m+[m[32m        self.current_sequence_id = None[m
+[32m+[m[32m        self.current_sequence = [][m
+[32m+[m[32m        self.genome_fasta_fp = os.path.join(self.output_dir, "output.fasta")[m
+[32m+[m[32m        self.gtf_fp = os.path.join(self.output_dir, "output.gtf")[m
+[32m+[m[41m        [m
+[32m+[m[32m        self._clear_existing_output_files()[m
+[32m+[m
+[32m+[m[32m    def _clear_existing_output_files(self):[m
+[32m+[m[32m        """[m
+[32m+[m[32m        Clear existing output files.[m
+[32m+[m[32m        """[m
+[32m+[m[32m        for fp in [self.genome_fasta_fp, self.gtf_fp]:[m
+[32m+[m[32m            if os.path.exists(fp):[m
+[32m+[m[32m                os.remove(fp)[m
+[32m+[m[32m                print(f"Removed existing file: {fp}")[m
+[32m+[m
+[32m+[m[32m    def read_file(self):[m
+[32m+[m[32m        try:[m
+[32m+[m[32m            with open(self.input_fp, "r") as fts:[m
+[32m+[m[32m                for line_num, line in enumerate(fts, 1):[m
+[32m+[m[32m                    try:[m
+[32m+[m[32m                        if line.startswith('>'):[m
+[32m+[m[32m                            if self.current_sequence_id is not None:[m
+[32m+[m[32m                                self.write_sequence()[m
+[32m+[m[32m                            self.current_sequence_id = line[1:].split()[0].strip()[m
+[32m+[m[32m                            self.current_sequence = [][m
+[32m+[m[32m                        else:[m
+[32m+[m[32m                            self.current_sequence.append(line.strip())[m
+[32m+[m[32m                    except Exception as e:[m
+[32m+[m[32m                        print(f"Error processing line {line_num}: {str(e)}")[m
+[32m+[m[32m                        continue[m
+[32m+[m[41m                [m
+[32m+[m[32m                if self.current_sequence_id is not None:[m
+[32m+[m[32m                    self.write_sequence()[m
+[32m+[m[32m        except Exception as e:[m
+[32m+[m[32m            raise Exception(f"Error reading file: {str(e)}")[m
+[32m+[m
+[32m+[m[32m    def write_sequence(self):[m
+[32m+[m[32m        try:[m
+[32m+[m[32m            sequence = ''.join(self.current_sequence)[m
+[32m+[m[32m            attrib_record = {[m
+[32m+[m[32m                "gene_id": self.current_sequence_id,[m
+[32m+[m[32m                "transcript_id": self.current_sequence_id,[m
+[32m+[m[32m                "exon_number": "1",[m
+[32m+[m[32m                "gene_name": self.current_sequence_id,[m
+[32m+[m[32m                "gene_biotype": "protein_coding"[m
+[32m+[m[32m            }[m
+[32m+[m[32m            attr_rec = [f'{k} "{v}"' for k, v in attrib_record.items()][m
+[32m+[m[32m            attr_rec = "; ".join(attr_rec)[m
+[32m+[m[32m            start_p = "1"[m
+[32m+[m[32m            end_p = str(len(sequence))[m
+[32m+[m
+[32m+[m[32m            record = [[m
+[32m+[m[32m                self.current_sequence_id,[m
+[32m+[m[32m                ".",[m
+[32m+[m[32m                "cds",[m
+[32m+[m[32m                start_p,[m
+[32m+[m[32m                end_p,[m
+[32m+[m[32m                ".",[m
+[32m+[m[32m                "+",[m
+[32m+[m[32m                ".",[m
+[32m+[m[32m                attr_rec[m
+[32m+[m[32m            ][m
+[32m+[m[32m            record_str = "\t".join(record)[m
+[32m+[m
+[32m+[m[32m            with open(self.genome_fasta_fp, "a") as fasta_fp:[m
+[32m+[m[32m                fasta_fp.write(f">{self.current_sequence_id}\n{sequence}\n")[m
+[32m+[m
+[32m+[m[32m            with open(self.gtf_fp, "a") as gtf_fp:[m
+[32m+[m[32m                gtf_fp.write(f"{record_str}\n")[m
+[32m+[m[41m                [m
+[32m+[m[32m        except Exception as e:[m
+[32m+[m[32m            print(f"Error writing sequence ({self.current_sequence_id}): {str(e)}")[m
+[32m+[m
+[32m+[m[32mdef main():[m
+[32m+[m[32m    parser = argparse.ArgumentParser(description='Convert FASTA to GTF and new FASTA.')[m
+[32m+[m[32m    parser.add_argument('-i', '--input', required=True, help='Input FASTA file or directory containing FASTA files')[m
+[32m+[m[32m    parser.add_argument('-o', '--output', required=True, help='Output directory path')[m
+[32m+[m[32m    args = parser.parse_args()[m
+[32m+[m
+[32m+[m[32m    try:[m
+[32m+[m[32m        f_to_gngtf = FtoGnGtf(args.input, args.output)[m
+[32m+[m[32m        f_to_gngtf.run()[m
+[32m+[m[32m        print("Conversion completed!")[m
+[32m+[m[32m    except Exception as e:[m
+[32m+[m[32m        print(f"Error: {str(e)}", file=sys.stderr)[m
+[32m+[m[32m        sys.exit(1)[m
+[32m+[m
+[32m+[m[32mif __name__ == '__main__':[m
+[32m+[m[32m    main()[m
+[1mdiff --git a/annotation/__init__.py b/annotation/__init__.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/annotation/annotation_with_marker_info.py b/annotation/annotation_with_marker_info.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d379f42[m
+[1m--- /dev/null[m
+[1m+++ b/annotation/annotation_with_marker_info.py[m
+[36m@@ -0,0 +1,332 @@[m
+[32m+[m[32m"""[m
+[32m+[m[32mAnnotte marker genes with additional information from various databases.[m
+[32m+[m[32mThis script reads a marker gene file and multiple annotation files (GO, KEGG, Pfam, KOG),[m
+[32m+[m[32merges the information, and exports the annotated marker genes to output files.[m
+[32m+[m[32mUsage:[m
+[32m+[m[32m   python annotation_with_marker_info.py[m
+[32m+[m[32mAuthor: Shengyao Zhang[m
+[32m+[m[32mate: 2024-12-19[m
+[32m+[m[32mersion: 1.0[m
+[32m+[m[32m"""[m
+[32m+[m[32mimport os[m
+[32m+[m[32mimport pandas as pd[m
+[32m+[m[32mfrom abc import ABC, abstractmethod[m
+[32m+[m[32mclass GeneList:[m
+[32m+[m[32m   """[m
+[32m+[m[32m   Class for reading and processing a gene list file.[m
+[32m+[m[32m   """[m
+[32m+[m[32m   def __init__(self, gene_list_file):[m
+[32m+[m[32m       """[m
+[32m+[m[32m       Initialize the GeneList with the gene list file path.[m
+[32m+[m[41m       [m
+[32m+[m[32m       Args:[m
+[32m+[m[32m           gene_list_file (str): Path to the gene list file.[m
+[32m+[m[32m       """[m
+[32m+[m[32m       self.gene_list_file = gene_list_file[m
+[32m+[m[32m       self.gene_list = None[m
+[32m+[m[32m       self.read_gene_list()[m
+[32m+[m[41m   [m
+[32m+[m[32m   def read_gene_list(self):[m
+[32m+[m[32m       """[m
+[32m+[m[32m       Read the gene list file and process the gene names.[m
+[32m+[m[32m       """[m
+[32m+[m[32m       gene_df = pd.read_csv(self.gene_list_file, header=None, index_col=False)[m
+[32m+[m[32m       gene_df.columns = ['gene'][m
+[32m+[m[32m       gene_df['gene'] = gene_df['gene'].str.strip().str.lower()[m
+[32m+[m[32m       self.gene_list = gene_df['gene'].tolist()[m
+[32m+[m[41m   [m
+[32m+[m[32m   def get_gene_list(self):[m
+[32m+[m[32m       """[m
+[32m+[m[32m       Get the processed gene list.[m
+[32m+[m[41m       [m
+[32m+[m[32m       Returns:[m
+[32m+[m[32m           list: The gene list.[m
+[32m+[m[32m       """[m
+[32m+[m[32m       return self.gene_list[m
+[32m+[m[32mclass Annotation(ABC):[m
+[32m+[m[32m   """[m
+[32m+[m[32m   Abstract base class for annotation classes.[m
+[32m+[m[32m   """[m
+[32m+[m[32m   def __init__(self, anno_file):[m
+[32m+[m[32m       """[m
+[32m+[m[32m       Initialize the Annotation with the annotation file path.[m
+[32m+[m[41m       [m
+[32m+[m[32m       Args:[m
+[32m+[m[32m           anno_file (str): Path to the annotation file.[m
+[32m+[m[32m       """[m
+[32m+[m[32m       self.anno_file = anno_file[m
+[32m+[m[32m       self.anno_df = None[m
+[32m+[m[41m   [m
+[32m+[m[32m   def read_anno_file(self):[m
+[32m+[m[32m       """[m
+[32m+[m[32m       Read the annotation file and process the data.[m
+[32m+[m[32m       First read the header line to get column names.[m
+[32m+[m[32m       """[m
+[32m+[m[32m       # First try to read the first line to get column names[m
+[32m+[m[32m       with open(self.anno_file, 'r') as f:[m
+[32m+[m[32m           header = f.readline().strip().split('\t')[m
+[32m+[m[41m       [m
+[32m+[m[32m       # Read the entire file content[m
+[32m+[m[32m       data = [][m
+[32m+[m[32m       with open(self.anno_file, 'r') as f:[m
+[32m+[m[32m           next(f)  # Skip header line[m
+[32m+[m[32m           for line in f:[m
+[32m+[m[32m               fields = line.strip().split('\t')[m
+[32m+[m[32m               if len(fields) > len(header):[m
+[32m+[m[32m                   # If number of fields exceeds header count, merge extra fields into last column[m
+[32m+[m[32m                   merged_fields = fields[:len(header)-1] + ['\t'.join(fields[len(header)-1:])][m
+[32m+[m[32m                   data.append(merged_fields)[m
+[32m+[m[32m               else:[m
+[32m+[m[32m                   data.append(fields)[m
+[32m+[m[41m       [m
+[32m+[m[32m       # Create DataFrame[m
+[32m+[m[32m       self.anno_df = pd.DataFrame(data, columns=header)[m
+[32m+[m[32m       return self.anno_df[m
+[32m+[m[41m   [m
+[32m+[m[32m   @abstractmethod[m
+[32m+[m[32m   def set_index(self):[m
+[32m+[m[32m       """[m
+[32m+[m[32m       Abstract method for setting the index of the annotation DataFrame.[m
+[32m+[m[32m       """[m
+[32m+[m[32m       pass[m
+[32m+[m[41m   [m
+[32m+[m[32m   def search(self, gene_list):[m
+[32m+[m[32m       """[m
+[32m+[m[32m       Search for the annotations of the given gene list.[m
+[32m+[m[41m       [m
+[32m+[m[32m       Args:[m
+[32m+[m[32m           gene_list (list): The list of genes to search for.[m
+[32m+[m[41m       [m
+[32m+[m[32m       Returns:[m
+[32m+[m[32m           pd.DataFrame: The search results DataFrame.[m
+[32m+[m[32m       """[m
+[32m+[m[32m       gene_list = [gene.strip().lower() for gene in gene_list][m
+[32m+[m[41m       [m
+[32m+[m[32m       res = self.anno_df.reindex(gene_list)[m
+[32m+[m[32m       found_genes = res.dropna(how='all').shape[0][m
+[32m+[m[32m       res.reset_index(inplace=True)[m
+[32m+[m[41m       [m
+[32m+[m[32m       not_found_genes = res.shape[0] - found_genes[m
+[32m+[m[41m       [m
+[32m+[m[32m       print(f"Search Results:")[m
+[32m+[m[32m       print(f"- Total input genes: {len(gene_list)}")[m
+[32m+[m[32m       print(f"- Genes with annotation: {found_genes}")[m
+[32m+[m[32m       print(f"- Genes without annotation: {not_found_genes}")[m
+[32m+[m[41m       [m
+[32m+[m[32m       return res[m
+[32m+[m[41m   [m
+[32m+[m[32m   def export(self, res, out_file):[m
+[32m+[m[32m       """[m
+[32m+[m[32m       Export the search results to an output file.[m
+[32m+[m[41m       [m
+[32m+[m[32m       Args:[m
+[32m+[m[32m           res (pd.DataFrame): The search results DataFrame.[m
+[32m+[m[32m           out_file (str): Path to the output file.[m
+[32m+[m[32m       """[m
+[32m+[m[32m       # Create base filename (without extension)[m
+[32m+[m[32m       base_file = os.path.splitext(out_file)[0][m
+[32m+[m[41m       [m
+[32m+[m[32m       # Export original results[m
+[32m+[m[32m       if out_file.endswith('.xlsx'):[m
+[32m+[m[32m           res.to_excel(out_file, index=False)[m
+[32m+[m[32m           # Get second column name[m
+[32m+[m[32m           second_col = res.columns[1][m
+[32m+[m[32m           # Create sorted results[m
+[32m+[m[32m           sorted_res = res.sort_values(by=second_col, ascending=False)[m
+[32m+[m[32m           # Export sorted results[m
+[32m+[m[32m           sorted_res.to_excel(f"{base_file}.sorted.xlsx", index=False)[m
+[32m+[m[32m       elif out_file.endswith('.tsv'):[m
+[32m+[m[32m           res.to_csv(out_file, sep='\t', index=False)[m
+[32m+[m[32m           # Get second column name[m
+[32m+[m[32m           second_col = res.columns[1][m
+[32m+[m[32m           # Create sorted results[m
+[32m+[m[32m           sorted_res = res.sort_values(by=second_col, ascending=False)[m
+[32m+[m[32m           # Export sorted results[m
+[32m+[m[32m           sorted_res.to_csv(f"{base_file}.sorted.tsv", sep='\t', index=False)[m
+[32m+[m[32m       else:[m
+[32m+[m[32m           raise ValueError("Unsupported file format. Please use .xlsx or .tsv.")[m
+[32m+[m[32mclass AnnotationGo(Annotation):[m
+[32m+[m[32m   """[m
+[32m+[m[32m   Class for GO annotation.[m
+[32m+[m[32m   """[m
+[32m+[m[32m   def set_index(self):[m
+[32m+[m[32m       """[m
+[32m+[m[32m       Set the index of the GO annotation DataFrame to 'Gene_id'.[m
+[32m+[m[32m       """[m
+[32m+[m[32m       self.anno_df['Gene_id'] = self.anno_df['Gene_id'].str.strip().str.lower()[m
+[32m+[m[32m       self.anno_df.set_index('Gene_id', inplace=True)[m
+[32m+[m[32mclass AnnotationKegg(Annotation):[m
+[32m+[m[32m   """[m
+[32m+[m[32m   Class for KEGG annotation.[m
+[32m+[m[32m   """[m
+[32m+[m[32m   def set_index(self):[m
+[32m+[m[32m       """[m
+[32m+[m[32m       Set the index of the KEGG annotation DataFrame to 'Query_id'.[m
+[32m+[m[32m       """[m
+[32m+[m[32m       self.anno_df['Query_id'] = self.anno_df['Query_id'].str.strip().str.lower()[m
+[32m+[m[41m       [m
+[32m+[m[32m       # Check for duplicate records[m
+[32m+[m[32m       duplicates = self.anno_df['Query_id'].duplicated().sum()[m
+[32m+[m[32m       print(f"Found {duplicates} duplicate gene IDs")[m
+[32m+[m[41m       [m
+[32m+[m[32m       # Group and merge duplicate records[m
+[32m+[m[32m       # Merge all columns except Query_id[m
+[32m+[m[32m       merged_df = self.anno_df.groupby('Query_id').agg({[m
+[32m+[m[32m           'Subject_id': lambda x: ' || '.join(x.dropna().unique()),[m
+[32m+[m[32m           'KO_ID': lambda x: ' || '.join(x.dropna().unique()),[m
+[32m+[m[32m           'KO_NAME': lambda x: ' || '.join(x.dropna().unique()),[m
+[32m+[m[32m           'KO_DEFINITION': lambda x: ' || '.join(x.dropna().unique()),[m
+[32m+[m[32m           'KO_EC': lambda x: ' || '.join(x.dropna().unique()),[m
+[32m+[m[32m           'KO_PATHWAY': lambda x: ' || '.join(x.dropna().unique())[m
+[32m+[m[32m       }).reset_index()[m
+[32m+[m[41m       [m
+[32m+[m[32m       # Set index[m
+[32m+[m[32m       self.anno_df = merged_df.set_index('Query_id')[m
+[32m+[m[32mclass AnnotationPfam(Annotation):[m
+[32m+[m[32m   """[m
+[32m+[m[32m   Class for Pfam annotation.[m
+[32m+[m[32m   """[m
+[32m+[m[32m   def set_index(self):[m
+[32m+[m[32m       """[m
+[32m+[m[32m       Set the index of the Pfam annotation DataFrame to 'Gene_id'.[m
+[32m+[m[32m       """[m
+[32m+[m[32m       self.anno_df['Gene_id'] = self.anno_df['Gene_id'].str.strip().str.lower()[m
+[32m+[m[32m       self.anno_df.set_index('Gene_id', inplace=True)[m
+[32m+[m[32mclass AnnotationKog(Annotation):[m
+[32m+[m[32m   """[m
+[32m+[m[32m   Class for KOG annotation.[m
+[32m+[m[32m   """[m
+[32m+[m[32m   def set_index(self):[m
+[32m+[m[32m       """[m
+[32m+[m[32m       Set the index of the KOG annotation DataFrame to 'Gene_id'.[m
+[32m+[m[32m       """[m
+[32m+[m[32m       self.anno_df['Gene_id'] = self.anno_df['Gene_id'].str.strip().str.lower()[m
+[32m+[m[32m       self.anno_df.set_index('Gene_id', inplace=True)[m
+[32m+[m[32mclass AnnotationMarker(Annotation):[m
+[32m+[m[32m   """[m
+[32m+[m[32m   Class for marker gene annotation.[m
+[32m+[m[32m   """[m
+[32m+[m[32m   def read_anno_file(self):[m
+[32m+[m[32m       """[m
+[32m+[m[32m       Read the marker file with pandas directly[m
+[32m+[m[32m       """[m
+[32m+[m[32m       # Read tsv file directly using pandas[m
+[32m+[m[32m       self.anno_df = pd.read_csv(self.anno_file, sep='\t', header=0)[m
+[32m+[m[41m       [m
+[32m+[m[32m       # Print column names for debugging[m
+[32m+[m[32m       print("Marker file columns:", self.anno_df.columns.tolist())[m
+[32m+[m[41m       [m
+[32m+[m[32m       # Rename first column to 'gene' if unnamed[m
+[32m+[m[32m       if self.anno_df.columns[0].startswith('Unnamed'):[m
+[32m+[m[32m           self.anno_df.rename(columns={self.anno_df.columns[0]: 'gene'}, inplace=True)[m
+[32m+[m[41m       [m
+[32m+[m[32m       # Replace hyphens with underscores in gene column[m
+[32m+[m[32m       self.anno_df[self.anno_df.columns[0]] = self.anno_df[self.anno_df.columns[0]].str.replace('-', '_')[m
+[32m+[m[41m       [m
+[32m+[m[32m       return self.anno_df[m
+[32m+[m[41m   [m
+[32m+[m[32m   def set_index(self):[m
+[32m+[m[32m       """[m
+[32m+[m[32m       Set the index of the marker gene annotation DataFrame.[m
+[32m+[m[32m       """[m
+[32m+[m[32m       # Get first column as gene name column[m
+[32m+[m[32m       gene_col = self.anno_df.columns[0][m
+[32m+[m[41m       [m
+[32m+[m[32m       # Clean and convert gene names to lowercase[m
+[32m+[m[32m       self.anno_df[gene_col] = self.anno_df[gene_col].str.strip().str.lower()[m
+[32m+[m[41m       [m
+[32m+[m[32m       # Check for duplicate records[m
+[32m+[m[32m       duplicates = self.anno_df[gene_col].duplicated().sum()[m
+[32m+[m[32m       if duplicates > 0:[m
+[32m+[m[32m           print(f"Found {duplicates} duplicate gene IDs")[m
+[32m+[m[32m           # Group and merge duplicates, keeping the record with smallest p-value[m
+[32m+[m[32m           self.anno_df = self.anno_df.sort_values('p_val').groupby(gene_col).first().reset_index()[m
+[32m+[m[41m       [m
+[32m+[m[32m       # Set index[m
+[32m+[m[32m       self.anno_df.set_index(gene_col, inplace=True)[m
+[32m+[m[32mif __name__ == "__main__":[m
+[32m+[m[32m   # Input files[m
+[32m+[m[32m   marker_file = r"D:\nextcloud\pd论文\data\cluster-marker\cluster9_markers.tsv"[m
+[32m+[m[32m   go_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\GO.anno.xls"[m
+[32m+[m[32m   kegg_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\P2.KEGG.filter.m8.anno.xls"[m
+[32m+[m[32m   pfam_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\P2.pfam.anno.xls"[m
+[32m+[m[32m   kog_anno_file = r"D:\nextcloud\pd论文\data\test\annotation\P2.KOG.filter.m8.anno.xls"[m
+[32m+[m[41m   [m
+[32m+[m[32m   # Output directory[m
+[32m+[m[32m   out_dir = r"D:\nextcloud\pd论文\result\annotation\cluster9"[m
+[32m+[m[32m   if not os.path.exists(out_dir):[m
+[32m+[m[32m       os.makedirs(out_dir)[m
+[32m+[m[41m   [m
+[32m+[m[32m   # First read and process marker file[m
+[32m+[m[32m   print("Testing marker gene annotation...")[m
+[32m+[m[32m   marker_anno = AnnotationMarker(marker_file)[m
+[32m+[m[32m   marker_anno.read_anno_file()[m
+[32m+[m[32m   marker_anno.set_index()[m
+[32m+[m[32m   print(f"Number of marker genes: {len(marker_anno.anno_df)}")[m
+[32m+[m[32m   print(marker_anno.anno_df.head())[m
+[32m+[m[32m   print("\n" + "="*50 + "\n")[m
+[32m+[m[41m   [m
+[32m+[m[32m   # Use gene list from marker file[m
+[32m+[m[32m   gene_list = marker_anno.anno_df.index.tolist()[m
+[32m+[m[41m   [m
+[32m+[m[32m   # Test GO annotation[m
+[32m+[m[32m   print("Testing GO annotation...")[m
+[32m+[m[32m   go_anno = AnnotationGo(go_anno_file)[m
+[32m+[m[32m   go_anno.read_anno_file()[m
+[32m+[m[32m   go_anno.set_index()[m
+[32m+[m[32m   go_results = go_anno.search(gene_list)[m
+[32m+[m[32m   go_results = pd.merge(go_results,[m[41m [m
+[32m+[m[32m                        marker_anno.anno_df.reset_index(),[m[41m [m
+[32m+[m[32m                        left_on='Gene_id',[m
+[32m+[m[32m                        right_on='gene',[m[41m [m
+[32m+[m[32m                        how='left')[m
+[32m+[m[41m   [m
+[32m+[m[32m   print(f"Number of GO annotation results: {len(go_results)}")[m
+[32m+[m[32m   print(go_results.head())[m
+[32m+[m[32m   go_anno.export(go_results, os.path.join(out_dir, "go_results.tsv"))[m
+[32m+[m[32m   print("\n" + "="*50 + "\n")[m
+[32m+[m[32m    # Test KEGG annotation[m
+[32m+[m[32m   print("Testing KEGG annotation...")[m
+[32m+[m[32m   kegg_anno = AnnotationKegg(kegg_anno_file)[m
+[32m+[m[32m   kegg_anno.read_anno_file()[m
+[32m+[m[32m   kegg_anno.set_index()[m
+[32m+[m[32m   kegg_results = kegg_anno.search(gene_list)[m
+[32m+[m[32m   kegg_results = pd.merge(kegg_results,[m[41m [m
+[32m+[m[32m                          marker_anno.anno_df.reset_index(),[m[41m [m
+[32m+[m[32m                          left_on='Query_id',[m
+[32m+[m[32m                          right_on='gene',[m[41m [m
+[32m+[m[32m                          how='left')[m
+[32m+[m[32m   print(f"Number of KEGG annotation results: {len(kegg_results)}")[m
+[32m+[m[32m   print(kegg_results.head())[m
+[32m+[m[32m   kegg_anno.export(kegg_results, os.path.join(out_dir, "kegg_results.tsv"))[m
+[32m+[m[32m   print("\n" + "="*50 + "\n")[m
+[32m+[m[32m    # Test Pfam annotation[m
+[32m+[m[32m   print("Testing Pfam annotation...")[m
+[32m+[m[32m   pfam_anno = AnnotationPfam(pfam_anno_file)[m
+[32m+[m[32m   pfam_anno.read_anno_file()[m
+[32m+[m[32m   pfam_anno.set_index()[m
+[32m+[m[32m   pfam_results = pfam_anno.search(gene_list)[m
+[32m+[m[32m   pfam_results = pd.merge(pfam_results,[m[41m [m
+[32m+[m[32m                          marker_anno.anno_df.reset_index(),[m[41m [m
+[32m+[m[32m                          left_on='Gene_id',[m
+[32m+[m[32m                          right_on='gene',[m[41m [m
+[32m+[m[32m                          how='left')[m
+[32m+[m[32m   print(f"Number of Pfam annotation results: {len(pfam_results)}")[m
+[32m+[m[32m   print(pfam_results.head())[m
+[32m+[m[32m   pfam_anno.export(pfam_results, os.path.join(out_dir, "pfam_results.tsv"))[m
+[32m+[m[32m   print("\n" + "="*50 + "\n")[m
+[32m+[m[32m    # Test KOG annotation[m
+[32m+[m[32m   print("Testing KOG annotation...")[m
+[32m+[m[32m   kog_anno = AnnotationKog(kog_anno_file)[m
+[32m+[m[32m   kog_anno.read_anno_file()[m
+[32m+[m[32m   kog_anno.set_index()[m
+[32m+[m[32m   kog_results = kog_anno.search(gene_list)[m
+[32m+[m[32m   kog_results = pd.merge(kog_results,[m[41m [m
+[32m+[m[32m                         marker_anno.anno_df.reset_index(),[m[41m [m
+[32m+[m[32m                         left_on='Gene_id',[m
+[32m+[m[32m                         right_on='gene',[m[41m [m
+[32m+[m[32m                         how='left')[m
+[32m+[m[32m   print(f"Number of KOG annotation results: {len(kog_results)}")[m
+[32m+[m[32m   print(kog_results.head())[m
+[32m+[m[32m   kog_anno.export(kog_results, os.path.join(out_dir, "kog_results.tsv"))[m
+[32m+[m[32m   print("\n" + "="*50 + "\n")[m
+\ No newline at end of file[m
+[1mdiff --git a/data_processing/merge_10x.py b/data_processing/merge_10x.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6f8fdb2[m
+[1m--- /dev/null[m
+[1m+++ b/data_processing/merge_10x.py[m
+[36m@@ -0,0 +1,265 @@[m
+[32m+[m[32m"""[m
+[32m+[m[32m10X Genomics data merger.[m
+[32m+[m[32mThis script merges 10X Genomics data from different species into a unified format.[m
+[32m+[m[32mIt processes barcode, feature, and matrix files from multiple species and combines them.[m
+[32m+[m
+[32m+[m[32mInput files required for each species:[m
+[32m+[m[32m    - barcode.tsv: Contains cell barcodes[m
+[32m+[m[32m    - feature.tsv: Contains gene/feature information[m
+[32m+[m[32m    - matrix.mtx: Contains expression matrix in sparse format[m
+[32m+[m
+[32m+[m[32mOutput files:[m
+[32m+[m[32m    - barcodes.tsv: Combined cell barcodes[m
+[32m+[m[32m    - features.tsv: Combined gene/feature list[m
+[32m+[m[32m    - matrix.mtx: Combined expression matrix[m
+[32m+[m
+[32m+[m[32mUsage:[m
+[32m+[m[32m    python merge_10x.py[m
+[32m+[m
+[32m+[m[32mAuthor: Shengyao Zhang[m
+[32m+[m[32mDate: 2024-12-19[m
+[32m+[m[32mVersion: 1.0[m
+[32m+[m[32m"""[m
+[32m+[m
+[32m+[m[32mimport gzip[m
+[32m+[m[32mimport os[m
+[32m+[m
+[32m+[m[32m'''[m
+[32m+[m[32mExample barcode.tsv content:[m
+[32m+[m[32mAAACCTGCAGCCTGTG-1[m
+[32m+[m[32mAAACCTGGTCCGTCAG-1[m
+[32m+[m[32mAAACCTGGTTCTGTTT-1[m
+[32m+[m[32mAAACCTGTCCGCTGTT-1[m
+[32m+[m[32mAAACCTGTCTGGTATG-1[m
+[32m+[m[32mAAACGGGAGTCGAGTG-1[m
+[32m+[m[32m'''[m
+[32m+[m
+[32m+[m[32mclass Barcode:[m
+[32m+[m[32m    def __init__(self, file_path):[m
+[32m+[m[32m        self.file_path = file_path[m
+[32m+[m[32m        self.barcode = self.read_barcode()[m
+[32m+[m
+[32m+[m[32m    def read_barcode(self):[m
+[32m+[m[32m        if self.file_path.endswith('.gz'):[m
+[32m+[m[32m            with gzip.open(self.file_path, 'rt', encoding='utf-8') as f:[m
+[32m+[m[32m                barcode = [line.strip() for line in f][m
+[32m+[m[32m        else:[m
+[32m+[m[32m            with open(self.file_path, 'r', encoding='utf-8') as f:[m
+[32m+[m[32m                barcode = [line.strip() for line in f][m
+[32m+[m[32m        return barcode[m
+[32m+[m
+[32m+[m[32m'''[m
+[32m+[m[32mExample feature.tsv content:[m
+[32m+[m[32mtranscript_HQ_OA1_1SP_transcript10903/f12p0/2901	transcript_HQ_OA1_1SP_transcript10903/f12p0/2901	Gene Expression[m
+[32m+[m[32mtranscript_HQ_OA1_1SP_transcript12719/f24p0/2754	transcript_HQ_OA1_1SP_transcript12719/f24p0/2754	Gene Expression[m
+[32m+[m[32mtranscript_HQ_OA1_1SP_transcript14531/f6p0/2646	transcript_HQ_OA1_1SP_transcript14531/f6p0/2646	Gene Expression[m
+[32m+[m[32mtranscript_HQ_OA1_1SP_transcript13629/f3p0/2697[m
+[32m+[m[32m'''[m
+[32m+[m
+[32m+[m[32mclass Feature:[m
+[32m+[m[32m    def __init__(self, file_path):[m
+[32m+[m[32m        self.file_path = file_path[m
+[32m+[m[32m        self.feature = self.read_feature()[m
+[32m+[m
+[32m+[m[32m    def read_feature(self):[m
+[32m+[m[32m        if self.file_path.endswith('.gz'):[m
+[32m+[m[32m            with gzip.open(self.file_path, 'rt', encoding='utf-8') as f:[m
+[32m+[m[32m                feature = [line.strip() for line in f][m
+[32m+[m[32m        else:[m
+[32m+[m[32m            with open(self.file_path, 'r', encoding='utf-8') as f:[m
+[32m+[m[32m                feature = [line.strip() for line in f][m
+[32m+[m[32m        return feature[m
+[32m+[m
+[32m+[m[32m'''[m
+[32m+[m[32mExample matrix.mtx content:[m
+[32m+[m[32m%%MatrixMarket matrix coordinate integer general[m
+[32m+[m[32m%metadata_json: {"software_version": "cellranger-8.0.1", "format_version": 2}[m
+[32m+[m[32m22408 2122 156897[m
+[32m+[m[32m53 1 2[m
+[32m+[m[32m1103 1 1[m
+[32m+[m[32m1426 1 1[m
+[32m+[m[32m1652 1 1[m
+[32m+[m
+[32m+[m[32mFirst two lines are comments, third line contains matrix dimensions.[m
+[32m+[m[32mFollowing lines contain data in format: feature_id barcode_id count[m
+[32m+[m[32m'''[m
+[32m+[m
+[32m+[m[32mclass Matrix:[m
+[32m+[m[32m    def __init__(self, file_path, sepr=' '):[m
+[32m+[m[32m        self.file_path = file_path[m
+[32m+[m[32m        self.sepr = sepr[m
+[32m+[m[32m        self.matrix = self.read_matrix()[m
+[32m+[m
+[32m+[m[32m    def read_matrix(self):[m
+[32m+[m[32m        if self.file_path.endswith('.gz'):[m
+[32m+[m[32m            with gzip.open(self.file_path, 'rt', encoding='utf-8') as f:[m
+[32m+[m[32m                lines = f.readlines()[3:]  # Skip first three lines[m
+[32m+[m[32m                matrix = [line.strip().split(self.sepr) for line in lines][m
+[32m+[m[32m        else:[m
+[32m+[m[32m            with open(self.file_path, 'r', encoding='utf-8') as f:[m
+[32m+[m[32m                lines = f.readlines()[3:]  # Skip first three lines[m
+[32m+[m[32m                matrix = [line.strip().split(self.sepr) for line in lines][m
+[32m+[m[32m        return matrix[m
+[32m+[m
+[32m+[m[32m# Store data in dictionary format: {barcode_id: {feature_id: count}}[m
+[32m+[m[32mclass MergeData:[m
+[32m+[m[32m    def __init__(self, barcode, feature, matrix):[m
+[32m+[m[32m        self.barcode = barcode[m
+[32m+[m[32m        self.feature = feature[m
+[32m+[m[32m        self.matrix = matrix[m
+[32m+[m[32m        self.data = self.trans_data()[m
+[32m+[m
+[32m+[m[32m    def trans_data(self):[m
+[32m+[m[32m        data = {}[m
+[32m+[m[32m        for line in self.matrix.matrix:[m
+[32m+[m[32m            try:[m
+[32m+[m[32m                barcode_id = int(line[1])  # Ensure it's an integer[m
+[32m+[m[32m                feature_id = int(line[0])  # Ensure it's an integer[m
+[32m+[m[41m                [m
+[32m+[m[32m                # Get barcode name from barcode_id (using index)[m
+[32m+[m[32m                barcode_name = self.barcode.barcode[barcode_id - 1][m
+[32m+[m[32m                # Get feature name from feature_id (using index)[m
+[32m+[m[32m                feature_name = self.feature.feature[feature_id - 1][m
+[32m+[m[32m                count = int(line[2])  # Ensure count is an integer[m
+[32m+[m[41m                [m
+[32m+[m[32m                # Initialize empty dict if barcode_id not in data[m
+[32m+[m[32m                if barcode_name not in data:[m
+[32m+[m[32m                    data[barcode_name] = {}[m
+[32m+[m[32m                # Initialize count to 0 if feature_id not in data[barcode_id][m
+[32m+[m[32m                if feature_name not in data[barcode_name]:[m
+[32m+[m[32m                    data[barcode_name][feature_name] = 0[m
+[32m+[m[32m                data[barcode_name][feature_name] += count[m
+[32m+[m[41m                [m
+[32m+[m[32m            except (IndexError, ValueError) as e:[m
+[32m+[m[32m                print(f"Error processing line: {line}")[m
+[32m+[m[32m                print(f"Error details: {str(e)}")[m
+[32m+[m[32m                continue[m
+[32m+[m[41m                [m
+[32m+[m[32m        return data[m
+[32m+[m
+[32m+[m[32m    # Merge a new MergeData object with current object[m
+[32m+[m[32m    def merge_data(self, new_data):[m
+[32m+[m[32m        for barcode in new_data.data:[m
+[32m+[m[32m            if barcode not in self.data:[m
+[32m+[m[32m                self.data[barcode] = new_data.data[barcode][m
+[32m+[m[32m            else:[m
+[32m+[m[32m                for feature in new_data.data[barcode]:[m
+[32m+[m[32m                    if feature not in self.data[barcode]:[m
+[32m+[m[32m                        self.data[barcode][feature] = new_data.data[barcode][feature][m
+[32m+[m[32m                    else:[m
+[32m+[m[32m                        self.data[barcode][feature] += new_data.data[barcode][feature][m
+[32m+[m[32m        return self.data[m
+[32m+[m
+[32m+[m[32m# Save MergeData.data to three files: matrix.mtx, features.tsv, barcodes.tsv[m
+[32m+[m[32mclass SaveData:[m
+[32m+[m[32m    def __init__(self, data, file_path='D:\Bioinformatics\数据整合\最终版数据\下游分析\\test001'):[m
+[32m+[m[32m        self.data = data[m
+[32m+[m[32m        self.file_path = file_path[m
+[32m+[m[32m        # Define output file paths[m
+[32m+[m[32m        self.barcode_file = os.path.join(self.file_path, 'barcodes.tsv')[m
+[32m+[m[32m        self.feature_file = os.path.join(self.file_path, 'features.tsv')[m
+[32m+[m[32m        self.matrix_file = os.path.join(self.file_path, 'matrix.mtx')[m
+[32m+[m[32m        self.save_data()[m
+[32m+[m
+[32m+[m[32m    # Save data from MergeData.data to three separate files[m
+[32m+[m[32m    def save_data(self):[m
+[32m+[m[32m        # Get all barcode names[m
+[32m+[m[32m        barcode = list(self.data.keys())[m
+[32m+[m[32m        barcode_to_id = {barcode: i + 1 for i, barcode in enumerate(barcode)}[m
+[32m+[m[32m        # Get all feature names[m
+[32m+[m[32m        feature = list(set([feature for barcode in self.data for feature in self.data[barcode]]))[m
+[32m+[m[32m        feature_to_id = {feature: i + 1 for i, feature in enumerate(feature)}[m
+[32m+[m
+[32m+[m[32m        # Save barcode names to file[m
+[32m+[m[32m        with open(self.barcode_file, 'w') as f:[m
+[32m+[m[32m            for bc in barcode:[m
+[32m+[m[32m                f.write(bc + '\n')[m
+[32m+[m[32m        # Save feature names to file[m
+[32m+[m[32m        with open(self.feature_file, 'w') as f:[m
+[32m+[m[32m            for ft in feature:[m
+[32m+[m[32m                f.write(ft + '\n')[m
+[32m+[m[32m        # Save data to matrix.mtx file in format: feature_id barcode_id count[m
+[32m+[m[32m        with open(self.matrix_file, 'w') as f:[m
+[32m+[m[32m            content = [][m
+[32m+[m[32m            for bc in barcode:[m
+[32m+[m[32m                for ft in feature:[m
+[32m+[m[32m                    if ft in self.data[bc]:[m
+[32m+[m[32m                        content.append([feature_to_id[ft], barcode_to_id[bc], self.data[bc][ft]])[m
+[32m+[m
+[32m+[m[32m            f.write('%%MatrixMarket matrix coordinate integer general\n')[m
+[32m+[m[32m            f.write('%metadata_json: {"software_version": "cellranger-8.0.1", "format_version": 2}\n')[m
+[32m+[m[32m            f.write(f'{len(feature)} {len(barcode)} {len(content)}\n')[m
+[32m+[m[32m            for line in content:[m
+[32m+[m[32m                f.write(' '.join([str(i) for i in line]) + '\n')[m
+[32m+[m
+[32m+[m[32mif __name__ == '__main__':[m
+[32m+[m[32m    # Define base paths for data from different species[m
+[32m+[m[32m    data_paths = {[m
+[32m+[m[32m        'species1': {[m
+[32m+[m[32m            'barcode': r'D:\Bioinformatics\数据整合\最终版数据\下游分析\SP-data\barcodes.tsv',[m
+[32m+[m[32m            'feature': r'D:\Bioinformatics\数据整合\最终版数据\下游分析\SP-data\features.tsv',[m
+[32m+[m[32m            'matrix': r'D:\Bioinformatics\数据整合\最终版数据\下游分析\SP-data\matrix.mtx'[m
+[32m+[m[32m        },[m
+[32m+[m[32m        'species2': {[m
+[32m+[m[32m            'barcode': r'D:\Bioinformatics\数据整合\最终版数据\下游分析\PD-data\barcodes.tsv',[m
+[32m+[m[32m            'feature': r'D:\Bioinformatics\数据整合\最终版数据\下游分析\PD-data\features.tsv',[m
+[32m+[m[32m            'matrix': r'D:\Bioinformatics\数据整合\最终版数据\下游分析\PD-data\matrix.mtx'[m
+[32m+[m[32m        },[m
+[32m+[m[32m        'species3': {[m
+[32m+[m[32m            'barcode': r'D:\Bioinformatics\数据整合\最终版数据\下游分析\PV-data\barcodes.tsv',[m
+[32m+[m[32m            'feature': r'D:\Bioinformatics\数据整合\最终版数据\下游分析\PV-data\features.tsv',[m
+[32m+[m[32m            'matrix': r'D:\Bioinformatics\数据整合\最终版数据\下游分析\PV-data\matrix.mtx'[m
+[32m+[m[32m        },[m
+[32m+[m[32m        'species4': {[m
+[32m+[m[32m            'barcode': r'D:\nextcloud\pd论文\data\merge-data\FL-data\barcodes.tsv',[m
+[32m+[m[32m            'feature': r'D:\nextcloud\pd论文\data\merge-data\FL-data\features.tsv',[m
+[32m+[m[32m            'matrix': r'D:\nextcloud\pd论文\data\merge-data\FL-data\matrix.mtx'[m
+[32m+[m[32m        },[m
+[32m+[m[32m        'species5': {[m
+[32m+[m[32m            'barcode': r'D:\nextcloud\pd论文\data\merge-data\SD-data\barcodes.tsv',[m
+[32m+[m[32m            'feature': r'D:\nextcloud\pd论文\data\merge-data\SD-data\features.tsv',[m
+[32m+[m[32m            'matrix': r'D:\nextcloud\pd论文\data\merge-data\SD-data\matrix.mtx'[m
+[32m+[m[32m        },[m
+[32m+[m[32m        'species6':{[m
+[32m+[m[32m            'barcode': r'D:\nextcloud\pd论文\data\merge-data\SP-NCBI-data\barcodes.tsv',[m
+[32m+[m[32m            'feature': r'D:\nextcloud\pd论文\data\merge-data\SP-NCBI-data\features.tsv',[m
+[32m+[m[32m            'matrix': r'D:\nextcloud\pd论文\data\merge-data\SP-NCBI-data\matrix.mtx'[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    # Initialize data list[m
+[32m+[m[32m    merge_data_list = [][m
+[32m+[m
+[32m+[m[32m    # Read all datasets[m
+[32m+[m[32m    for species, paths in data_paths.items():[m
+[32m+[m[32m        try:[m
+[32m+[m[32m            print(f"Processing {species}...")[m
+[32m+[m[32m            barcode = Barcode(paths['barcode'])[m
+[32m+[m[32m            feature = Feature(paths['feature'])[m
+[32m+[m[32m            matrix = Matrix(paths['matrix'])[m
+[32m+[m
+[32m+[m[32m            # Create MergeData object[m
+[32m+[m[32m            data = MergeData(barcode, feature, matrix)[m
+[32m+[m[32m            merge_data_list.append(data)[m
+[32m+[m[32m            print(f"Successfully processed {species}")[m
+[32m+[m[32m        except Exception as e:[m
+[32m+[m[32m            print(f"Error processing {species}: {str(e)}")[m
+[32m+[m[32m            continue[m
+[32m+[m
+[32m+[m[32m    if not merge_data_list:[m
+[32m+[m[32m        print("No data was successfully processed. Exiting...")[m
+[32m+[m[32m        exit()[m
+[32m+[m
+[32m+[m[32m    # Merge all datasets[m
+[32m+[m[32m    final_data = merge_data_list[0][m
+[32m+[m[32m    for data in merge_data_list[1:]:[m
+[32m+[m[32m        final_data.merge_data(data)[m
+[32m+[m
+[32m+[m[32m    # Save merged data[m
+[32m+[m[32m    out_file_path = r"D:\nextcloud\pd论文\result\merge_data"[m
+[32m+[m[32m    os.makedirs(out_file_path, exist_ok=True)  # Ensure output directory exists[m
+[32m+[m[32m    save_data = SaveData(final_data.data, out_file_path)[m
+[32m+[m
+[32m+[m[32m    print('Merging completed successfully')[m
+[1mdiff --git a/gsea/.idea/.gitignore b/gsea/.idea/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..13566b8[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/.idea/.gitignore[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m# Default ignored files[m
+[32m+[m[32m/shelf/[m
+[32m+[m[32m/workspace.xml[m
+[32m+[m[32m# Editor-based HTTP Client requests[m
+[32m+[m[32m/httpRequests/[m
+[32m+[m[32m# Datasource local storage ignored files[m
+[32m+[m[32m/dataSources/[m
+[32m+[m[32m/dataSources.local.xml[m
+[1mdiff --git a/gsea/.idea/deployment.xml b/gsea/.idea/deployment.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9b3f0d1[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/.idea/deployment.xml[m
+[36m@@ -0,0 +1,14 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">[m
+[32m+[m[32m    <serverData>[m
+[32m+[m[32m      <paths name="liuyq@172.24.141.222:22 password">[m
+[32m+[m[32m        <serverdata>[m
+[32m+[m[32m          <mappings>[m
+[32m+[m[32m            <mapping local="$PROJECT_DIR$" web="/" />[m
+[32m+[m[32m          </mappings>[m
+[32m+[m[32m        </serverdata>[m
+[32m+[m[32m      </paths>[m
+[32m+[m[32m    </serverData>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/gsea/.idea/gsea.iml b/gsea/.idea/gsea.iml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d0876a7[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/.idea/gsea.iml[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<module type="PYTHON_MODULE" version="4">[m
+[32m+[m[32m  <component name="NewModuleRootManager">[m
+[32m+[m[32m    <content url="file://$MODULE_DIR$" />[m
+[32m+[m[32m    <orderEntry type="inheritedJdk" />[m
+[32m+[m[32m    <orderEntry type="sourceFolder" forTests="false" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</module>[m
+\ No newline at end of file[m
+[1mdiff --git a/gsea/.idea/inspectionProfiles/Project_Default.xml b/gsea/.idea/inspectionProfiles/Project_Default.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d26f410[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/.idea/inspectionProfiles/Project_Default.xml[m
+[36m@@ -0,0 +1,42 @@[m
+[32m+[m[32m<component name="InspectionProjectProfileManager">[m
+[32m+[m[32m  <profile version="1.0">[m
+[32m+[m[32m    <option name="myName" value="Project Default" />[m
+[32m+[m[32m    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">[m
+[32m+[m[32m      <Languages>[m
+[32m+[m[32m        <language minSize="102" name="Python" />[m
+[32m+[m[32m      </Languages>[m
+[32m+[m[32m    </inspection_tool>[m
+[32m+[m[32m    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">[m
+[32m+[m[32m      <option name="ignoredErrors">[m
+[32m+[m[32m        <list>[m
+[32m+[m[32m          <option value="W191" />[m
+[32m+[m[32m          <option value="E101" />[m
+[32m+[m[32m          <option value="E265" />[m
+[32m+[m[32m          <option value="E302" />[m
+[32m+[m[32m        </list>[m
+[32m+[m[32m      </option>[m
+[32m+[m[32m    </inspection_tool>[m
+[32m+[m[32m    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">[m
+[32m+[m[32m      <option name="ignoredErrors">[m
+[32m+[m[32m        <list>[m
+[32m+[m[32m          <option value="N802" />[m
+[32m+[m[32m          <option value="N803" />[m
+[32m+[m[32m          <option value="N806" />[m
+[32m+[m[32m        </list>[m
+[32m+[m[32m      </option>[m
+[32m+[m[32m    </inspection_tool>[m
+[32m+[m[32m    <inspection_tool class="PyUnboundLocalVariableInspection" enabled="false" level="WARNING" enabled_by_default="false" />[m
+[32m+[m[32m    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">[m
+[32m+[m[32m      <option name="ignoredIdentifiers">[m
+[32m+[m[32m        <list>[m
+[32m+[m[32m          <option value="requests" />[m
+[32m+[m[32m          <option value="urllib.*" />[m
+[32m+[m[32m          <option value="list.group" />[m
+[32m+[m[32m          <option value="BeautifulSoup" />[m
+[32m+[m[32m          <option value="talib" />[m
+[32m+[m[32m          <option value="aiDesign.test.df_final" />[m
+[32m+[m[32m        </list>[m
+[32m+[m[32m      </option>[m
+[32m+[m[32m    </inspection_tool>[m
+[32m+[m[32m  </profile>[m
+[32m+[m[32m</component>[m
+\ No newline at end of file[m
+[1mdiff --git a/gsea/.idea/inspectionProfiles/profiles_settings.xml b/gsea/.idea/inspectionProfiles/profiles_settings.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..105ce2d[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/.idea/inspectionProfiles/profiles_settings.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<component name="InspectionProjectProfileManager">[m
+[32m+[m[32m  <settings>[m
+[32m+[m[32m    <option name="USE_PROJECT_PROFILE" value="false" />[m
+[32m+[m[32m    <version value="1.0" />[m
+[32m+[m[32m  </settings>[m
+[32m+[m[32m</component>[m
+\ No newline at end of file[m
+[1mdiff --git a/gsea/.idea/misc.xml b/gsea/.idea/misc.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a6218fe[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/.idea/misc.xml[m
+[36m@@ -0,0 +1,7 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="Black">[m
+[32m+[m[32m    <option name="sdkName" value="Python 3.11" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11" project-jdk-type="Python SDK" />[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/gsea/.idea/modules.xml b/gsea/.idea/modules.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..cfa0ca9[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/.idea/modules.xml[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="ProjectModuleManager">[m
+[32m+[m[32m    <modules>[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/.idea/gsea.iml" filepath="$PROJECT_DIR$/.idea/gsea.iml" />[m
+[32m+[m[32m    </modules>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/gsea/.idea/vcs.xml b/gsea/.idea/vcs.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6c0b863[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/.idea/vcs.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="VcsDirectoryMappings">[m
+[32m+[m[32m    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/gsea/GSEA.py b/gsea/GSEA.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..46e3092[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/GSEA.py[m
+[36m@@ -0,0 +1,205 @@[m
+[32m+[m[32m"""[m
+[32m+[m[32mFile GSEA.py[m
+[32m+[m[32mDescription:[m[41m [m
+[32m+[m[32m   This module provides a GSEA (Gene Set Enrichment Analysis) class for performing gene set enrichment analysis.[m
+[32m+[m[32m   It supports analysis using various annotation databases such as GO, KEGG, KOG, and Pfam.[m
+[32m+[m[32mAuthor: Shengyao Zhang[m
+[32m+[m[32mate: 2024-12-19[m
+[32m+[m[32mUsage:[m
+[32m+[m[32m   1. Create a GSEA object by providing the gene list file and annotation files.[m
+[32m+[m[32m   2. Run the analysis using the `run_analysis()` method.[m
+[32m+[m[32m   3. Access the analysis results through the corresponding result attributes (e.g., `go_res`, `kegg_res`, etc.).[m
+[32m+[m[32m   4. Optionally, save the analysis results to files using the `save_result()` method.[m
+[32m+[m[32mExample:[m
+[32m+[m[32m   gene_list_file = "path/to/gene_list.txt"[m
+[32m+[m[32m   anno_files = {[m
+[32m+[m[32m       "go": "path/to/go_annotation.xls",[m
+[32m+[m[32m       "kegg": "path/to/kegg_annotation.xls",[m
+[32m+[m[32m       "kog": "path/to/kog_annotation.xls",[m
+[32m+[m[32m       "pfam": "path/to/pfam_annotation.xls"[m
+[32m+[m[32m   }[m
+[32m+[m[41m   [m
+[32m+[m[32m   gsea = GSEA(gene_list_file, **anno_files)[m
+[32m+[m[32m   go_res, go_bp_res, go_cc_res, go_mf_res, kegg_res, kog_res, pfam_res = gsea.run_analysis()[m
+[32m+[m[41m   [m
+[32m+[m[32m   gsea.save_result("path/to/output_directory", format='tsv')[m
+[32m+[m[32mDependencies:[m
+[32m+[m[32m   - data.gene_list_obj[m
+[32m+[m[32m   - data.gene_set_obj_go_trans[m
+[32m+[m[32m   - data.gene_set_obj_kegg[m
+[32m+[m[32m   - data.gene_set_obj_kog_trans[m
+[32m+[m[32m   - data.gene_set_obj_pfam_trans[m
+[32m+[m[32m   - algorithms.hypergeom[m
+[32m+[m[32m   - os[m
+[32m+[m[32m   - pandas[m
+[32m+[m[32m"""[m
+[32m+[m[32mfrom data.gene_list_obj import GeneList_Obj[m
+[32m+[m[32mfrom data import gene_set_obj_go_trans[m
+[32m+[m[32mfrom data import gene_set_obj_kegg[m
+[32m+[m[32mfrom data import gene_set_obj_kog_trans[m
+[32m+[m[32mfrom data import gene_set_obj_pfam_trans[m
+[32m+[m[32mfrom algorithms import hypergeom[m
+[32m+[m[32mimport os[m
+[32m+[m[32mimport pandas as pd[m
+[32m+[m
+[32m+[m[32mclass GSEA:[m
+[32m+[m[32m    def __init__(self, gene_list_file, **anno_files):[m
+[32m+[m[32m        # Initialize file paths[m
+[32m+[m[32m        self.gene_list_file = gene_list_file[m
+[32m+[m[32m        self.anno_files = anno_files[m
+[32m+[m[41m        [m
+[32m+[m
+[32m+[m[32m        # Initialize result variables[m
+[32m+[m[32m        self.go_gmt = None[m
+[32m+[m[32m        self.go_sub_objs = None[m
+[32m+[m[32m        self.kegg_gmt = None[m
+[32m+[m[32m        self.kog_gmt = None[m
+[32m+[m[32m        self.pfam_gmt = None[m
+[32m+[m
+[32m+[m[32m        self.go_res = None[m
+[32m+[m[32m        self.go_bp_res = None[m
+[32m+[m[32m        self.go_cc_res = None[m
+[32m+[m[32m        self.go_mf_res = None[m
+[32m+[m[32m        self.kegg_res = None[m
+[32m+[m[32m        self.kog_res = None[m
+[32m+[m[32m        self.pfam_res = None[m
+[32m+[m[41m        [m
+[32m+[m[32m        # Import gene list[m
+[32m+[m[32m        self.gene_list = GeneList_Obj(self.gene_list_file)[m
+[32m+[m[41m        [m
+[32m+[m[32m        # Import annotation files[m
+[32m+[m[32m        self._load_annotations()[m
+[32m+[m[41m    [m
+[32m+[m[32m    def _load_annotations(self):[m
+[32m+[m[32m        """Load all annotation files"""[m
+[32m+[m
+[32m+[m[41m        [m
+[32m+[m[32m        for gene_set, file_path in self.anno_files.items():[m
+[32m+[m[32m            if gene_set == 'go':[m
+[32m+[m[32m                self.go_gmt = gene_set_obj_go_trans.Gmt_stat(file_path)[m
+[32m+[m[32m                self.go_sub_objs = self.go_gmt.split_by_term_class()[m
+[32m+[m[32m            elif gene_set == 'kegg':[m
+[32m+[m[32m                self.kegg_gmt = gene_set_obj_kegg.Gmt_stat_gene(file_path)[m
+[32m+[m[32m            elif gene_set == 'kog':[m
+[32m+[m[32m                self.kog_gmt = gene_set_obj_kog_trans.Gmt_stat(file_path)[m
+[32m+[m[32m            elif gene_set == 'pfam':[m
+[32m+[m[32m                self.pfam_gmt = gene_set_obj_pfam_trans.Gmt_stat(file_path)[m
+[32m+[m[41m                            [m
+[32m+[m[32m    def run_analysis(self):[m
+[32m+[m[32m        """Run GSEA analysis"""[m
+[32m+[m[32m        # Run hypergeometric test[m
+[32m+[m[32m        if self.go_gmt:[m
+[32m+[m[32m            self.go_res = hypergeom.calcu_hypergeom(self.gene_list, self.go_gmt)[m
+[32m+[m[32m            for class_type, sub_obj in self.go_sub_objs.items():[m
+[32m+[m[32m                if class_type.upper() == 'BP':[m
+[32m+[m[32m                    self.go_bp_res = hypergeom.calcu_hypergeom(self.gene_list, sub_obj)[m
+[32m+[m[32m                elif class_type.upper() == 'CC':[m
+[32m+[m[32m                    self.go_cc_res = hypergeom.calcu_hypergeom(self.gene_list, sub_obj)[m
+[32m+[m[32m                elif class_type.upper() == 'MF':[m
+[32m+[m[32m                    self.go_mf_res = hypergeom.calcu_hypergeom(self.gene_list, sub_obj)[m
+[32m+[m[41m        [m
+[32m+[m[32m        if self.kegg_gmt:[m
+[32m+[m[32m            self.kegg_res = hypergeom.calcu_hypergeom(self.gene_list, self.kegg_gmt)[m
+[32m+[m[41m        [m
+[32m+[m[32m        if self.kog_gmt:[m
+[32m+[m[32m            self.kog_res = hypergeom.calcu_hypergeom(self.gene_list, self.kog_gmt)[m
+[32m+[m[41m        [m
+[32m+[m[32m        if self.pfam_gmt:[m
+[32m+[m[32m            self.pfam_res = hypergeom.calcu_hypergeom(self.gene_list, self.pfam_gmt)[m
+[32m+[m[41m        [m
+[32m+[m[32m        return self.go_res, self.go_bp_res, self.go_cc_res, self.go_mf_res, self.kegg_res, self.kog_res, self.pfam_res[m
+[32m+[m[41m    [m
+[32m+[m[32m    #save all result[m
+[32m+[m[32m    def save_result(self, out_dir, format='xlsx'):[m
+[32m+[m[32m        """[m
+[32m+[m[32m        Save analysis results[m
+[32m+[m[32m        Args:[m
+[32m+[m[32m            out_dir: Output directory path[m
+[32m+[m[32m            format: Output format, supports 'xlsx' or 'tsv'[m
+[32m+[m[32m        """[m
+[32m+[m[32m        if not os.path.exists(out_dir):[m
+[32m+[m[32m            os.makedirs(out_dir)[m
+[32m+[m[41m        [m
+[32m+[m[32m        # Define save function[m
+[32m+[m[32m        def save_df(df, filename):[m
+[32m+[m[32m            if df is not None and not df.empty:[m
+[32m+[m[32m                file_path = os.path.join(out_dir, filename)[m
+[32m+[m[32m                if format.lower() == 'xlsx':[m
+[32m+[m[32m                    df.to_excel(f"{file_path}.xlsx", index=False)[m
+[32m+[m[32m                elif format.lower() == 'tsv':[m
+[32m+[m[32m                    df.to_csv(f"{file_path}.tsv", sep='\t', index=False)[m
+[32m+[m[32m                else:[m
+[32m+[m[32m                    raise ValueError(f"Unsupported format: {format}")[m
+[32m+[m[41m        [m
+[32m+[m[32m        # Save various results[m
+[32m+[m[32m        result_files = {[m
+[32m+[m[32m            'go_res': self.go_res,[m
+[32m+[m[32m            'go_bp_res': self.go_bp_res,[m
+[32m+[m[32m            'go_cc_res': self.go_cc_res,[m
+[32m+[m[32m            'go_mf_res': self.go_mf_res,[m
+[32m+[m[32m            'kegg_res': self.kegg_res,[m
+[32m+[m[32m            'kog_res': self.kog_res,[m
+[32m+[m[32m            'pfam_res': self.pfam_res[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        for name, df in result_files.items():[m
+[32m+[m[32m            save_df(df, name)[m
+[32m+[m
+[32m+[m
+[32m+[m[32mif __name__ == "__main__":[m
+[32m+[m[32m    """Test main function for GSEA analysis"""[m
+[32m+[m[32m    # Test file paths[m
+[32m+[m[32m    gene_list_file = r"D:\nextcloud\pd论文\data\Cluster-pos-nag-genlist\Cluster0_markers_negative.txt"[m
+[32m+[m[32m    anno_files = {[m
+[32m+[m[32m        "go": r"D:\nextcloud\pd论文\data\test\gsea\GO.anno.xls",[m
+[32m+[m[32m        "kegg": r"D:\nextcloud\pd论文\data\test\gsea\P2.KEGG.filter.m8.anno.xls",[m
+[32m+[m[32m        "kog": r"D:\nextcloud\pd论文\data\test\gsea\P2.KOG.filter.m8.anno.xls",[m
+[32m+[m[32m        "pfam": r"D:\nextcloud\pd论文\data\test\gsea\P2.pfam.anno.xls"[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    try:[m
+[32m+[m[32m        # Create GSEA object[m
+[32m+[m[32m        gsea = GSEA(gene_list_file, **anno_files)[m
+[32m+[m[41m        [m
+[32m+[m[32m        # Run analysis[m
+[32m+[m[32m        go_res, go_bp_res, go_cc_res, go_mf_res, kegg_res, kog_res, pfam_res = gsea.run_analysis()[m
+[32m+[m[41m        [m
+[32m+[m[32m        # Print results[m
+[32m+[m[32m        print("\nGO Enrichment Analysis Results:")[m
+[32m+[m[32m        if go_res is not None:[m
+[32m+[m[32m            print(f"Total GO terms: {len(go_res)}")[m
+[32m+[m[32m            print(go_res.head())[m
+[32m+[m[41m            [m
+[32m+[m[32m            print("\nGO Subcategory Analysis Results:")[m
+[32m+[m[32m            print(f"BP terms: {len(go_bp_res)}")[m
+[32m+[m[32m            print(go_bp_res.head())[m
+[32m+[m[32m            print(f"CC terms: {len(go_cc_res)}")[m
+[32m+[m[32m            print(go_cc_res.head())[m
+[32m+[m[32m            print(f"MF terms: {len(go_mf_res)}")[m
+[32m+[m[32m            print(go_mf_res.head())[m
+[32m+[m
+[32m+[m[41m        [m
+[32m+[m[32m        print("\nKEGG Enrichment Analysis Results:")[m
+[32m+[m[32m        if kegg_res is not None:[m
+[32m+[m[32m            print(f"Enriched KEGG terms: {len(kegg_res)}")[m
+[32m+[m[32m            print(kegg_res.head())[m
+[32m+[m[41m            [m
+[32m+[m[32m        print("\nKOG Enrichment Analysis Results:")[m
+[32m+[m[32m        if kog_res is not None:[m
+[32m+[m[32m            print(f"Enriched KOG terms: {len(kog_res)}")[m
+[32m+[m[32m            print(kog_res.head())[m
+[32m+[m[41m            [m
+[32m+[m[32m        print("\nPfam Enrichment Analysis Results:")[m
+[32m+[m[32m        if pfam_res is not None:[m
+[32m+[m[32m            print(f"Enriched Pfam terms: {len(pfam_res)}")[m
+[32m+[m[32m            print(pfam_res.head())[m
+[32m+[m[41m            [m
+[32m+[m[32m    except Exception as e:[m
+[32m+[m[32m        print(f"Error during execution: {str(e)}")[m
+[32m+[m
+[32m+[m[32m    # Export result[m
+[32m+[m[32m    gsea.save_result(r"D:\nextcloud\pd论文\result\GSEA\Cluster0\negative", format='tsv')[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[1mdiff --git a/gsea/__init__.py b/gsea/__init__.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/gsea/algorithms/__init__.py b/gsea/algorithms/__init__.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/gsea/algorithms/__pycache__/__init__.cpython-311.pyc b/gsea/algorithms/__pycache__/__init__.cpython-311.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1840896[m
+Binary files /dev/null and b/gsea/algorithms/__pycache__/__init__.cpython-311.pyc differ
+[1mdiff --git a/gsea/algorithms/__pycache__/__init__.cpython-312.pyc b/gsea/algorithms/__pycache__/__init__.cpython-312.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c454d40[m
+Binary files /dev/null and b/gsea/algorithms/__pycache__/__init__.cpython-312.pyc differ
+[1mdiff --git a/gsea/algorithms/__pycache__/hypergeom.cpython-311.pyc b/gsea/algorithms/__pycache__/hypergeom.cpython-311.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4b01914[m
+Binary files /dev/null and b/gsea/algorithms/__pycache__/hypergeom.cpython-311.pyc differ
+[1mdiff --git a/gsea/algorithms/__pycache__/hypergeom.cpython-312.pyc b/gsea/algorithms/__pycache__/hypergeom.cpython-312.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ceb1349[m
+Binary files /dev/null and b/gsea/algorithms/__pycache__/hypergeom.cpython-312.pyc differ
+[1mdiff --git a/gsea/algorithms/hypergeom.py b/gsea/algorithms/hypergeom.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4b4ed05[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/algorithms/hypergeom.py[m
+[36m@@ -0,0 +1,139 @@[m
+[32m+[m[32m"""[m
+[32m+[m[32mFile: hypergeom.py[m
+[32m+[m[32mDescription:[m
+[32m+[m[32m    This module provides functions for performing hypergeometric tests for gene set enrichment analysis.[m
+[32m+[m[32m    It includes functions for calculating hypergeometric probabilities, adjusting p-values for multiple testing,[m
+[32m+[m[32m    and performing hypergeometric tests on gene sets.[m
+[32m+[m
+[32m+[m[32mAuthor: [Your Name][m
+[32m+[m[32mDate: [Current Date][m
+[32m+[m
+[32m+[m[32mFunctions:[m
+[32m+[m[32m    - calcu_hypergeom(gene_list_obj, gmt_obj, bg=None, min_count=1):[m[41m [m
+[32m+[m[32m        Perform hypergeometric test on a gene list object and a gene set object.[m
+[32m+[m[32m    - adj_pv(res: pd.DataFrame, ad_pth=0.05):[m
+[32m+[m[32m        Adjust p-values for multiple testing using the Benjamini-Hochberg method.[m
+[32m+[m[32m    - hypergeom_single(expr_in_geneset, allgenes, _geneset, expr_genes, min_count=1):[m
+[32m+[m[32m        Calculate the hypergeometric probability for a single gene set.[m
+[32m+[m[32m    - hypergeom_row(expr_in_genesets, allgenes, _geneset, expr_genes, min_count=2):[m
+[32m+[m[32m        Calculate hypergeometric probabilities for multiple gene sets.[m
+[32m+[m[32m    - calcu_hypergeom_pp(gene_list_obj, gmt_obj, bg=None, min_count=1):[m
+[32m+[m[32m        Perform hypergeometric test on a gene list object and a gene set object (alternative implementation).[m
+[32m+[m
+[32m+[m[32mDependencies:[m
+[32m+[m[32m    - numpy[m
+[32m+[m[32m    - pandas[m
+[32m+[m[32m    - scipy[m
+[32m+[m[32m    - statsmodels[m
+[32m+[m
+[32m+[m[32m"""[m
+[32m+[m
+[32m+[m[32mimport numpy as np[m
+[32m+[m[32mimport pandas as pd[m
+[32m+[m[32mfrom scipy import stats[m
+[32m+[m[32mfrom statsmodels.stats import multitest as multi[m
+[32m+[m
+[32m+[m
+[32m+[m[32mdef calcu_hypergeom(gene_list_obj, gmt_obj, bg=None, min_count=1):[m
+[32m+[m[32m    allgenes = bg[m
+[32m+[m[32m    allgenes = len(gmt_obj.unique_genes)[m
+[32m+[m
+[32m+[m[32m    gene_list = gene_list_obj.gene_list[m
+[32m+[m[32m    subsets = sorted(gmt_obj.term_gene_dic.keys())[m
+[32m+[m
+[32m+[m[32m    # Create a list to store result rows[m
+[32m+[m[32m    rows = [][m
+[32m+[m[32m    for s in subsets:[m
+[32m+[m[32m        # each set[m
+[32m+[m[32m        category = gmt_obj.term_gene_dic.get(s)[m
+[32m+[m[32m        category = set(category)[m
+[32m+[m[32m        _geneset = len(category)[m
+[32m+[m
+[32m+[m[32m        # gene list[m
+[32m+[m[32m        gene_list = set(gene_list)[m
+[32m+[m[32m        # expr_genes = len(gene_list)[m
+[32m+[m[32m        expr_genes = len(gene_list.intersection(gmt_obj.unique_genes))[m
+[32m+[m
+[32m+[m[32m        # intersection[m
+[32m+[m[32m        hits = category.intersection(gene_list)[m
+[32m+[m[32m        expr_in_geneset = len(hits)[m
+[32m+[m[32m        if expr_in_geneset > min_count:[m
+[32m+[m[32m            pvalue = stats.hypergeom.sf(expr_in_geneset - 1, allgenes, _geneset, expr_genes)[m
+[32m+[m[32m            # oddsratio means the expr_in_geneset is greater than theory(>1) or less than theory(<1)[m
+[32m+[m[32m            pvalue_thred = 0.05[m
+[32m+[m[32m            if pvalue <= pvalue_thred:[m
+[32m+[m[32m                rows.append({[m
+[32m+[m[32m                    'Term': s,[m
+[32m+[m[32m                    'Term_name': gmt_obj.term_name[s],[m
+[32m+[m[32m                    'Adjusted P-value': pvalue[m
+[32m+[m[32m                })[m
+[32m+[m
+[32m+[m[32m    # Create DataFrame at once[m
+[32m+[m[32m    res = pd.DataFrame(rows) if rows else pd.DataFrame(columns=['Term', 'Adjusted P-value', 'Term_name'])[m
+[32m+[m[32m    #sort by 'Adjusted P-value'[m
+[32m+[m[32m    res = res.sort_values(by='Adjusted P-value', ascending=True)[m
+[32m+[m
+[32m+[m[32m    return res[m
+[32m+[m
+[32m+[m
+[32m+[m[32mdef adj_pv(res: pd.DataFrame, ad_pth=0.05):[m
+[32m+[m[32m    pvs = multi.multipletests(np.array(res['Adjusted P-value']), alpha=0.05)[m
+[32m+[m[32m    res['Adjusted P-value'] = pvs[1][m
+[32m+[m[32m    res = res.loc[res['Adjusted P-value'] <= ad_pth][m
+[32m+[m[32m    return res[m
+[32m+[m
+[32m+[m
+[32m+[m[32mdef hypergeom_single(expr_in_geneset, allgenes, _geneset, expr_genes, min_count=1):[m
+[32m+[m[32m    if expr_in_geneset <= min_count:[m
+[32m+[m[32m        pvalue = 1[m
+[32m+[m[32m    else:[m
+[32m+[m[32m        pvalue = stats.hypergeom.sf(expr_in_geneset - 1, allgenes, _geneset, expr_genes)[m
+[32m+[m[32m    return pvalue[m
+[32m+[m
+[32m+[m
+[32m+[m[32mdef hypergeom_row(expr_in_genesets, allgenes, _geneset, expr_genes, min_count=2):[m
+[32m+[m[32m    each_gmt_pvalues = [][m
+[32m+[m[32m    for ih, value in enumerate(expr_in_genesets):[m
+[32m+[m[32m        expr_in_geneset = value[m
+[32m+[m[32m        expr_gene = expr_genes[ih][m
+[32m+[m[32m        if expr_in_geneset <= min_count:[m
+[32m+[m[32m            pvalue = 1[m
+[32m+[m[32m        else:[m
+[32m+[m[32m            pvalue = stats.hypergeom.sf(expr_in_geneset - 1, allgenes, _geneset, expr_gene)[m
+[32m+[m[32m        each_gmt_pvalues.append(pvalue)[m
+[32m+[m[32m    return each_gmt_pvalues[m
+[32m+[m
+[32m+[m
+[32m+[m[32mdef calcu_hypergeom_pp(gene_list_obj, gmt_obj, bg=None, min_count=1):[m
+[32m+[m[32m    allgenes = bg[m
+[32m+[m[32m    allgenes = len(gmt_obj.unique_genes)[m
+[32m+[m
+[32m+[m[32m    gene_list = gene_list_obj.gene_list[m
+[32m+[m[32m    subsets = sorted(gmt_obj.term_gene_dic.keys())[m
+[32m+[m
+[32m+[m[32m    res = pd.DataFrame(columns=['Term', 'Adjusted P-value', 'Term_name'])[m
+[32m+[m[32m    for s in subsets:[m
+[32m+[m[32m        # each set[m
+[32m+[m[32m        category = gmt_obj.term_gene_dic.get(s)[m
+[32m+[m[32m        category = set(category)[m
+[32m+[m[32m        _geneset = len(category)[m
+[32m+[m
+[32m+[m[32m        # gene list[m
+[32m+[m[32m        gene_list = set(gene_list)[m
+[32m+[m[32m        expr_genes = len(gene_list)[m
+[32m+[m
+[32m+[m[32m        # intersection[m
+[32m+[m[32m        hits = category.intersection(gene_list)[m
+[32m+[m[32m        expr_in_geneset = len(hits)[m
+[32m+[m[32m        if expr_in_geneset > min_count:[m
+[32m+[m[32m            pvalue = stats.hypergeom.sf(expr_in_geneset - 1, allgenes, _geneset, expr_genes)[m
+[32m+[m[32m            # oddsratio means the expr_in_geneset is greater than theory(>1) or less than theory(<1)[m
+[32m+[m[32m            pvalue_thred = 0.05[m
+[32m+[m[32m            if pvalue <= pvalue_thred:[m
+[32m+[m[32m                row = pd.DataFrame({[m
+[32m+[m[32m                    'Term': [s],[m
+[32m+[m[32m                    'Term_name': [gmt_obj.term_name[s]],[m
+[32m+[m[32m                    'Adjusted P-value': [pvalue][m
+[32m+[m[32m                })[m
+[32m+[m[32m                res = pd.concat([res, row], ignore_index=True)[m
+[32m+[m[32m    return res[m
+[1mdiff --git a/gsea/data/__init__.py b/gsea/data/__init__.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/gsea/data/__pycache__/__init__.cpython-311.pyc b/gsea/data/__pycache__/__init__.cpython-311.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e6c0b35[m
+Binary files /dev/null and b/gsea/data/__pycache__/__init__.cpython-311.pyc differ
+[1mdiff --git a/gsea/data/__pycache__/__init__.cpython-312.pyc b/gsea/data/__pycache__/__init__.cpython-312.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d0a3483[m
+Binary files /dev/null and b/gsea/data/__pycache__/__init__.cpython-312.pyc differ
+[1mdiff --git a/gsea/data/__pycache__/gene_list_obj.cpython-311.pyc b/gsea/data/__pycache__/gene_list_obj.cpython-311.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7d78488[m
+Binary files /dev/null and b/gsea/data/__pycache__/gene_list_obj.cpython-311.pyc differ
+[1mdiff --git a/gsea/data/__pycache__/gene_list_obj.cpython-312.pyc b/gsea/data/__pycache__/gene_list_obj.cpython-312.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b460253[m
+Binary files /dev/null and b/gsea/data/__pycache__/gene_list_obj.cpython-312.pyc differ
+[1mdiff --git a/gsea/data/__pycache__/gene_set_obj_go_trans.cpython-311.pyc b/gsea/data/__pycache__/gene_set_obj_go_trans.cpython-311.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..76762e5[m
+Binary files /dev/null and b/gsea/data/__pycache__/gene_set_obj_go_trans.cpython-311.pyc differ
+[1mdiff --git a/gsea/data/__pycache__/gene_set_obj_go_trans.cpython-312.pyc b/gsea/data/__pycache__/gene_set_obj_go_trans.cpython-312.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0a8e17f[m
+Binary files /dev/null and b/gsea/data/__pycache__/gene_set_obj_go_trans.cpython-312.pyc differ
+[1mdiff --git a/gsea/data/__pycache__/gene_set_obj_kegg.cpython-311.pyc b/gsea/data/__pycache__/gene_set_obj_kegg.cpython-311.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..312e21b[m
+Binary files /dev/null and b/gsea/data/__pycache__/gene_set_obj_kegg.cpython-311.pyc differ
+[1mdiff --git a/gsea/data/__pycache__/gene_set_obj_kegg.cpython-312.pyc b/gsea/data/__pycache__/gene_set_obj_kegg.cpython-312.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..55d43ab[m
+Binary files /dev/null and b/gsea/data/__pycache__/gene_set_obj_kegg.cpython-312.pyc differ
+[1mdiff --git a/gsea/data/__pycache__/gene_set_obj_kog_trans.cpython-311.pyc b/gsea/data/__pycache__/gene_set_obj_kog_trans.cpython-311.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c1b2a9e[m
+Binary files /dev/null and b/gsea/data/__pycache__/gene_set_obj_kog_trans.cpython-311.pyc differ
+[1mdiff --git a/gsea/data/__pycache__/gene_set_obj_kog_trans.cpython-312.pyc b/gsea/data/__pycache__/gene_set_obj_kog_trans.cpython-312.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3858671[m
+Binary files /dev/null and b/gsea/data/__pycache__/gene_set_obj_kog_trans.cpython-312.pyc differ
+[1mdiff --git a/gsea/data/__pycache__/gene_set_obj_pfam_trans.cpython-311.pyc b/gsea/data/__pycache__/gene_set_obj_pfam_trans.cpython-311.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1e234f8[m
+Binary files /dev/null and b/gsea/data/__pycache__/gene_set_obj_pfam_trans.cpython-311.pyc differ
+[1mdiff --git a/gsea/data/__pycache__/gene_set_obj_pfam_trans.cpython-312.pyc b/gsea/data/__pycache__/gene_set_obj_pfam_trans.cpython-312.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..32e11c3[m
+Binary files /dev/null and b/gsea/data/__pycache__/gene_set_obj_pfam_trans.cpython-312.pyc differ
+[1mdiff --git a/gsea/data/gene_list_obj.py b/gsea/data/gene_list_obj.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1c13918[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/data/gene_list_obj.py[m
+[36m@@ -0,0 +1,20 @@[m
+[32m+[m[32mclass GeneList_Obj(object):[m
+[32m+[m[32m    def __init__(self, fn, header=False):[m
+[32m+[m[32m        self.header = header[m
+[32m+[m[32m        self.header_info = [][m
+[32m+[m[32m        self.fn = fn[m
+[32m+[m[32m        self.gene_list = [][m
+[32m+[m[32m        self.readfile()[m
+[32m+[m[32m        self.low_case()[m
+[32m+[m
+[32m+[m[32m    def readfile(self):[m
+[32m+[m[32m        with open(self.fn, 'r') as gf:[m
+[32m+[m[32m            if self.header:[m
+[32m+[m[32m                self.header_info = gf.readline()[m
+[32m+[m[32m            for line in gf.readlines():[m
+[32m+[m[32m                line = line.strip('\n')[m
+[32m+[m[32m                if line:[m
+[32m+[m[32m                    self.gene_list.append(line)[m
+[32m+[m
+[32m+[m[32m    def low_case(self):[m
+[32m+[m[32m        self.gene_list = [data.lower() for data in self.gene_list][m
+[1mdiff --git a/gsea/data/gene_set_obj_go_trans.py b/gsea/data/gene_set_obj_go_trans.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..652e92d[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/data/gene_set_obj_go_trans.py[m
+[36m@@ -0,0 +1,210 @@[m
+[32m+[m
+[32m+[m[32m'''[m
+[32m+[m[32mgo annotation xlsx file format:[m
+[32m+[m[32mGene_id	GO_number	GO_id; GO_description; GO_class[m[41m	[m
+[32m+[m[32mtranscript_HQ_P2_transcript0/f8p0/9897	1	GO:0005515; protein binding; molecular_function[m[41m	[m
+[32m+[m[32mtranscript_HQ_P2_transcript1/f2p0/9329	10	GO:0006914; autophagy; biological_process	GO:0005198; NA[m
+[32m+[m[32mtranscript_HQ_P2_transcript10/f2p0/8399	4	GO:0004222; metalloendopeptidase activity; molecular_function	GO:0003677; DNA binding; molecular_function[m
+[32m+[m[32mtranscript_HQ_P2_transcript100/f5p0/6808	8	GO:0016192; vesicle-mediated transport; biological_process	GO:0006886; intracellular protein transport; biological_process[m
+[32m+[m[32mtranscript_HQ_P2_transcript1000/f3p0/4849	7	GO:0016787; hydrolase activity; molecular_function	GO:0003677; DNA binding; molecular_function[m
+[32m+[m[32mtranscript_HQ_P2_transcript10000/f12p0/2537	4	GO:0005666; DNA-directed RNA polymerase III complex; cellular_component	GO:0006383; transcription from RNA polymerase III promoter; biological_process[m
+[32m+[m[32mtranscript_HQ_P2_transcript10001/f2p0/2514	4	GO:0015031; protein transport; biological_process	GO:0035091; phosphatidylinositol binding; cellular_component[m
+[32m+[m
+[32m+[m[32m'''[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32mimport os[m
+[32m+[m[32mfrom collections import OrderedDict[m
+[32m+[m[32mimport pandas as pd[m
+[32m+[m
+[32m+[m
+[32m+[m[32mclass Gmt_stat():[m
+[32m+[m[32m    def __init__(self, file_name:str, sepr='\t', ele_sepr=';', _lower=True):[m
+[32m+[m[32m        self.file_name = file_name[m
+[32m+[m[32m        self.sepr = sepr[m
+[32m+[m[32m        self.ele_sepr = ele_sepr[m
+[32m+[m[32m        self.term_number = {}[m
+[32m+[m[32m        self.term_gene_dic = {}[m
+[32m+[m[32m        self.term_name = {}[m
+[32m+[m[32m        self.term_class = {}[m
+[32m+[m[32m        self.head_list = [][m
+[32m+[m[32m        self.unique_genes = set()[m
+[32m+[m[32m        self.get_gmtobj()[m
+[32m+[m[32m        # rename the term_class keys[m
+[32m+[m[32m        #self.term_abbr = {"molecular_function": "mf",[m
+[32m+[m[32m         #                 "biological_process": "bp",[m
+[32m+[m[32m          #                "cellular_component": "cc"}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    def read_as_pd(self):[m
+[32m+[m[32m        tsv_data = pd.read_csv(self.file_name, sep='\t', header=0, index_col=0)[m
+[32m+[m
+[32m+[m[32m    def get_gmtobj(self):[m
+[32m+[m[32m        uniq_gene = [][m
+[32m+[m[32m        with open(self.file_name, 'r') as fgmt:[m
+[32m+[m[32m            self.head_list = fgmt.readline().strip('\n').split(self.sepr)[m
+[32m+[m[32m            for line in fgmt.readlines():[m
+[32m+[m[32m                Gene_id, GO_number, *GO_id_GO_description_GO_class = line.strip('\n').split(self.sepr)[m
+[32m+[m[32m                Gene_id = Gene_id.lower()[m
+[32m+[m[32m                uniq_gene.append(Gene_id)[m
+[32m+[m[32m                for each_go in GO_id_GO_description_GO_class:[m
+[32m+[m[32m                    go_list = self.get_go_info(each_go)[m
+[32m+[m[32m                    if not go_list:[m
+[32m+[m[32m                        continue[m
+[32m+[m[32m                    if go_list[0] not in self.term_name:[m
+[32m+[m[32m                        self.term_name[go_list[0]] = go_list[1][m
+[32m+[m[32m                        self.term_class[go_list[0]] = go_list[2][m
+[32m+[m[32m                        self.term_gene_dic[go_list[0]] = [Gene_id][m
+[32m+[m[32m                    else:[m
+[32m+[m[32m                        self.term_gene_dic[go_list[0]].append(Gene_id)[m
+[32m+[m[32m        self.unique_genes = set(uniq_gene)[m
+[32m+[m
+[32m+[m[32m    def get_go_info(self, go_3):[m
+[32m+[m[32m        try:[m
+[32m+[m[32m            go_id, go_description, go_class = go_3.strip().split(self.ele_sepr)[m
+[32m+[m[32m        except:[m
+[32m+[m[32m            return False[m
+[32m+[m[32m        return [go_id.strip(), go_description.strip(), go_class.strip()][m
+[32m+[m
+[32m+[m[32m    def low_case(self, data_list: list):[m
+[32m+[m[32m        return [data.lower() for data in data_list][m
+[32m+[m[41m    [m
+[32m+[m
+[32m+[m[32m    @staticmethod[m
+[32m+[m[32m    def from_gmt(gmt_file: str) -> 'Gmt_stat':[m
+[32m+[m[32m        """从GMT文件创建Gmt_stat对象[m
+[32m+[m[41m        [m
+[32m+[m[32m        GMT文件格式:[m
+[32m+[m[32m        <term>\t<term_name>\t<gene1>\t<gene2>...\t<geneN>[m
+[32m+[m[32m        """[m
+[32m+[m[32m        gmt_obj = Gmt_stat.__new__(Gmt_stat)[m
+[32m+[m[32m        gmt_obj.file_name = gmt_file[m
+[32m+[m[32m        gmt_obj.sepr = '\t'[m
+[32m+[m[32m        gmt_obj.ele_sepr = ';'[m
+[32m+[m[32m        gmt_obj.term_number = {}[m
+[32m+[m[32m        gmt_obj.term_gene_dic = {}[m
+[32m+[m[32m        gmt_obj.term_name = {}[m
+[32m+[m[32m        gmt_obj.term_class = {}[m
+[32m+[m[32m        gmt_obj.head_list = [][m
+[32m+[m[32m        gmt_obj.unique_genes = set()[m
+[32m+[m
+[32m+[m[32m        with open(gmt_file, 'r') as f:[m
+[32m+[m[32m            for line in f:[m
+[32m+[m[32m                fields = line.strip().split('\t')[m
+[32m+[m[32m                if len(fields) < 3:  # 至少需要term、term_name和一个基因[m
+[32m+[m[32m                    continue[m
+[32m+[m[41m                    [m
+[32m+[m[32m                term, term_name = fields[0:2][m
+[32m+[m[32m                genes = fields[2:][m
+[32m+[m[41m                [m
+[32m+[m[32m                gmt_obj.term_name[term] = term_name[m
+[32m+[m[32m                gmt_obj.term_gene_dic[term] = genes[m
+[32m+[m[32m                gmt_obj.unique_genes.update(genes)[m
+[32m+[m[32m                # 由于GMT文件通常不包含GO分类信息，默认设为biological_process[m
+[32m+[m[32m                gmt_obj.term_class[term] = "biological_process"[m
+[32m+[m[41m                [m
+[32m+[m[32m        return gmt_obj[m
+[32m+[m
+[32m+[m[32m    def split_by_term_class(self) -> dict:[m
+[32m+[m[32m        """将当前Gmt_stat对象按term_class分割成三个子对象[m
+[32m+[m[41m        [m
+[32m+[m[32m        Returns:[m
+[32m+[m[32m            dict: 包含三个子Gmt_stat对象的字典[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    'bp': Gmt_stat object (biological_process),[m
+[32m+[m[32m                    'mf': Gmt_stat object (molecular_function),[m
+[32m+[m[32m                    'cc': Gmt_stat object (cellular_component)[m
+[32m+[m[32m                }[m
+[32m+[m[32m        """[m
+[32m+[m[32m        # 初始化三个子对象[m
+[32m+[m[32m        sub_objs = {}[m
+[32m+[m[32m        for class_type in ['bp', 'mf', 'cc']:[m
+[32m+[m[32m            sub_obj = Gmt_stat.__new__(Gmt_stat)[m
+[32m+[m[32m            sub_obj.file_name = self.file_name[m
+[32m+[m[32m            sub_obj.sepr = self.sepr[m
+[32m+[m[32m            sub_obj.ele_sepr = self.ele_sepr[m
+[32m+[m[32m            sub_obj.term_number = {}[m
+[32m+[m[32m            sub_obj.term_gene_dic = {}[m
+[32m+[m[32m            sub_obj.term_name = {}[m
+[32m+[m[32m            sub_obj.term_class = {}[m
+[32m+[m[32m            sub_obj.head_list = self.head_list[m
+[32m+[m[32m            sub_obj.unique_genes = set()[m
+[32m+[m[32m            sub_objs[class_type] = sub_obj[m
+[32m+[m[41m        [m
+[32m+[m[32m        # 映射完整类名到简写[m
+[32m+[m[32m        class_map = {[m
+[32m+[m[32m            "biological_process": "bp",[m
+[32m+[m[32m            "molecular_function": "mf",[m
+[32m+[m[32m            "cellular_component": "cc"[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        # 根据term_class分配数据[m
+[32m+[m[32m        for term, class_type in self.term_class.items():[m
+[32m+[m[32m            if class_type not in class_map:[m
+[32m+[m[32m                continue[m
+[32m+[m[41m                [m
+[32m+[m[32m            class_abbr = class_map[class_type][m
+[32m+[m[32m            sub_obj = sub_objs[class_abbr][m
+[32m+[m[41m            [m
+[32m+[m[32m            # 复制相关数据到子对象[m
+[32m+[m[32m            if term in self.term_gene_dic:[m
+[32m+[m[32m                sub_obj.term_gene_dic[term] = self.term_gene_dic[term][m
+[32m+[m[32m                sub_obj.unique_genes.update(self.term_gene_dic[term])[m
+[32m+[m[41m            [m
+[32m+[m[32m            if term in self.term_name:[m
+[32m+[m[32m                sub_obj.term_name[term] = self.term_name[term][m
+[32m+[m[41m                [m
+[32m+[m[32m            if term in self.term_number:[m
+[32m+[m[32m                sub_obj.term_number[term] = self.term_number[term][m
+[32m+[m[41m                [m
+[32m+[m[32m            sub_obj.term_class[term] = class_type[m
+[32m+[m[41m            [m
+[32m+[m[32m        return sub_objs[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32mclass ExportGmt(object):[m
+[32m+[m[32m    def __init__(self, gmt_obj:Gmt_stat, out_fp:str):[m
+[32m+[m[32m        self.gmt_obj = gmt_obj[m
+[32m+[m[32m        self.out_fp = out_fp[m
+[32m+[m
+[32m+[m[32m    def export(self):[m
+[32m+[m[32m        # 创建输出目录[m
+[32m+[m[32m        out_dir = os.path.dirname(self.out_fp)[m
+[32m+[m[32m        if not os.path.exists(out_dir):[m
+[32m+[m[32m            os.makedirs(out_dir)[m
+[32m+[m[41m            [m
+[32m+[m[32m        with open(self.out_fp + "_bp.gmt", 'w') as fbp:[m
+[32m+[m[32m            with open(self.out_fp + "_cc.gmt", 'w') as fcc:[m
+[32m+[m[32m                with open(self.out_fp + "_mf.gmt", 'w') as fmf:[m
+[32m+[m[32m                    fp_map = {"molecular_function": fmf,[m
+[32m+[m[32m                              "cellular_component": fcc,[m
+[32m+[m[32m                              "biological_process": fbp}[m
+[32m+[m[32m                    for term, genes in self.gmt_obj.term_gene_dic.items():[m
+[32m+[m[32m                        term_ = "\t".join([term, gmt_obj.term_name[term]])[m
+[32m+[m[32m                        genes = "\t".join(genes)[m
+[32m+[m[32m                        fw = fp_map[gmt_obj.term_class[term]][m
+[32m+[m[32m                        fw.write("\t".join([term_, genes]))[m
+[32m+[m[32m                        fw.write("\n")[m
+[32m+[m
+[32m+[m
+[32m+[m[32m'''[m
+[32m+[m[32mGene_id	GO_number	GO_id; GO_description; GO_class[m
+[32m+[m
+[32m+[m[32m'''[m
+[32m+[m[32mif __name__ == '__main__':[m
+[32m+[m[32m    file_fp = r"D:\Bioinformatics\数据整合\GSEA\GSEA\new-data\GO.anno.xls"[m
+[32m+[m[32m    out_fp = r"D:\Bioinformatics\数据整合\GSEA\result\GO\go.gmt"[m
+[32m+[m[32m    gmt_obj = Gmt_stat(file_name=file_fp)[m
+[32m+[m[32m    gmt_obj.get_gmtobj()[m
+[32m+[m[32m    sub_objs = gmt_obj.split_by_term_class()[m
+[32m+[m[32m    for class_type, sub_obj in sub_objs.items():[m
+[32m+[m[32m        out_fp_class = out_fp + "_" + class_type + ".gmt"[m
+[32m+[m[32m        exper = ExportGmt(sub_obj, out_fp_class)[m
+[32m+[m[32m        exper.export()[m
+[32m+[m[32m    exper = ExportGmt(gmt_obj, out_fp)[m
+[32m+[m[32m    exper.export()[m
+[32m+[m
+[32m+[m
+[1mdiff --git a/gsea/data/gene_set_obj_kegg.py b/gsea/data/gene_set_obj_kegg.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2849a68[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/data/gene_set_obj_kegg.py[m
+[36m@@ -0,0 +1,138 @@[m
+[32m+[m[32mimport os[m
+[32m+[m[32mfrom collections import OrderedDict, defaultdict[m
+[32m+[m[32mimport pandas as pd[m
+[32m+[m
+[32m+[m
+[32m+[m[32mclass Gmt_stat():[m
+[32m+[m[32m    def __init__(self, file_name: str, sepr='\t', ele_sepr=';', _lower=True):[m
+[32m+[m[32m        self.file_name = file_name[m
+[32m+[m[32m        self.sepr = sepr[m
+[32m+[m[32m        self.ele_sepr = ele_sepr[m
+[32m+[m[32m        self.term_number = {}[m
+[32m+[m[32m        self.term_gene_dic = {}[m
+[32m+[m[32m        self.term_name = {}[m
+[32m+[m[32m        self.head_list = [][m
+[32m+[m[32m        self.unique_genes = set()[m
+[32m+[m[32m        self.get_gmtobj()[m
+[32m+[m
+[32m+[m[32m    def read_as_pd(self):[m
+[32m+[m[32m        tsv_data = pd.read_csv(self.file_name, sep='\t', header=0, index_col=0)[m
+[32m+[m
+[32m+[m[32m    def get_gmtobj(self):[m
+[32m+[m[32m        with open(self.file_name, 'r') as fgmt:[m
+[32m+[m[32m            self.head_list = fgmt.readline().strip('\n').split(self.sepr)[m
+[32m+[m[32m            for line in fgmt.readlines():[m
+[32m+[m[32m                term_id, term_name, term_number, *gene_list = line.strip('\n').split(self.sepr)[m
+[32m+[m[32m                term_id = term_id.upper()[m
+[32m+[m[32m                self.term_name[term_id] = term_name[m
+[32m+[m[32m                self.term_number[term_id] = term_number[m
+[32m+[m
+[32m+[m[32m                gene_list = self.low_case(list(gene_list))[m
+[32m+[m[32m                self.term_gene_dic[term_id] = list(gene_list)[m
+[32m+[m
+[32m+[m[32m                self.unique_genes.update(set(gene_list))[m
+[32m+[m
+[32m+[m[32m    def low_case(self, data_list: list):[m
+[32m+[m[32m        return [data.lower() for data in data_list][m
+[32m+[m
+[32m+[m[32m    @staticmethod[m
+[32m+[m[32m    def from_gmt(gmt_file: str) -> 'Gmt_stat':[m
+[32m+[m[32m        """从GMT文件创建Gmt_stat对象[m
+[32m+[m[41m        [m
+[32m+[m[32m        GMT文件格式:[m
+[32m+[m[32m        <term>\t<term_name>\t<gene1>\t<gene2>...\t<geneN>[m
+[32m+[m[32m        """[m
+[32m+[m[32m        gmt_obj = Gmt_stat.__new__(Gmt_stat)[m
+[32m+[m[32m        gmt_obj.file_name = gmt_file[m
+[32m+[m[32m        gmt_obj.sepr = '\t'[m
+[32m+[m[32m        gmt_obj.ele_sepr = ';'[m
+[32m+[m[32m        gmt_obj.term_number = {}[m
+[32m+[m[32m        gmt_obj.term_gene_dic = {}[m
+[32m+[m[32m        gmt_obj.term_name = {}[m
+[32m+[m[32m        gmt_obj.head_list = [][m
+[32m+[m[32m        gmt_obj.unique_genes = set()[m
+[32m+[m
+[32m+[m[32m        with open(gmt_file, 'r') as f:[m
+[32m+[m[32m            for line in f:[m
+[32m+[m[32m                fields = line.strip().split('\t')[m
+[32m+[m[32m                if len(fields) < 3:  # 至少需要term、term_name和一个基因[m
+[32m+[m[32m                    continue[m
+[32m+[m[41m                    [m
+[32m+[m[32m                term_id, term_name, *genes = fields[m
+[32m+[m[32m                term_id = term_id.upper()[m
+[32m+[m[41m                [m
+[32m+[m[32m                gmt_obj.term_name[term_id] = term_name[m
+[32m+[m[32m                gmt_obj.term_gene_dic[term_id] = genes[m
+[32m+[m[32m                gmt_obj.term_number[term_id] = str(len(genes))[m
+[32m+[m[32m                gmt_obj.unique_genes.update(genes)[m
+[32m+[m[41m                [m
+[32m+[m[32m        return gmt_obj[m
+[32m+[m
+[32m+[m
+[32m+[m[32mclass Gmt_stat_gene():[m
+[32m+[m[32m    def __init__(self, file_name: str, sepr='\t', ele_sepr=';', _lower=True, term_sepr=" | "):[m
+[32m+[m[32m        self.file_name = file_name[m
+[32m+[m[32m        self.sepr = sepr[m
+[32m+[m[32m        self.ele_sepr = ele_sepr[m
+[32m+[m[32m        self.term_sepr = term_sepr[m
+[32m+[m[32m        self.term_number = {}[m
+[32m+[m[32m        self.term_gene_dic = defaultdict(set)[m
+[32m+[m[32m        self.term_name = {}[m
+[32m+[m[32m        self.head_list = [][m
+[32m+[m[32m        self.unique_genes = set()[m
+[32m+[m[32m        self.get_gmtobj()[m
+[32m+[m
+[32m+[m[32m    def get_gmtobj(self):[m
+[32m+[m[32m        with open(self.file_name, 'r') as fgmt:[m
+[32m+[m[32m            self.head_list = fgmt.readline().strip('\n').split(self.sepr)[m
+[32m+[m[32m            for line in fgmt.readlines():[m
+[32m+[m[32m                Query_id, Subject_id, KO_ID, KO_NAME, KO_DEFINITION, KO_EC, KO_PATHWAY = line.strip('\n').split(self.sepr)[m
+[32m+[m[32m                gene = Query_id.lower()[m
+[32m+[m[32m                self.unique_genes.update([gene])[m
+[32m+[m[32m                if KO_PATHWAY == "-":[m
+[32m+[m[32m                    continue[m
+[32m+[m[32m                each_KO_PATHWAY = KO_PATHWAY.split(self.term_sepr)[m
+[32m+[m[32m                for kp in each_KO_PATHWAY:[m
+[32m+[m[32m                    res = self.get_kegg_info(kp)[m
+[32m+[m[32m                    if isinstance(res, list):[m
+[32m+[m[32m                        kegg_id = res.pop(0).lower()[m
+[32m+[m[32m                        kegg_name = self.ele_sepr.join(res)[m
+[32m+[m[32m                        self.term_gene_dic[kegg_id].update([gene])[m
+[32m+[m[32m                        self.term_name[kegg_id] = kegg_name[m
+[32m+[m[32m        self.term_gene_dic = {k: list(v) for k, v in self.term_gene_dic.items()}[m
+[32m+[m
+[32m+[m[32m    def get_kegg_info(self, each_pfam):[m
+[32m+[m[32m        try:[m
+[32m+[m[32m            kegg_id, kegg_class, kegg_subclass, kegg_term= each_pfam.split(self.ele_sepr)[m
+[32m+[m[32m        except:[m
+[32m+[m[32m            return False[m
+[32m+[m[32m        return [kegg_id, kegg_class, kegg_subclass, kegg_term][m
+[32m+[m
+[32m+[m[32mclass ExportGmt(object):[m
+[32m+[m[32m    def __init__(self, gmt_obj:Gmt_stat, out_fp:str):[m
+[32m+[m[32m        self.gmt_obj = gmt_obj[m
+[32m+[m[32m        self.out_fp = out_fp[m
+[32m+[m
+[32m+[m[32m    def export(self):[m
+[32m+[m[32m        with open(self.out_fp, 'w') as fw:[m
+[32m+[m[32m            for term, genes in self.gmt_obj.term_gene_dic.items():[m
+[32m+[m[32m                term_ = "\t".join([term, gmt_obj.term_name[term]])[m
+[32m+[m[32m                genes = "\t".join(genes)[m
+[32m+[m[32m                fw.write("\t".join([term_, genes]))[m
+[32m+[m[32m                fw.write("\n")[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m'''[m
+[32m+[m[32mKO_Pathway_Level3	Pathway_Name	Reads_Num	Reads_IDs.[m
+[32m+[m
+[32m+[m
+[32m+[m[32m'''[m
+[32m+[m[32mif __name__ == '__main__':[m
+[32m+[m[32m    file_fp = r"D:\nextcloud\pd论文\data\test\gsea\P2.KEGG.filter.m8.anno.xls"[m
+[32m+[m[32m    out_fp = r"D:\nextcloud\pd论文\data\test\gsea\kegg.gmt"[m
+[32m+[m[32m    gmt_obj = Gmt_stat(file_name=file_fp)[m
+[32m+[m[32m    gmt_obj.get_gmtobj()[m
+[32m+[m[32m    exper = ExportGmt(gmt_obj, out_fp)[m
+[32m+[m[32m    exper.export()[m
+[1mdiff --git a/gsea/data/gene_set_obj_kog_trans.py b/gsea/data/gene_set_obj_kog_trans.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9dc0bdf[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/data/gene_set_obj_kog_trans.py[m
+[36m@@ -0,0 +1,111 @@[m
+[32m+[m[32mimport os[m
+[32m+[m[32mfrom collections import OrderedDict[m
+[32m+[m[32mimport pandas as pd[m
+[32m+[m
+[32m+[m
+[32m+[m[32mclass Gmt_stat():[m
+[32m+[m[32m    def __init__(self, file_name:str, sepr='\t', _lower=True):[m
+[32m+[m[32m        self.file_name = file_name[m
+[32m+[m[32m        self.sepr = sepr[m
+[32m+[m[32m        self.term_number = {}[m
+[32m+[m[32m        self.term_gene_dic = {}[m
+[32m+[m[32m        self.term_name = {}[m
+[32m+[m[32m        self.term_class = {}[m
+[32m+[m[32m        self.head_list = [][m
+[32m+[m[32m        self.unique_genes = set()[m
+[32m+[m[32m        self.get_gmtobj()[m
+[32m+[m[32m        self.ele_sepr = ";"[m
+[32m+[m
+[32m+[m[32m    def read_as_pd(self):[m
+[32m+[m[32m        tsv_data = pd.read_csv(self.file_name, sep='\t', header=0, index_col=0)[m
+[32m+[m
+[32m+[m[32m    def get_gmtobj(self):[m
+[32m+[m[32m        uniq_gene = [][m
+[32m+[m[32m        with open(self.file_name, 'r') as fgmt:[m
+[32m+[m[32m            self.head_list = fgmt.readline().strip('\n').split(self.sepr)[m
+[32m+[m[32m            for line in fgmt.readlines():[m
+[32m+[m[32m                Gene_id, Identity, E_value, KOG_gene_id, KOG_num, Functional_description, Functional_class, Class_description = line.strip('\n').split(self.sepr)[m
+[32m+[m[32m                Gene_id = Gene_id.lower()[m
+[32m+[m[32m                uniq_gene.append(Gene_id)[m
+[32m+[m[32m                if KOG_num not in self.term_name:[m
+[32m+[m[32m                    self.term_name[KOG_num] = Functional_description[m
+[32m+[m[32m                    self.term_gene_dic[KOG_num] = [Gene_id][m
+[32m+[m[32m                    self.term_class[KOG_num] = Class_description[m
+[32m+[m[32m                else:[m
+[32m+[m[32m                    self.term_gene_dic[KOG_num].append(Gene_id)[m
+[32m+[m[32m        self.unique_genes = set(uniq_gene)[m
+[32m+[m
+[32m+[m[32m    @staticmethod[m
+[32m+[m[32m    def from_gmt(gmt_file: str) -> 'Gmt_stat':[m
+[32m+[m[32m        """从GMT文件创建Gmt_stat对象[m
+[32m+[m[41m        [m
+[32m+[m[32m        GMT文件格式:[m
+[32m+[m[32m        <KOG_num>\t<Functional_description>\t<gene1>\t<gene2>...\t<geneN>[m
+[32m+[m[32m        """[m
+[32m+[m[32m        gmt_obj = Gmt_stat.__new__(Gmt_stat)[m
+[32m+[m[32m        gmt_obj.file_name = gmt_file[m
+[32m+[m[32m        gmt_obj.sepr = '\t'[m
+[32m+[m[32m        gmt_obj.ele_sepr = ';'[m
+[32m+[m[32m        gmt_obj.term_number = {}[m
+[32m+[m[32m        gmt_obj.term_gene_dic = {}[m
+[32m+[m[32m        gmt_obj.term_name = {}[m
+[32m+[m[32m        gmt_obj.term_class = {}[m
+[32m+[m[32m        gmt_obj.head_list = [][m
+[32m+[m[32m        gmt_obj.unique_genes = set()[m
+[32m+[m
+[32m+[m[32m        with open(gmt_file, 'r') as f:[m
+[32m+[m[32m            for line in f:[m
+[32m+[m[32m                fields = line.strip().split('\t')[m
+[32m+[m[32m                if len(fields) < 3:  # 至少需要KOG_num、Functional_description和一个基因[m
+[32m+[m[32m                    continue[m
+[32m+[m[41m                    [m
+[32m+[m[32m                kog_num, func_desc, *genes = fields[m
+[32m+[m[32m                genes = [gene.lower() for gene in genes]  # 保持基因名小写[m
+[32m+[m[41m                [m
+[32m+[m[32m                gmt_obj.term_name[kog_num] = func_desc[m
+[32m+[m[32m                gmt_obj.term_gene_dic[kog_num] = genes[m
+[32m+[m[32m                gmt_obj.term_class[kog_num] = "KOG"  # KOG分类[m
+[32m+[m[32m                gmt_obj.unique_genes.update(genes)[m
+[32m+[m[41m                [m
+[32m+[m[32m        return gmt_obj[m
+[32m+[m
+[32m+[m[32m    def get_go_info(self, go_3):[m
+[32m+[m[32m        try:[m
+[32m+[m[32m            go_id, go_description, go_class = go_3.split(self.ele_sepr)[m
+[32m+[m[32m        except:[m
+[32m+[m[32m            return False[m
+[32m+[m[32m        return [go_id, go_description, go_class][m
+[32m+[m
+[32m+[m[32m    def low_case(self, data_list: list):[m
+[32m+[m[32m        return [data.lower() for data in data_list][m
+[32m+[m
+[32m+[m[32mclass ExportGmt(object):[m
+[32m+[m[32m    def __init__(self, gmt_obj:Gmt_stat, out_fp:str):[m
+[32m+[m[32m        self.gmt_obj = gmt_obj[m
+[32m+[m[32m        self.out_fp = out_fp[m
+[32m+[m
+[32m+[m[32m    def export(self):[m
+[32m+[m[32m        with open(self.out_fp, 'w') as fw:[m
+[32m+[m[32m            for term, genes in self.gmt_obj.term_gene_dic.items():[m
+[32m+[m[32m                term_ = "\t".join([term, gmt_obj.term_name[term]])[m
+[32m+[m[32m                genes = "\t".join(genes)[m
+[32m+[m[32m                fw.write("\t".join([term_, genes]))[m
+[32m+[m[32m                fw.write("\n")[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m'''[m
+[32m+[m
+[32m+[m[32mGene_id	Identity	E_value	KOG_gene_id	KOG_num	Functional_description	Functional_class	Class_description[m
+[32m+[m
+[32m+[m[32m'''[m
+[32m+[m[32mif __name__ == '__main__':[m
+[32m+[m[32m    file_fp = r"E:\coral_experiment\GSEA\data\OA1_4MF.KOG.filter.m8.anno.xls"[m
+[32m+[m[32m    out_fp = r"E:\coral_experiment\GSEA\data\kog.gmt"[m
+[32m+[m[32m    gmt_obj = Gmt_stat(file_name=file_fp)[m
+[32m+[m[32m    gmt_obj.get_gmtobj()[m
+[32m+[m[32m    exper = ExportGmt(gmt_obj, out_fp)[m
+[32m+[m[32m    exper.export()[m
+[32m+[m
+[32m+[m
+[32m+[m
+[1mdiff --git a/gsea/data/gene_set_obj_pfam_trans.py b/gsea/data/gene_set_obj_pfam_trans.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b18e377[m
+[1m--- /dev/null[m
+[1m+++ b/gsea/data/gene_set_obj_pfam_trans.py[m
+[36m@@ -0,0 +1,112 @@[m
+[32m+[m[32mimport os[m
+[32m+[m[32mfrom collections import OrderedDict[m
+[32m+[m[32mimport pandas as pd[m
+[32m+[m
+[32m+[m
+[32m+[m[32mclass Gmt_stat():[m
+[32m+[m[32m    def __init__(self, file_name:str, sepr='\t', ele_sepr=':', _lower=True):[m
+[32m+[m[32m        self.file_name = file_name[m
+[32m+[m[32m        self.sepr = sepr[m
+[32m+[m[32m        self.ele_sepr = ele_sepr[m
+[32m+[m[32m        self.term_number = {}[m
+[32m+[m[32m        self.term_gene_dic = {}[m
+[32m+[m[32m        self.term_name = {}[m
+[32m+[m[32m        self.term_class = {}[m
+[32m+[m[32m        self.head_list = [][m
+[32m+[m[32m        self.unique_genes = set()[m
+[32m+[m[32m        self.get_gmtobj()[m
+[32m+[m
+[32m+[m[32m    def read_as_pd(self):[m
+[32m+[m[32m        tsv_data = pd.read_csv(self.file_name, sep='\t', header=0, index_col=0)[m
+[32m+[m
+[32m+[m[32m    def get_gmtobj(self):[m
+[32m+[m[32m        uniq_gene = [][m
+[32m+[m[32m        with open(self.file_name, 'r') as fgmt:[m
+[32m+[m[32m            self.head_list = fgmt.readline().strip('\n').split(self.sepr)[m
+[32m+[m[32m            for line in fgmt.readlines():[m
+[32m+[m[32m                Gene_id, Pfam_number, *Pfam_id_Pfam_description = line.strip('\n').split(self.sepr)[m
+[32m+[m[32m                Gene_id = Gene_id.lower()[m
+[32m+[m[32m                uniq_gene.append(Gene_id)[m
+[32m+[m[32m                for each_pfam in Pfam_id_Pfam_description:[m
+[32m+[m[32m                    pfam_list = self.get_go_info(each_pfam)[m
+[32m+[m[32m                    if not pfam_list:[m
+[32m+[m[32m                        continue[m
+[32m+[m[32m                    if pfam_list[0] not in self.term_name:[m
+[32m+[m[32m                        self.term_name[pfam_list[0]] = pfam_list[1][m
+[32m+[m[32m                        self.term_gene_dic[pfam_list[0]] = [Gene_id][m
+[32m+[m[32m                    else:[m
+[32m+[m[32m                        self.term_gene_dic[pfam_list[0]].append(Gene_id)[m
+[32m+[m[32m        self.unique_genes = set(uniq_gene)[m
+[32m+[m
+[32m+[m[32m    def get_go_info(self, each_pfam):[m
+[32m+[m[32m        try:[m
+[32m+[m[32m            Pfam_id, Pfam_description = each_pfam.split(self.ele_sepr)[m
+[32m+[m[32m        except:[m
+[32m+[m[32m            return False[m
+[32m+[m[32m        return [Pfam_id, Pfam_description][m
+[32m+[m
+[32m+[m[32m    def low_case(self, data_list: list):[m
+[32m+[m[32m        return [data.lower() for data in data_list][m
+[32m+[m
+[32m+[m[32m    @staticmethod[m
+[32m+[m[32m    def from_gmt(gmt_file: str) -> 'Gmt_stat':[m
+[32m+[m[32m        """从GMT文件创建Gmt_stat对象[m
+[32m+[m[41m        [m
+[32m+[m[32m        GMT文件格式:[m
+[32m+[m[32m        <Pfam_id>\t<Pfam_description>\t<gene1>\t<gene2>...\t<geneN>[m
+[32m+[m[32m        """[m
+[32m+[m[32m        gmt_obj = Gmt_stat.__new__(Gmt_stat)[m
+[32m+[m[32m        gmt_obj.file_name = gmt_file[m
+[32m+[m[32m        gmt_obj.sepr = '\t'[m
+[32m+[m[32m        gmt_obj.ele_sepr = ':'[m
+[32m+[m[32m        gmt_obj.term_number = {}[m
+[32m+[m[32m        gmt_obj.term_gene_dic = {}[m
+[32m+[m[32m        gmt_obj.term_name = {}[m
+[32m+[m[32m        gmt_obj.head_list = [][m
+[32m+[m[32m        gmt_obj.unique_genes = set()[m
+[32m+[m
+[32m+[m[32m        with open(gmt_file, 'r') as f:[m
+[32m+[m[32m            for line in f:[m
+[32m+[m[32m                fields = line.strip().split('\t')[m
+[32m+[m[32m                if len(fields) < 3:  # 至少需要Pfam_id、Pfam_description和一个基因[m
+[32m+[m[32m                    continue[m
+[32m+[m[41m                    [m
+[32m+[m[32m                pfam_id, pfam_desc, *genes = fields[m
+[32m+[m[32m                genes = [gene.lower() for gene in genes]  # 保持基因名小写[m
+[32m+[m[41m                [m
+[32m+[m[32m                gmt_obj.term_name[pfam_id] = pfam_desc[m
+[32m+[m[32m                gmt_obj.term_gene_dic[pfam_id] = genes[m
+[32m+[m[32m                gmt_obj.unique_genes.update(genes)[m
+[32m+[m[41m                [m
+[32m+[m[32m        return gmt_obj[m
+[32m+[m
+[32m+[m[32mclass ExportGmt(object):[m
+[32m+[m[32m    def __init__(self, gmt_obj:Gmt_stat, out_fp:str):[m
+[32m+[m[32m        self.gmt_obj = gmt_obj[m
+[32m+[m[32m        self.out_fp = out_fp[m
+[32m+[m
+[32m+[m[32m    def export(self):[m
+[32m+[m[32m        with open(self.out_fp, 'w') as fw:[m
+[32m+[m[32m            for term, genes in self.gmt_obj.term_gene_dic.items():[m
+[32m+[m[32m                term_ = "\t".join([term, gmt_obj.term_name[term]])[m
+[32m+[m[32m                genes = "\t".join(genes)[m
+[32m+[m[32m                fw.write("\t".join([term_, genes]))[m
+[32m+[m[32m                fw.write("\n")[m
+[32m+[m
+[32m+[m
+[32m+[m[32m'''[m
+[32m+[m
+[32m+[m[32mGene_id	Pfam_number	Pfam_id:Pfam_description[m
+[32m+[m
+[32m+[m[32m'''[m
+[32m+[m
+[32m+[m[32mif __name__ == '__main__':[m
+[32m+[m[32m    file_fp = r"E:\coral_experiment\GSEA\data\OA1_4MF.pfam.anno.xls"[m
+[32m+[m[32m    out_fp = r"E:\coral_experiment\GSEA\data\pfam.gmt"[m
+[32m+[m[32m    gmt_obj = Gmt_stat(file_name=file_fp)[m
+[32m+[m[32m    gmt_obj.get_gmtobj()[m
+[32m+[m[32m    exper = ExportGmt(gmt_obj, out_fp)[m
+[32m+[m[32m    exper.export()[m
+[32m+[m
+[32m+[m
+[32m+[m
+[1mdiff --git a/processing_gene_names/.idea/.gitignore b/processing_gene_names/.idea/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..13566b8[m
+[1m--- /dev/null[m
+[1m+++ b/processing_gene_names/.idea/.gitignore[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m# Default ignored files[m
+[32m+[m[32m/shelf/[m
+[32m+[m[32m/workspace.xml[m
+[32m+[m[32m# Editor-based HTTP Client requests[m
+[32m+[m[32m/httpRequests/[m
+[32m+[m[32m# Datasource local storage ignored files[m
+[32m+[m[32m/dataSources/[m
+[32m+[m[32m/dataSources.local.xml[m
+[1mdiff --git a/processing_gene_names/.idea/deployment.xml b/processing_gene_names/.idea/deployment.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9b3f0d1[m
+[1m--- /dev/null[m
+[1m+++ b/processing_gene_names/.idea/deployment.xml[m
+[36m@@ -0,0 +1,14 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">[m
+[32m+[m[32m    <serverData>[m
+[32m+[m[32m      <paths name="liuyq@172.24.141.222:22 password">[m
+[32m+[m[32m        <serverdata>[m
+[32m+[m[32m          <mappings>[m
+[32m+[m[32m            <mapping local="$PROJECT_DIR$" web="/" />[m
+[32m+[m[32m          </mappings>[m
+[32m+[m[32m        </serverdata>[m
+[32m+[m[32m      </paths>[m
+[32m+[m[32m    </serverData>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/processing_gene_names/.idea/inspectionProfiles/Project_Default.xml b/processing_gene_names/.idea/inspectionProfiles/Project_Default.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d26f410[m
+[1m--- /dev/null[m
+[1m+++ b/processing_gene_names/.idea/inspectionProfiles/Project_Default.xml[m
+[36m@@ -0,0 +1,42 @@[m
+[32m+[m[32m<component name="InspectionProjectProfileManager">[m
+[32m+[m[32m  <profile version="1.0">[m
+[32m+[m[32m    <option name="myName" value="Project Default" />[m
+[32m+[m[32m    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">[m
+[32m+[m[32m      <Languages>[m
+[32m+[m[32m        <language minSize="102" name="Python" />[m
+[32m+[m[32m      </Languages>[m
+[32m+[m[32m    </inspection_tool>[m
+[32m+[m[32m    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">[m
+[32m+[m[32m      <option name="ignoredErrors">[m
+[32m+[m[32m        <list>[m
+[32m+[m[32m          <option value="W191" />[m
+[32m+[m[32m          <option value="E101" />[m
+[32m+[m[32m          <option value="E265" />[m
+[32m+[m[32m          <option value="E302" />[m
+[32m+[m[32m        </list>[m
+[32m+[m[32m      </option>[m
+[32m+[m[32m    </inspection_tool>[m
+[32m+[m[32m    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">[m
+[32m+[m[32m      <option name="ignoredErrors">[m
+[32m+[m[32m        <list>[m
+[32m+[m[32m          <option value="N802" />[m
+[32m+[m[32m          <option value="N803" />[m
+[32m+[m[32m          <option value="N806" />[m
+[32m+[m[32m        </list>[m
+[32m+[m[32m      </option>[m
+[32m+[m[32m    </inspection_tool>[m
+[32m+[m[32m    <inspection_tool class="PyUnboundLocalVariableInspection" enabled="false" level="WARNING" enabled_by_default="false" />[m
+[32m+[m[32m    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">[m
+[32m+[m[32m      <option name="ignoredIdentifiers">[m
+[32m+[m[32m        <list>[m
+[32m+[m[32m          <option value="requests" />[m
+[32m+[m[32m          <option value="urllib.*" />[m
+[32m+[m[32m          <option value="list.group" />[m
+[32m+[m[32m          <option value="BeautifulSoup" />[m
+[32m+[m[32m          <option value="talib" />[m
+[32m+[m[32m          <option value="aiDesign.test.df_final" />[m
+[32m+[m[32m        </list>[m
+[32m+[m[32m      </option>[m
+[32m+[m[32m    </inspection_tool>[m
+[32m+[m[32m  </profile>[m
+[32m+[m[32m</component>[m
+\ No newline at end of file[m
+[1mdiff --git a/processing_gene_names/.idea/inspectionProfiles/profiles_settings.xml b/processing_gene_names/.idea/inspectionProfiles/profiles_settings.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..105ce2d[m
+[1m--- /dev/null[m
+[1m+++ b/processing_gene_names/.idea/inspectionProfiles/profiles_settings.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<component name="InspectionProjectProfileManager">[m
+[32m+[m[32m  <settings>[m
+[32m+[m[32m    <option name="USE_PROJECT_PROFILE" value="false" />[m
+[32m+[m[32m    <version value="1.0" />[m
+[32m+[m[32m  </settings>[m
+[32m+[m[32m</component>[m
+\ No newline at end of file[m
+[1mdiff --git a/processing_gene_names/.idea/misc.xml b/processing_gene_names/.idea/misc.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a6218fe[m
+[1m--- /dev/null[m
+[1m+++ b/processing_gene_names/.idea/misc.xml[m
+[36m@@ -0,0 +1,7 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="Black">[m
+[32m+[m[32m    <option name="sdkName" value="Python 3.11" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11" project-jdk-type="Python SDK" />[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/processing_gene_names/.idea/modules.xml b/processing_gene_names/.idea/modules.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..07ed667[m
+[1m--- /dev/null[m
+[1m+++ b/processing_gene_names/.idea/modules.xml[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="ProjectModuleManager">[m
+[32m+[m[32m    <modules>[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/.idea/processing_gene_names.iml" filepath="$PROJECT_DIR$/.idea/processing_gene_names.iml" />[m
+[32m+[m[32m    </modules>[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/processing_gene_names/.idea/processing_gene_names.iml b/processing_gene_names/.idea/processing_gene_names.iml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d0876a7[m
+[1m--- /dev/null[m
+[1m+++ b/processing_gene_names/.idea/processing_gene_names.iml[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<module type="PYTHON_MODULE" version="4">[m
+[32m+[m[32m  <component name="NewModuleRootManager">[m
+[32m+[m[32m    <content url="file://$MODULE_DIR$" />[m
+[32m+[m[32m    <orderEntry type="inheritedJdk" />[m
+[32m+[m[32m    <orderEntry type="sourceFolder" forTests="false" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</module>[m
+\ No newline at end of file[m
+[1mdiff --git a/processing_gene_names/.idea/vcs.xml b/processing_gene_names/.idea/vcs.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6c0b863[m
+[1m--- /dev/null[m
+[1m+++ b/processing_gene_names/.idea/vcs.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="VcsDirectoryMappings">[m
+[32m+[m[32m    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/processing_gene_names/celltype_identification2.py b/processing_gene_names/celltype_identification2.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4a13e15[m
+[1m--- /dev/null[m
+[1m+++ b/processing_gene_names/celltype_identification2.py[m
+[36m@@ -0,0 +1,281 @@[m
+[32m+[m[32m"""[m
+[32m+[m[32mCell Type Identification Comparator.[m
+[32m+[m[32mThis script compares marker genes between two species to identify corresponding cell types.[m
+[32m+[m[32mIt processes marker gene files from both species and identifies overlapping genes.[m
+[32m+[m
+[32m+[m[32mInput files:[m
+[32m+[m[32m    - marker1_files: Marker gene files from first species (LOC111 format)[m
+[32m+[m[32m    - marker2_files: Marker gene files from second species (Spis-XP format)[m
+[32m+[m[32m    - mapping_file: Gene ID to protein ID mapping file[m
+[32m+[m
+[32m+[m[32mOutput:[m
+[32m+[m[32m    - Comparison results for each cell type pair[m
+[32m+[m[32m    - Detailed log files with comparison statistics[m
+[32m+[m[32m    - TSV files containing overlapping genes[m
+[32m+[m
+[32m+[m[32mUsage:[m
+[32m+[m[32m    python celltype_identification2.py[m
+[32m+[m
+[32m+[m[32mAuthor: Shengyao Zhang[m
+[32m+[m[32mDate: 2024-12-19[m
+[32m+[m[32mVersion: 1.0[m
+[32m+[m[32m"""[m
+[32m+[m
+[32m+[m[32mimport pandas as pd[m
+[32m+[m[32mfrom pathlib import Path[m
+[32m+[m[32mfrom itertools import product[m
+[32m+[m[32mimport logging[m
+[32m+[m[32mfrom datetime import datetime[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32mdef read_file_with_encodings(file_path, **kwargs):[m
+[32m+[m[32m    """Generic file reading function that automatically handles encoding issues"""[m
+[32m+[m[32m    encodings = ['utf-8', 'gbk', 'gb18030'][m
+[32m+[m[32m    for encoding in encodings:[m
+[32m+[m[32m        try:[m
+[32m+[m[32m            return pd.read_csv(file_path, encoding=encoding, **kwargs)[m
+[32m+[m[32m        except UnicodeDecodeError:[m
+[32m+[m[32m            continue[m
+[32m+[m[32m    raise UnicodeDecodeError(f"Could not read file with encodings {encodings}: {file_path}")[m
+[32m+[m
+[32m+[m[32mdef process_marker_file1(file_path, gene_to_protein, all_marker1_files, gene_prefix='LOC111', min_log2fc=0, max_pval=0.05):[m
+[32m+[m[32m    """Process the marker file in the first format and retain only the genes that are specifically expressed."""[m
+[32m+[m[32m    # read the current file[m
+[32m+[m[32m    current_markers = read_file_with_encodings(file_path, sep='\t')[m
+[32m+[m[32m    current_proteins = set()[m
+[32m+[m[41m    [m
+[32m+[m[32m    # Read the genes of all other marker1 files[m
+[32m+[m[32m    other_proteins = set()[m
+[32m+[m[32m    for other_file in all_marker1_files:[m
+[32m+[m[32m        if other_file != file_path:  # Skip current file[m
+[32m+[m[32m            other_markers = read_file_with_encodings(other_file, sep='\t')[m
+[32m+[m[32m            for _, row in other_markers.iterrows():[m
+[32m+[m[32m                gene = row.iloc[0][m
+[32m+[m[32m                avg_log2fc = row['avg_log2FC'][m
+[32m+[m[32m                p_val = row['p_val'][m
+[32m+[m[41m                [m
+[32m+[m[32m                if (gene.startswith(gene_prefix) and[m[41m [m
+[32m+[m[32m                    avg_log2fc > min_log2fc and[m[41m [m
+[32m+[m[32m                    p_val < max_pval and[m[41m [m
+[32m+[m[32m                    gene in gene_to_protein and[m[41m [m
+[32m+[m[32m                    gene_to_protein[gene] is not None):[m
+[32m+[m[32m                    protein = gene_to_protein[gene].replace('.', '_')[m
+[32m+[m[32m                    other_proteins.add(protein)[m
+[32m+[m[41m    [m
+[32m+[m[32m    # Only genes that are specifically expressed in the current document are retained.[m
+[32m+[m[32m    for _, row in current_markers.iterrows():[m
+[32m+[m[32m        gene = row.iloc[0][m
+[32m+[m[32m        avg_log2fc = row['avg_log2FC'][m
+[32m+[m[32m        p_val = row['p_val'][m
+[32m+[m[41m        [m
+[32m+[m[32m        if (gene.startswith(gene_prefix) and[m[41m [m
+[32m+[m[32m            avg_log2fc > min_log2fc and[m[41m [m
+[32m+[m[32m            p_val < max_pval and[m[41m [m
+[32m+[m[32m            gene in gene_to_protein and[m[41m [m
+[32m+[m[32m            gene_to_protein[gene] is not None):[m
+[32m+[m[32m            protein = gene_to_protein[gene].replace('.', '_')[m
+[32m+[m[32m            if protein not in other_proteins:  # Add only the proteins that do not appear in other files.[m
+[32m+[m[32m                current_proteins.add(protein)[m
+[32m+[m[41m    [m
+[32m+[m[32m    return list(current_proteins)[m
+[32m+[m
+[32m+[m[32mdef process_marker_file2(file_path, all_marker2_files):[m
+[32m+[m[32m    """Process second type of marker file, keeping only specifically expressed genes"""[m
+[32m+[m[32m    # Read current file[m
+[32m+[m[32m    current_markers = read_file_with_encodings(file_path, sep=" ", quotechar='"')[m
+[32m+[m[32m    current_proteins = set()[m
+[32m+[m[41m    [m
+[32m+[m[32m    # Read genes from all other marker2 files[m
+[32m+[m[32m    other_proteins = set()[m
+[32m+[m[32m    for other_file in all_marker2_files:[m
+[32m+[m[32m        if other_file != file_path:  # Skip current file[m
+[32m+[m[32m            other_markers = read_file_with_encodings(other_file, sep=" ", quotechar='"')[m
+[32m+[m[32m            for gene in other_markers.index:[m
+[32m+[m[32m                # Convert gene to string before using startswith[m
+[32m+[m[32m                gene_str = str(gene)[m
+[32m+[m[32m                if (gene_str.startswith('Spis-XP-') and[m[41m [m
+[32m+[m[32m                    other_markers.loc[gene, 'avg_log2FC'] > 0 and[m[41m [m
+[32m+[m[32m                    other_markers.loc[gene, 'p_val'] < 0.05):[m
+[32m+[m[32m                    protein = gene_str.replace('Spis-XP-', 'XP_').replace('-', '_')[m
+[32m+[m[32m                    other_proteins.add(protein)[m
+[32m+[m[41m    [m
+[32m+[m[32m    # Keep only genes specifically expressed in current file[m
+[32m+[m[32m    for gene in current_markers.index:[m
+[32m+[m[32m        avg_log2fc = current_markers.loc[gene, 'avg_log2FC'][m
+[32m+[m[32m        p_val = current_markers.loc[gene, 'p_val'][m
+[32m+[m[41m        [m
+[32m+[m[32m        # Convert gene to string before using startswith[m
+[32m+[m[32m        gene_str = str(gene)[m
+[32m+[m[32m        if (gene_str.startswith('Spis-XP-') and[m[41m [m
+[32m+[m[32m            avg_log2fc > 0 and[m[41m [m
+[32m+[m[32m            p_val < 0.05):[m
+[32m+[m[32m            protein = gene_str.replace('Spis-XP-', 'XP_').replace('-', '_')[m
+[32m+[m[32m            if protein not in other_proteins:  # Only add proteins not in other files[m
+[32m+[m[32m                current_proteins.add(protein)[m
+[32m+[m[41m    [m
+[32m+[m[32m    return list(current_proteins)[m
+[32m+[m
+[32m+[m[32mdef setup_logging(output_dir):[m
+[32m+[m[32m    """Set up logging configuration"""[m
+[32m+[m[32m    log_file = output_dir / f"comparison_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"[m
+[32m+[m[32m    logging.basicConfig([m
+[32m+[m[32m        level=logging.INFO,[m
+[32m+[m[32m        format='%(asctime)s - %(message)s',[m
+[32m+[m[32m        handlers=[[m
+[32m+[m[32m            logging.FileHandler(log_file),[m
+[32m+[m[32m            logging.StreamHandler()[m
+[32m+[m[32m        ][m
+[32m+[m[32m    )[m
+[32m+[m[32m    return logging.getLogger(__name__)[m
+[32m+[m
+[32m+[m[32mdef save_comparison_results(comparison, output_dir):[m
+[32m+[m[32m    """Save comparison results for each pair"""[m
+[32m+[m[32m    # Create result filename[m
+[32m+[m[32m    result_file = output_dir / f"{comparison['marker1_file']}_vs_{comparison['marker2_file']}.tsv"[m
+[32m+[m[41m    [m
+[32m+[m[32m    # Create result dataframe[m
+[32m+[m[32m    result_df = pd.DataFrame({[m
+[32m+[m[32m        'protein_id': sorted(list(comparison['overlapping_proteins'])),[m
+[32m+[m[32m        'source': 'overlapping'[m
+[32m+[m[32m    })[m
+[32m+[m[41m    [m
+[32m+[m[32m    # Add proteins only in marker1[m
+[32m+[m[32m    marker1_only = comparison['marker1_proteins'] - comparison['overlapping_proteins'][m
+[32m+[m[32m    if marker1_only:[m
+[32m+[m[32m        result_df = pd.concat([result_df, pd.DataFrame({[m
+[32m+[m[32m            'protein_id': sorted(list(marker1_only)),[m
+[32m+[m[32m            'source': 'marker1_only'[m
+[32m+[m[32m        })])[m
+[32m+[m[41m    [m
+[32m+[m[32m    # Add proteins only in marker2[m
+[32m+[m[32m    marker2_only = comparison['marker2_proteins'] - comparison['overlapping_proteins'][m
+[32m+[m[32m    if marker2_only:[m
+[32m+[m[32m        result_df = pd.concat([result_df, pd.DataFrame({[m
+[32m+[m[32m            'protein_id': sorted(list(marker2_only)),[m
+[32m+[m[32m            'source': 'marker2_only'[m
+[32m+[m[32m        })])[m
+[32m+[m[41m    [m
+[32m+[m[32m    # Save results[m
+[32m+[m[32m    result_df.to_csv(result_file, sep='\t', index=False)[m
+[32m+[m[32m    return result_file[m
+[32m+[m
+[32m+[m[32mdef compare_marker_pairs(marker1_files, marker2_files, mapping_file, output_dir,[m[41m [m
+[32m+[m[32m                        gene_prefix='LOC111', min_log2fc=0, max_pval=0.05):[m
+[32m+[m[32m    """[m
+[32m+[m[32m    Compare overlapping genes between each pair of marker files.[m
+[32m+[m[41m    [m
+[32m+[m[32m    Args:[m
+[32m+[m[32m        marker1_files: List of marker files from first species[m
+[32m+[m[32m        marker2_files: List of marker files from second species[m
+[32m+[m[32m        mapping_file: Gene to protein mapping file[m
+[32m+[m[32m        output_dir: Directory for output files[m
+[32m+[m[32m        gene_prefix: Prefix for gene IDs (default: 'LOC111')[m
+[32m+[m[32m        min_log2fc: Minimum log2 fold change threshold[m
+[32m+[m[32m        max_pval: Maximum p-value threshold[m
+[32m+[m[32m    """[m
+[32m+[m[32m    # Create output directory[m
+[32m+[m[32m    output_dir = Path(output_dir)[m
+[32m+[m[32m    output_dir.mkdir(parents=True, exist_ok=True)[m
+[32m+[m[41m    [m
+[32m+[m[32m    # Set up logging[m
+[32m+[m[32m    logger = setup_logging(output_dir)[m
+[32m+[m[41m    [m
+[32m+[m[32m    logger.info(f"Starting comparison analysis...")[m
+[32m+[m[32m    logger.info(f"Parameters: gene_prefix={gene_prefix}, min_log2fc={min_log2fc}, max_pval={max_pval}")[m
+[32m+[m[41m    [m
+[32m+[m[32m    # Read mapping file[m
+[32m+[m[32m    logger.info(f"Reading mapping file: {mapping_file}")[m
+[32m+[m[32m    mapping_df = read_file_with_encodings(mapping_file, sep='\t')[m
+[32m+[m[32m    gene_to_protein = dict(zip(mapping_df['gene_id'], mapping_df['protein_id']))[m
+[32m+[m[32m    gene_to_protein = {k: v if v != 'No corresponding protein_id' else None[m[41m [m
+[32m+[m[32m                      for k, v in gene_to_protein.items()}[m
+[32m+[m[41m    [m
+[32m+[m[32m    # Store processing results for each file[m
+[32m+[m[32m    marker1_results = {}[m
+[32m+[m[32m    marker2_results = {}[m
+[32m+[m[41m    [m
+[32m+[m[32m    # Process all marker1 files[m
+[32m+[m[32m    for file in marker1_files:[m
+[32m+[m[32m        logger.info(f"Processing marker1 file: {file}")[m
+[32m+[m[32m        proteins = process_marker_file1(file, gene_to_protein, marker1_files,[m
+[32m+[m[32m                                      gene_prefix=gene_prefix,[m
+[32m+[m[32m                                      min_log2fc=min_log2fc,[m
+[32m+[m[32m                                      max_pval=max_pval)[m
+[32m+[m[32m        marker1_results[file] = set(proteins)[m
+[32m+[m[32m        logger.info(f"Found {len(proteins)} specific protein IDs")[m
+[32m+[m[41m    [m
+[32m+[m[32m    # Process all marker2 files[m
+[32m+[m[32m    for file in marker2_files:[m
+[32m+[m[32m        logger.info(f"Processing marker2 file: {file}")[m
+[32m+[m[32m        proteins = process_marker_file2(file, marker2_files)[m
+[32m+[m[32m        marker2_results[file] = set(proteins)[m
+[32m+[m[32m        logger.info(f"Found {len(proteins)} specific protein IDs")[m
+[32m+[m[41m    [m
+[32m+[m[32m    # Compare each pair of files[m
+[32m+[m[32m    comparisons = [][m
+[32m+[m[32m    for marker1_file, marker2_file in product(marker1_files, marker2_files):[m
+[32m+[m[32m        marker1_name = Path(marker1_file).stem[m
+[32m+[m[32m        marker2_name = Path(marker2_file).stem[m
+[32m+[m[41m        [m
+[32m+[m[32m        logger.info(f"\nComparing {marker1_name} and {marker2_name}")[m
+[32m+[m[41m        [m
+[32m+[m[32m        proteins1 = marker1_results[marker1_file][m
+[32m+[m[32m        proteins2 = marker2_results[marker2_file][m
+[32m+[m[32m        overlapping = proteins1 & proteins2[m
+[32m+[m[32m        overlap_ratio = len(overlapping) / len(proteins1) if proteins1 else 0[m
+[32m+[m[41m        [m
+[32m+[m[32m        comparison = {[m
+[32m+[m[32m            'marker1_file': marker1_name,[m
+[32m+[m[32m            'marker2_file': marker2_name,[m
+[32m+[m[32m            'marker1_proteins': proteins1,[m
+[32m+[m[32m            'marker2_proteins': proteins2,[m
+[32m+[m[32m            'overlapping_proteins': overlapping,[m
+[32m+[m[32m            'overlap_ratio': overlap_ratio[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m        # Save results for this comparison[m
+[32m+[m[32m        result_file = save_comparison_results(comparison, output_dir)[m
+[32m+[m[32m        logger.info(f"Results saved to: {result_file}")[m
+[32m+[m[41m        [m
+[32m+[m[32m        # Log statistics[m
+[32m+[m[32m        logger.info(f"Number of valid protein IDs in first file: {len(proteins1)}")[m
+[32m+[m[32m        logger.info(f"Number of protein IDs in second file: {len(proteins2)}")[m
+[32m+[m[32m        logger.info(f"Number of overlapping protein IDs: {len(overlapping)}")[m
+[32m+[m[32m        logger.info(f"Overlap ratio: {overlap_ratio:.2%}")[m
+[32m+[m[41m        [m
+[32m+[m[32m        comparisons.append(comparison)[m
+[32m+[m[41m    [m
+[32m+[m[32m    logger.info("Analysis completed!")[m
+[32m+[m[32m    return comparisons[m
+[32m+[m
+[32m+[m[32m# 使用示例[m
+[32m+[m[32mif __name__ == "__main__":[m
+[32m+[m[32m    # 定义文件路径[m
+[32m+[m[32m    marker1_files = [[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\cluster-marker\cluster0_markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\cluster-marker\cluster1_markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\cluster-marker\cluster2_markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\cluster-marker\cluster3_markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\cluster-marker\cluster6_markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\cluster-marker\cluster7_markers.tsv",[m
+[32m+[m[32m    ][m
+[32m+[m[41m    [m
+[32m+[m[32m    marker2_files = [[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\Cell-cluster-marker\cnidocyte-markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\Cell-cluster-marker\digestive_filaments-markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\Cell-cluster-marker\neuron-markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\Cell-cluster-marker\mitotic-host-cells-markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\Cell-cluster-marker\alga-hosting-cells-markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\Cell-cluster-marker\calicoblast-markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\Cell-cluster-marker\epidermis-markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\Cell-cluster-marker\gastrodermis-markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\Cell-cluster-marker\germline-markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\Cell-cluster-marker\gland-markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\Cell-cluster-marker\immune-markers.tsv",[m
+[32m+[m[32m        r"D:\nextcloud\pd论文\data\Cell-cluster-marker\unknown-markers.tsv"[m
+[32m+[m[32m    ][m
+[32m+[m[32m    mapping_file = r"D:\nextcloud\pd论文\data\cluster-marker\loc111_gene_mapping.tsv"[m
+[32m+[m[32m    output_dir = r"D:\nextcloud\pd论文\result\comparison-result2"[m
+[32m+[m
+[32m+[m[32m    results = compare_marker_pairs(marker1_files, marker2_files, mapping_file, output_dir)[m
+\ No newline at end of file[m
+[1mdiff --git a/processing_gene_names/extract_gene_names.py b/processing_gene_names/extract_gene_names.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..43b5385[m
+[1m--- /dev/null[m
+[1m+++ b/processing_gene_names/extract_gene_names.py[m
+[36m@@ -0,0 +1,40 @@[m
+[32m+[m[32mimport pandas as pd[m
+[32m+[m[32m"""[m
+[32m+[m[32mRead in the marker file and extract the gene names. The marker file format is as follows:[m
+[32m+[m[32m"p_val" "avg_log2FC" "pct.1" "pct.2" "p_val_adj" "cluster" "gene"[m
+[32m+[m[32m"LOC131768943" 5.98636196686601e-135 -4.71546249021902 0.016 0.352 3.21234169503997e-130 "0" "LOC131768943"[m
+[32m+[m[32m"LOC113677177" 3.38178484945174e-130 -3.41989240052076 0.02 0.354 1.8146995680643e-125 "0" "LOC113677177"[m
+[32m+[m[32m"transcript-HQ-P2-transcript13875/f192p0/1996" 2.35948385593556e-124 -2.26149823236855 0.025 0.355 1.26612263193358e-119 "0" "transcript-HQ-P2-transcript13875/f192p0/1996"[m
+[32m+[m[32m"LOC131789709" 1.9525717479567e-84 -5.2709441592786 0.009 0.225 1.04776952567104e-79 "0" "LOC131789709"[m
+[32m+[m[32m"LOC113675085" 3.78074822616779e-83 -4.3399188101396 0.01 0.225 2.0287873056439e-78 "0" "LOC113675085"[m
+[32m+[m[32m"LOC131783707" 5.03417612968189e-80 -4.85592570965736 0.007 0.214 2.7013892529486e-75 "0" "LOC131783707"[m
+[32m+[m
+[32m+[m[32m"""[m
+[32m+[m
+[32m+[m[32mmarker_file = r"D:\nextcloud\pd论文\data\cluster-marker\allmarkers.tsv"[m
+[32m+[m[32mmarker_df = pd.read_csv(marker_file,sep=" ")[m
+[32m+[m[32mprint(marker_df.head())[m
+[32m+[m
+[32m+[m[32m# Create a list to store gene names[m
+[32m+[m[32mgene_list = [][m
+[32m+[m[32mloc111_genes = [][m
+[32m+[m
+[32m+[m[32m# Traverse the gene column and add the gene names to the list.[m
+[32m+[m[32mfor gene in marker_df['gene'].unique():[m
+[32m+[m[32m    # Remove quotation marks if present.[m
+[32m+[m[32m    gene_clean = gene.strip('"')[m
+[32m+[m[32m    gene_list.append(gene_clean)[m
+[32m+[m[32m    if gene_clean.startswith("LOC111"):[m
+[32m+[m[32m        loc111_genes.append(gene_clean)[m
+[32m+[m
+[32m+[m[32moutput_file = r"D:\nextcloud\pd论文\data\cluster-marker\gene_list.tsv"[m
+[32m+[m[32mwith open(output_file, 'w') as f:[m
+[32m+[m[32m    for gene in gene_list:[m
+[32m+[m[32m        f.write(f"{gene}\n")[m
+[32m+[m[32mprint(f"have extracted{len(gene_list)} a unique gene name and save it to {output_file}")[m
+[32m+[m
+[32m+[m[32moutput_file = r"D:\nextcloud\pd论文\data\cluster-marker\loc111_genes.tsv"[m
+[32m+[m[32mwith open(output_file, 'w') as f:[m
+[32m+[m[32m    for gene in loc111_genes:[m
+[32m+[m[32m        f.write(f"{gene}\n")[m
+[32m+[m[32mprint(f"have extracted{len(loc111_genes)} the name of the LOC111 gene and save it to {output_file}")[m
+\ No newline at end of file[m
+[1mdiff --git a/processing_gene_names/gene_to_protein.py b/processing_gene_names/gene_to_protein.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9671c67[m
+[1m--- /dev/null[m
+[1m+++ b/processing_gene_names/gene_to_protein.py[m
+[36m@@ -0,0 +1,95 @@[m
+[32m+[m[32m"""[m
+[32m+[m[32mGene to Protein ID Mapper.[m
+[32m+[m[32mThis script maps gene IDs (LOC111 format) to their corresponding protein IDs using GTF annotation file.[m
+[32m+[m
+[32m+[m[32mInput files:[m
+[32m+[m[32m    - gene_list.tsv: List of LOC111 format gene IDs[m
+[32m+[m[32m    - GTF annotation file: Contains gene and protein information[m
+[32m+[m
+[32m+[m[32mOutput:[m
+[32m+[m[32m    - ncbi_gene_mapping.tsv: Mapping between gene IDs and protein IDs[m
+[32m+[m
+[32m+[m[32mUsage:[m
+[32m+[m[32m    python gene_to_protein.py[m
+[32m+[m
+[32m+[m[32mAuthor: Shengyao Zhang[m
+[32m+[m[32mDate: 2024-12-19[m
+[32m+[m[32mVersion: 1.0[m
+[32m+[m[32m"""[m
+[32m+[m
+[32m+[m[32mimport pandas as pd[m
+[32m+[m
+[32m+[m[32m"""[m
+[32m+[m[32mExample of loc111_genes.tsv format:[m
+[32m+[m[32mLOC111325671[m
+[32m+[m[32mLOC111326254[m
+[32m+[m[32mLOC111326848[m
+[32m+[m[32mLOC111339103[m
+[32m+[m[32mLOC111343026[m
+[32m+[m[32mLOC111322693[m
+[32m+[m[32mLOC111320871[m
+[32m+[m[32mLOC111340891[m
+[32m+[m[32mLOC111327082[m
+[32m+[m[32mLOC111320821[m
+[32m+[m[32m"""[m
+[32m+[m[32m# Read loc111_genes.tsv file[m
+[32m+[m[32mloc111_file = r"D:\nextcloud\pd论文\data\merge-data\SP-NCBI-data\genlist.tsv"[m
+[32m+[m[32mwith open(loc111_file, 'r') as f:[m
+[32m+[m[32m    loc111_genes = [line.strip() for line in f][m
+[32m+[m
+[32m+[m[32mprint(f"Read {len(loc111_genes)} LOC111 genes")[m
+[32m+[m
+[32m+[m[32m# Store gene_id to protein_id mapping[m
+[32m+[m[32mgene_to_protein = {}[m
+[32m+[m
+[32m+[m[32m"""[m
+[32m+[m[32mGTF file format example:[m
+[32m+[m[32m#gtf-version 2.2[m
+[32m+[m[32m#!genome-build Stylophora pistillata v1.1[m
+[32m+[m[32m#!genome-build-accession NCBI_Assembly:GCF_002571385.2[m
+[32m+[m[32m#!annotation-source NCBI Stylophora pistillata Annotation Release 100[m
+[32m+[m[32mNW_019217784.1	Gnomon	gene	30	5662	.	-	.	gene_id "LOC111326392"; ...[m
+[32m+[m[32m"""[m
+[32m+[m
+[32m+[m[32m# Read GTF file and find corresponding protein_ids[m
+[32m+[m[32mgtf_file = r'D:\nextcloud\pd论文\data\NCBI-SP\GCF_002571385.2_Stylophora_pistillata_v1.1_genomic.gtf\GCF_0025.2_S'[m
+[32m+[m[32mwith open(gtf_file, 'r') as f:[m
+[32m+[m[32m    for line in f:[m
+[32m+[m[32m        if line.startswith('#'):  # Skip comment lines[m
+[32m+[m[32m            continue[m
+[32m+[m[32m        if '\tCDS\t' not in line:  # Only process CDS lines[m
+[32m+[m[32m            continue[m
+[32m+[m[41m            [m
+[32m+[m[32m        # Parse gene_id and protein_id[m
+[32m+[m[32m        attributes = line.strip().split('\t')[-1][m
+[32m+[m[32m        gene_id = None[m
+[32m+[m[32m        protein_id = None[m
+[32m+[m[41m        [m
+[32m+[m[32m        # Parse attribute fields[m
+[32m+[m[32m        for attr in attributes.split('; '):[m
+[32m+[m[32m            if 'gene_id' in attr:[m
+[32m+[m[32m                gene_id = attr.split('"')[1][m
+[32m+[m[32m            elif 'protein_id' in attr:[m
+[32m+[m[32m                protein_id = attr.split('"')[1][m
+[32m+[m[41m                [m
+[32m+[m[32m        if gene_id and protein_id:[m
+[32m+[m[32m            gene_to_protein[gene_id] = protein_id[m
+[32m+[m
+[32m+[m[32m# Output results to TSV file[m
+[32m+[m[32moutput_file = r'D:\nextcloud\pd论文\data\cluster-marker\ncbi_gene_mapping.tsv'[m
+[32m+[m[32mwith open(output_file, 'w') as out:[m
+[32m+[m[32m    # Write header[m
+[32m+[m[32m    out.write("gene_id\tprotein_id\n")[m
+[32m+[m[32m    # Write data[m
+[32m+[m[32m    for gene in loc111_genes:[m
+[32m+[m[32m        if gene in gene_to_protein:[m
+[32m+[m[32m            out.write(f"{gene}\t{gene_to_protein[gene]}\n")[m
+[32m+[m[32m        else:[m
+[32m+[m[32m            out.write(f"{gene}\tNo corresponding protein_id found\n")[m
+[32m+[m
+[32m+[m[32m# Print statistics[m
+[32m+[m[32mfound_count = sum(1 for gene in loc111_genes if gene in gene_to_protein)[m
+[32m+[m[32mprint(f"Total LOC111 genes: {len(loc111_genes)}")[m
+[32m+[m[32mprint(f"Number of genes with protein_id: {found_count}")[m
+[32m+[m[32mprint(f"Number of genes without protein_id: {len(loc111_genes) - found_count}")[m
+[32m+[m[32mprint(f"Results saved to file: {output_file}")[m
+[1mdiff --git a/readme.md b/readme.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c2ef2b4[m
+[1m--- /dev/null[m
+[1m+++ b/readme.md[m
+[36m@@ -0,0 +1,118 @@[m
+[32m+[m[32m# Bioinformatics Analysis Pipeline[m
+[32m+[m
+[32m+[m[32mThis project is a bioinformatics analysis pipeline that includes multiple steps from generating reference genome, processing 10X genomics data, gene annotation to cell type identification. Here are detailed descriptions for each part.[m
+[32m+[m
+[32m+[m[32m## 1. Generating GTF Files[m
+[32m+[m
+[32m+[m[32mThe `full_length_make_gtf_ref.py` script converts FASTA files to GTF and new FASTA format. It takes a FASTA file or a directory containing FASTA files as input, and generates a new FASTA file and a GTF file based on the input sequences.[m
+[32m+[m
+[32m+[m[32m### Features[m
+[32m+[m
+[32m+[m[32m- Supports single FASTA file or directory containing multiple FASTA files as input[m
+[32m+[m[32m- Generates a new FASTA file with cleaned up sequence names[m
+[32m+[m[32m- Creates a GTF file with gene and transcript annotations[m
+[32m+[m[32m- Handles duplicate sequence names by appending a unique index[m
+[32m+[m[32m- Provides command-line arguments for specifying input and output paths[m
+[32m+[m
+[32m+[m[32m### Usage[m
+[32m+[m[32mpython full_length_make_gtf_ref.py -i <input_fasta> -o <output_directory>[m
+[32m+[m
+[32m+[m[32m## 2. 10X Genomics Data Processing[m
+[32m+[m
+[32m+[m[32mThis Python script merges 10X Genomics data from different species into a unified format. It processes barcode, feature, and matrix files from multiple species and combines them into a single dataset.[m
+[32m+[m
+[32m+[m[32m### Features[m
+[32m+[m
+[32m+[m[32m- Supports merging data from multiple species[m
+[32m+[m[32m- Handles input files in plain text or gzip compressed format[m
+[32m+[m[32m- Generates unified output files: barcodes.tsv, features.tsv, and matrix.mtx[m
+[32m+[m[32m- Provides error handling and logging for data processing issues[m
+[32m+[m
+[32m+[m[32m### Usage[m
+[32m+[m
+[32m+[m[32m1. Prepare the input data files for each species:[m
+[32m+[m[32m   - barcode.tsv: Contains cell barcodes[m
+[32m+[m[32m   - feature.tsv: Contains gene/feature information[m
+[32m+[m[32m   - matrix.mtx: Contains expression matrix in sparse format[m
+[32m+[m[32m2. Update the data_paths dictionary in the script with the file paths for each species[m
+[32m+[m
+[32m+[m[32m## 3. Gene Annotation[m[41m [m
+[32m+[m
+[32m+[m[32mThis Python script annotates marker genes with additional information from various databases such as GO, KEGG, Pfam, and KOG. It reads a marker gene file and multiple annotation files, merges the information, and exports the annotated marker genes to output files.[m
+[32m+[m
+[32m+[m[32m### Features[m
+[32m+[m
+[32m+[m[32m- Supports annotation from multiple databases: GO, KEGG, Pfam, and KOG[m
+[32m+[m[32m- Reads marker gene file and annotation files in TSV format[m
+[32m+[m[32m- Merges annotation information with marker gene data[m
+[32m+[m[32m- Handles duplicate gene IDs and merges their annotations[m
+[32m+[m[32m- Exports annotated results to TSV files[m
+[32m+[m[32m- Provides summary statistics of annotation results[m
+[32m+[m
+[32m+[m[32m### Usage[m
+[32m+[m
+[32m+[m[32m1. Prepare the input files:[m
+[32m+[m[32m   - Marker gene file in TSV format[m
+[32m+[m[32m   - Annotation files in TSV format for GO, KEGG, Pfam, and KOG[m
+[32m+[m[32m2. Update the file paths in the `__main__` section of the script[m
+[32m+[m
+[32m+[m[32m## 4. Cell Type Identification and Gene Name Processing[m
+[32m+[m
+[32m+[m[32mThis part includes three Python scripts for cell type identification and gene name processing:[m
+[32m+[m
+[32m+[m[32m1. `celltype_identification2.py`: Compares marker gene files from different species to identify overlapping proteins.[m
+[32m+[m[32m2. `gene_to_protein.py`: Maps gene IDs (LOC111 format) to corresponding protein IDs using a GTF annotation file.[m[41m  [m
+[32m+[m[32m3. `extract_gene_names.py`: Extracts gene names from marker gene files and saves LOC111 format gene names separately.[m
+[32m+[m
+[32m+[m[32m### Features[m
+[32m+[m
+[32m+[m[32m- Compares marker gene files from different species to identify overlapping proteins[m
+[32m+[m[32m- Maps LOC111 format gene IDs to corresponding protein IDs[m
+[32m+[m[32m- Extracts gene names from marker gene files and saves LOC111 format gene names separately[m
+[32m+[m
+[32m+[m[32m### Usage[m[41m [m
+[32m+[m
+[32m+[m[32m1. Prepare input files:[m
+[32m+[m[32m   - Marker gene files from different species (tsv format)[m
+[32m+[m[32m   - Gene ID to protein ID mapping file (tsv format)[m
+[32m+[m[32m   - GTF annotation file[m
+[32m+[m[32m2. Update file paths in the scripts[m
+[32m+[m[32m3. Run the scripts[m[41m [m
+[32m+[m[32m4. Check the output results[m
+[32m+[m
+[32m+[m[32m## 5. GSEA Enrichment Analysis[m
+[32m+[m
+[32m+[m[32mThis is a Python module for performing Gene Set Enrichment Analysis (GSEA).[m
+[32m+[m
+[32m+[m[32m### Features[m[41m  [m
+[32m+[m
+[32m+[m[32m- Perform hypergeometric test on gene lists and gene sets[m
+[32m+[m[32m- P-value correction for multiple hypothesis testing[m
+[32m+[m[32m- Support multiple gene set database formats such as GMT, GO, KEGG, KOG, and Pfam[m
+[32m+[m[32m- Flexible input and output options[m
+[32m+[m[32mHere's the code with the markdown format corrected:[m
+[32m+[m
+[32m+[m[32m### Usage Example[m
+[32m+[m[32m```python[m
+[32m+[m[32mfrom gsea.algorithms.hypergeom import calcu_hypergeom[m
+[32m+[m[32mfrom gsea.data.gene_list_obj import GeneList_Obj[m
+[32m+[m[32mfrom gsea.data.gene_set_obj_kegg import Gmt_stat[m
+[32m+[m
+[32m+[m[32m# Load gene list and gene set[m
+[32m+[m[32mgene_list = GeneList_Obj("path/to/gene_list.txt").gene_list[m
+[32m+[m[32mgmt_obj = Gmt_stat.from_gmt("path/to/gene_set.gmt")[m
+[32m+[m
+[32m+[m[32m# Perform GSEA analysis[m
+[32m+[m[32mres = calcu_hypergeom(gene_list, gmt_obj, min_count=5)[m
+[32m+[m
+[32m+[m[32m# Output enrichment results[m
+[32m+[m[32mprint(res)[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m### Dependencies[m
+[32m+[m
+[32m+[m[32m- Python 3.6+[m
+[32m+[m[32m- NumPy[m
+[32m+[m[32m- Pandas[m
+[32m+[m[32m- SciPy[m
+[32m+[m[32m- statsmodels[m
+[1mdiff --git a/requirement.txt b/requirement.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4107648[m
+[1m--- /dev/null[m
+[1m+++ b/requirement.txt[m
+[36m@@ -0,0 +1,7 @@[m
+[32m+[m[32mscipy==1.13.1[m
+[32m+[m[32mstatsmodels==0.14.2[m
+[32m+[m[32mnumpy==1.26.4[m
+[32m+[m[32mpandas==2.2.2[m
+[32m+[m[32mseaborn==0.13.2[m
+[32m+[m[32mmatplotlib==3.8.4[m
+[32m+[m[32msklearn==1.4.2[m

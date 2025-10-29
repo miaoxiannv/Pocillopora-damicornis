@@ -3,13 +3,16 @@ File GSEA.py
 Description: 
    This module provides a GSEA (Gene Set Enrichment Analysis) class for performing gene set enrichment analysis.
    It supports analysis using various annotation databases such as GO, KEGG, KOG, and Pfam.
+
 Author: Shengyao Zhang
-ate: 2024-12-19
+Date: 2024-12-19
+
 Usage:
    1. Create a GSEA object by providing the gene list file and annotation files.
    2. Run the analysis using the `run_analysis()` method.
    3. Access the analysis results through the corresponding result attributes (e.g., `go_res`, `kegg_res`, etc.).
    4. Optionally, save the analysis results to files using the `save_result()` method.
+
 Example:
    gene_list_file = "path/to/gene_list.txt"
    anno_files = {
@@ -23,6 +26,7 @@ Example:
    go_res, go_bp_res, go_cc_res, go_mf_res, kegg_res, kog_res, pfam_res = gsea.run_analysis()
    
    gsea.save_result("path/to/output_directory", format='tsv')
+
 Dependencies:
    - data.gene_list_obj
    - data.gene_set_obj_go_trans
@@ -33,23 +37,20 @@ Dependencies:
    - os
    - pandas
 """
+import os
+import pandas as pd
 from data.gene_list_obj import GeneList_Obj
 from data import gene_set_obj_go_trans
 from data import gene_set_obj_kegg
 from data import gene_set_obj_kog_trans
 from data import gene_set_obj_pfam_trans
 from algorithms import hypergeom
-import os
-import pandas as pd
 
 class GSEA:
     def __init__(self, gene_list_file, **anno_files):
-        # Initialize file paths
         self.gene_list_file = gene_list_file
         self.anno_files = anno_files
         
-
-        # Initialize result variables
         self.go_gmt = None
         self.go_sub_objs = None
         self.kegg_gmt = None
@@ -64,16 +65,11 @@ class GSEA:
         self.kog_res = None
         self.pfam_res = None
         
-        # Import gene list
         self.gene_list = GeneList_Obj(self.gene_list_file)
-        
-        # Import annotation files
         self._load_annotations()
     
     def _load_annotations(self):
         """Load all annotation files"""
-
-        
         for gene_set, file_path in self.anno_files.items():
             if gene_set == 'go':
                 self.go_gmt = gene_set_obj_go_trans.Gmt_stat(file_path)
@@ -109,10 +105,10 @@ class GSEA:
         
         return self.go_res, self.go_bp_res, self.go_cc_res, self.go_mf_res, self.kegg_res, self.kog_res, self.pfam_res
     
-    #save all result
     def save_result(self, out_dir, format='xlsx'):
         """
         Save analysis results
+        
         Args:
             out_dir: Output directory path
             format: Output format, supports 'xlsx' or 'tsv'
@@ -120,7 +116,6 @@ class GSEA:
         if not os.path.exists(out_dir):
             os.makedirs(out_dir)
         
-        # Define save function
         def save_df(df, filename):
             if df is not None and not df.empty:
                 file_path = os.path.join(out_dir, filename)
@@ -131,7 +126,6 @@ class GSEA:
                 else:
                     raise ValueError(f"Unsupported format: {format}")
         
-        # Save various results
         result_files = {
             'go_res': self.go_res,
             'go_bp_res': self.go_bp_res,
